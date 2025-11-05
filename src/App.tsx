@@ -15,9 +15,9 @@ import ClientsPartners from './components/ClientsPartners'
 import ContactInfo from './components/ContactInfo'
 const App = () => {
     return (
-        <div className="flex flex-col  mt-7 px-28 min-h-screen bg-[#EEEEEE] text-black">
+        <div className="flex flex-col mt-7 min-h-screen bg-[#EEEEEE] text-black">
             <Header />
-            <main className="flex flex-col gap-12">
+            <main className="flex flex-col gap-12 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <Hero />
                 <About />
                 <Vision />

@@ -77,14 +77,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ p }) => {
 export const Showcase: React.FC = () => {
     const { lang } = useLang()
     return (
-        <section id="showcase" className="py-10" >
-            <div className=" flex-col flex gap-8 ">
+        <section id="showcase" className="py-10">
+            <div className="flex flex-col gap-8 w-full">
                 <FadeUp className="">
                     <h2 className="text-3xl font-bold text-slate-900">{lang === 'en' ? 'Projects' : 'Dự án tiêu biểu'}</h2>
                 </FadeUp>
 
-                <FadeUp className="relative w-[1250px] ">
-                    <Slider {...settings} >
+                <FadeUp className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <Slider {...settings}>
                         {projects.map((p, i) => (
                             <ProjectCard key={p.title} p={p} />
                         ))}
