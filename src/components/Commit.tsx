@@ -6,8 +6,8 @@ const QualityCommitment: React.FC = () => {
     const titleColor = 'text-[#7B6E5B]'; 
 
     return (
-        <section className={`py-16 md:py-24  mt-12 bg-stone-50  ${bgColor}`}>
-            <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <section className={`p-20 bg-stone-50  ${bgColor}`}>
+            <div className="">
                 
                 <header className="flex justify-between items-start mb-12">
                     <h1 className={`text-5xl font-serif font-medium ${titleColor}`}>
@@ -17,7 +17,8 @@ const QualityCommitment: React.FC = () => {
 
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
                     
-                    <div className="lg:w-1/2 space-y-8">
+                    <div className="lg:w-1/2 space-y-8 lg:border-r border-black
+ lg:pr-10  ">
                         {commitments.map((item, index) => (
                             <div key={index} className="flex items-start gap-4">
                                 <div className={`flex-shrink-0 w-8 h-8 rounded-full flex justify-center items-center text-white font-bold ${item.iconBg}`}>

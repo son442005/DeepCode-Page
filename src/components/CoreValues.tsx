@@ -33,11 +33,11 @@ const IconDiamond = () => (
 
 export const CoreValues = () => {
     return (
-        <section id="values" className="py-20">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="rounded-3xl border border-[#E3D5B5] bg-[#F2E4C8] shadow-sm p-8 sm:p-12">
+        <section id="values" className="">
+            <div className="">
+                <div className="rounded-3xl border border-[#E3D5B5] bg-[#F2E4C8] shadow-sm ">
                     <h2 className="text-4xl font-bold text-slate-900 tracking-tight font-serif">Giá Trị Cốt Lõi</h2>
-                    <div className="mt-10 grid gap-10 lg:grid-cols-2 items-start">
+                    <div className="mt-10 grid lg:grid-cols-2 items-start">
                         {/* Left texts */}
                         <div className="space-y-12">
                             <div>

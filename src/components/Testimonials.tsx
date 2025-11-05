@@ -2,9 +2,9 @@ import { testimonials } from '../constants'
 
 export const Testimonials = () => {
     return (
-        <section id="testimonials" className="py-20">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="max-w-2xl">
+        <section id="testimonials" className="">
+            <div className="">
+                <div className="">
                     <h2 className="text-3xl font-bold text-slate-900">Khách hàng nói gì</h2>
                     <p className="mt-3 text-slate-700">Niềm tin của khách hàng là động lực để chúng tôi phát triển.</p>
                 </div>

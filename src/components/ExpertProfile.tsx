@@ -3,19 +3,19 @@ import {expertData} from "../constants";
 interface ExpertProfileTailwindProps {}
 const ExpertProfileTailwind: React.FC<ExpertProfileTailwindProps> = () => {
     return (
-        <div className="max-w-7xl mx-auto p-8 font-sans bg-stone-50 text-gray-800">
+        <div className="rounded-3xl p-16 font-sans bg-stone-50 text-gray-800 ">
             
-            <header className="flex justify-between items-start mb-10">
+            <header className="flex justify-between  ">
                 <h1 className="text-4xl font-bold text-gray-700">Đội Ngũ Chuyên Gia</h1>
             </header>
             
-            <section className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start">
+            <section className="flex flex-col lg:flex-row lg:gap-16  item-center mt-10">
 
                 <div className="lg:w-1/3 w-full">
                     <img 
                         src={expertData.profileImage} 
                         alt={expertData.name} 
-                        className=" mt-10 w-full h-auto object-cover block shadow-lg rounded-xl border border-gray-300 text-center "
+                        className=" mt-10 w-full h-auto object-cover block shadow-lg  border border-gray-300 text-center "
                     />
                 </div>
 
@@ -25,16 +25,16 @@ const ExpertProfileTailwind: React.FC<ExpertProfileTailwindProps> = () => {
 
                     <div className="flex flex-col gap-8 pl-10 relative">
                         
-                        <div className={`absolute top-4 bottom-4 left-[46px] w-0.5 bg-orange-600 z-0`}></div>
+                        <div className={` absolute top-4 bottom-4 left-[56px] w-0.5 bg-orange-600 z-0`}></div>
                         
                         {expertData.items.map((item, index) => (
-                            <div key={item.id} className="flex items-start gap-5 relative z-10">
+                            <div key={item.id} className="flex  gap-5 relative z-10 items-center">
                                 
                                 <div className={`flex-shrink-0 w-8 h-8 rounded-full bg-orange-600 text-white font-bold text-lg flex justify-center items-center mt-1`}>
                                     {item.id}
                                 </div>
                                 
-                                <div className="flex-1 pt-1">
+                                <div className="flex-1 pt-1 ">
                                     <h3 className={`text-xl font-bold text-orange-600 mb-1`}>{item.title}</h3>
                                     {item.details.map((detail, detailIndex) => (
                                         <p key={detailIndex} className="text-sm leading-relaxed mb-1">

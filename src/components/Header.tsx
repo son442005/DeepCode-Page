@@ -12,7 +12,6 @@ export const Header = () => {
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
-
     const handleToggle = () => setIsOpen((v) => !v)
 
     const handleNavClick = (href: string) => {
@@ -21,10 +20,9 @@ export const Header = () => {
         el.scrollIntoView({ behavior: 'smooth', block: 'start' })
         setIsOpen(false)
     }
-
     return (
-        <header className={`fixed top-0 left-0 right-0 z-50 transition-colors ${isScrolled ? 'bg-white/70 backdrop-blur border-b border-slate-200' : 'bg-transparent'}`}>
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <header className={`fixed top-0 z-50 left-0 right-0 bg-white `}>
+            <div className=" mx-20 ">
                 <div className="flex h-16 items-center justify-between">
                     <div className="flex items-center gap-2">
                         <div className="h-10 w-10 rounded-lg bg-white ring-1 ring-slate-300 shadow-sm flex items-center justify-center overflow-hidden">

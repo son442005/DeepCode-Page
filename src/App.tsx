@@ -15,9 +15,9 @@ import ClientsPartners from './components/ClientsPartners'
 import ContactInfo from './components/ContactInfo'
 const App = () => {
     return (
-        <div className="min-h-screen bg-white text-black">
+        <div className="flex flex-col  mt-7 px-28 min-h-screen bg-[#EEEEEE] text-black">
             <Header />
-            <main className=" max-w-7xl mx-auto">
+            <main className="flex flex-col gap-12">
                 <Hero />
                 <About />
                 <Vision />
@@ -29,7 +29,7 @@ const App = () => {
                 <StaffStats />
                 <Commit />
                 <ClientsPartners/>
-                <CTA />
+                {/* <CTA /> */}
                 <ContactInfo />
             </main>
             <Footer />

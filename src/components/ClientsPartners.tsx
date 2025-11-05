@@ -2,9 +2,9 @@ import { clientTestimonial, partnerLogos } from "../constants";
 import React from "react";
 const ClientsPartners: React.FC = () => {
   return (
-    <section className="mt-6 mx-auto  py-20 md:py-28 bg-stone-50 from-[#F8F4EB] to-[#F4EFE4]">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10">
-        <div className="mb-16 text-center">
+    <section className="p-20 bg-stone-50 from-[#F8F4EB] to-[#F4EFE4]">
+      <div className="flex flex-col gap-16">
+        <div className=" text-center">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#6E5C43]">
             Khách Hàng & Đối Tác
           </h2>
@@ -13,7 +13,7 @@ const ClientsPartners: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-10 items-center mb-24">
+        <div className="grid grid-cols-2 sm:grid-cols-4  items-center">
           {partnerLogos.map((logo, i) => (
             <div key={i} className="flex justify-center opacity-80 hover:opacity-100 transition">
               <img src={logo.src} alt={logo.name} className="h-10 md:h-12 object-contain" />

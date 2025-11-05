@@ -4,8 +4,8 @@ const meetingImage = "/project-7.jpg";
 
 const ContactInfo: React.FC = () => {
     return (
-        <section className={`bg-stone-50 py-16 md:py-24 bg-[#F9F5EC`}>
-            <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <section className={`p-20 bg-stone-50 bg-[#F9F5EC`}>
+            <div className="">
                 
                 <header className="mb-12">
                     <h1 className={`text-5xl font-serif font-medium text-[#7B6E5B]`}>

@@ -12,7 +12,7 @@ export default {
                     // 'background': '#F9F5EC',
                     secondary: '#0EA5E9',
                     dark: '#0B1220',
-                    background:'#000099'
+                    rbg: '#B7B7B7',
                 }
             }
     },
