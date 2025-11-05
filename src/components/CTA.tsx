@@ -11,13 +11,14 @@ export const CTA = () => {
     }
 
     return (
-        <section id="contact" className="">
-            <div className="">
-                <div className="rounded-2xl border border-white/10 bg-gradient-to-tr from-primary/20 via-secondary/10 to-white/5">
-                    <div className="grid gap-10 lg:grid-cols-2">
+        <section id="contact" className="bg-white">
+            <div className="p-20">
+                <div className="bg-gradient-to-r from-[#FFFFFF] to-[#E9ECEF]
+">
+                    <div className="grid gap-10 lg:grid-cols-2 ">
                         <div>
                             <h3 className="text-3xl font-bold text-slate-900">Bắt đầu cùng chúng tôi</h3>
-                            <p className="mt-3 text-slate-700">Hãy để lại thông tin, đội ngũ sẽ tư vấn giải pháp phù hợp.</p>
+                            <p className="">Hãy để lại thông tin, đội ngũ sẽ tư vấn giải pháp phù hợp.</p>
                         </div>
                         <form onSubmit={handleSubmit} className="grid gap-4">
                             <input name="name" required placeholder="Họ và tên" className="rounded-lg bg-white/10 px-4 py-3 outline-none ring-1 ring-white/10 focus:ring-primary" />

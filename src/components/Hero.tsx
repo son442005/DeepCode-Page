@@ -35,8 +35,14 @@ export const Hero = () => {
                             </button>
                         </div>
                     </div>
-                    <div className="relative">
-                        <div className=" aspect-[16/10] w-full rounded-xl bg-gradient-to-tr from-primary/30 via-secondary/20 to-white/10 ring-1 ring-white/10 shadow-2xl" />
+                    <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden ring-1 ring-white/10 shadow-2xl">
+                        <iframe
+                            className="absolute inset-0 w-full h-full"
+                            src="https://www.youtube.com/embed/gIxcgrZvIO0?autoplay=1&mute=1&controls=0&showinfo=0&loop=1&playlist=gIxcgrZvIO0"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen
+                        ></iframe>
                     </div>
                 </div>
             </div>

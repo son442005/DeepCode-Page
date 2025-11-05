@@ -4,7 +4,7 @@ const meetingImage = "/project-7.jpg";
 
 const ContactInfo: React.FC = () => {
     return (
-        <section id="ContactInfo" className={`p-20 bg-stone-50 bg-[#F9F5EC rounded-3xl`}>
+        <section id="ContactInfo" className={`p-20 bg-stone-50 bg-[#F9F5EC rounded-3xl `}>
             <div className="">
                 
                 <header className="mb-12">
