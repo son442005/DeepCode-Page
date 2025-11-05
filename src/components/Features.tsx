@@ -9,7 +9,7 @@ const Icon = ({ name }: { name: string }) => {
 
 export const Features = () => {
     return (
-        <section id="features" className="p-20 rounded-md bg-stone-50 from-[#F8F4EB] to-[#F4EFE4]">
+        <section id="features" className="p-20 bg-stone-50 from-[#F8F4EB] to-[#F4EFE4] rounded-3xl">
             <div className="flex flex-col gap-10">
                 <div className="">
                     <h2 className="text-2xl font-bold">Dịch vụ & Thế mạnh</h2>

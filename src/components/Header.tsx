@@ -30,13 +30,13 @@ export const Header = () => {
                         </div>
                         <span className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">{site.company}</span>
                     </div>
-                    <nav className="hidden md:flex items-center gap-6">
+                    <nav className="hidden md:flex items-center gap-6 text-blue-600">
                         {nav.map((n) => (
                             <button key={n.href} onClick={() => handleNavClick(n.href)} className="text-sm text-slate-700 hover:text-slate-900 transition">
                                 {n.label}
                             </button>
                         ))}
-                        <a href="#contact" className="inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-white shadow hover:bg-blue-500 transition">
+                        <a href="#ContactInfo" className="inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-white shadow hover:bg-blue-500 transition">
                             Liên hệ
                         </a>
                     </nav>

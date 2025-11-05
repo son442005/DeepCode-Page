@@ -6,7 +6,7 @@ const QualityCommitment: React.FC = () => {
     const titleColor = 'text-[#7B6E5B]'; 
 
     return (
-        <section className={`p-20 bg-stone-50  ${bgColor}`}>
+        <section id='Commit' className={`p-20 bg-stone-50 rounded-3xl ${bgColor}`}>
             <div className="">
                 
                 <header className="flex justify-between items-start mb-12">
@@ -15,8 +15,8 @@ const QualityCommitment: React.FC = () => {
                     </h1>
                 </header>
 
-                <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
-                    
+                <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 ">
+                     
                     <div className="lg:w-1/2 space-y-8 lg:border-r border-black
  lg:pr-10  ">
                         {commitments.map((item, index) => (

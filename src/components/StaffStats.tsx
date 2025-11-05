@@ -4,7 +4,7 @@ const StaffStats: React.FC = () => {
     const titleColor = 'text-[#7B6E5B]'; 
 
     return (
-        <section className={`p-20 bg-stone-50 text-gray-800 `}>
+        <section id="StaffStats" className={`p-20 bg-stone-50 text-gray-800 rounded-3xl `}>
             <div className="flex flex-col gap-12">
                 <div className="">
                     <h1 className={`text-5xl font-serif font-medium ${titleColor}`}>

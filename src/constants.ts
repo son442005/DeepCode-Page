@@ -12,7 +12,7 @@ export type Testimonial = {
 export type Project = {
     title: string
     description: string
-    image: string // path under public/
+    image: string
 }
 
 export const site = {
@@ -62,8 +62,10 @@ export const nav = [
     { label: 'Tầm nhìn', href: '#vision' },
     { label: 'Dịch vụ', href: '#features' },
     { label: 'Dự án', href: '#showcase' },
-    { label: 'Khách hàng', href: '#testimonials' },
-    { label: 'Liên hệ', href: '#contact' },
+    { label: 'Đôi Ngũ', href: '#ExpertProfile' },
+    { label: 'Nhân Sự', href: '#StaffStats' },
+    { label: 'Cam Kết', href: '#Commit' },
+    { label: 'Khách hàng', href: '#ClientsPartners' },
 ]
 
 

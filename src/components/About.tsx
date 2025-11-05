@@ -2,7 +2,7 @@ import { site } from '../constants'
 
 export const About = () => {
     return (
-        <section id="about" className="">
+        <section id="about" className="p-20 bg-white rounded-3xl" aria-label="About Us ">
             <div className="">
                 <div className="grid lg:grid-cols-2 items-start">
                     <div>

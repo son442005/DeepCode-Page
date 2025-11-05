@@ -1,6 +1,6 @@
   const Vision = () => {
     return (
-        <section id="vision" className="">
+        <section id="vision" className="" aria-label="About Us">
             <div className="">
                 <div className="rounded-3xl border border-[#E3D5B5] bg-[#F2E4C8] shadow-sm p-8 sm:p-12">
                     <h2 className="text-4xl font-bold text-slate-900 tracking-tight font-serif">Tầm Nhìn</h2>

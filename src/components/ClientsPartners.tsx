@@ -2,7 +2,7 @@ import { clientTestimonial, partnerLogos } from "../constants";
 import React from "react";
 const ClientsPartners: React.FC = () => {
   return (
-    <section className="p-20 bg-stone-50 from-[#F8F4EB] to-[#F4EFE4]">
+    <section id="ClientsPartners" className="p-20 bg-stone-50 from-[#F8F4EB] to-[#F4EFE4] rounded-3xl">
       <div className="flex flex-col gap-16">
         <div className=" text-center">
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#6E5C43]">
