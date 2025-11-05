@@ -1,22 +1,25 @@
 import React from 'react';
 import { commitments, standards } from "../constants";
+import { FadeUp } from './Anim'
+import { useLang } from '../lang'
 
 const QualityCommitment: React.FC = () => {
-    const bgColor = 'bg-[#F9F5EC]'; 
-    const titleColor = 'text-[#7B6E5B]'; 
+    const bgColor = 'bg-[#F9F5EC]';
+    const titleColor = 'text-[#7B6E5B]';
 
+    const { lang } = useLang()
     return (
         <section id='Commit' className={`p-20 bg-stone-50 rounded-3xl ${bgColor}`}>
             <div className="">
-                
+
                 <header className="flex justify-between items-start mb-12">
                     <h1 className={`text-5xl font-serif font-medium ${titleColor}`}>
-                        Cam Kết Chất Lượng
+                        {lang === 'en' ? 'Quality Commitment' : 'Cam Kết Chất Lượng'}
                     </h1>
                 </header>
 
-                <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 ">
-                     
+                <FadeUp className="flex flex-col lg:flex-row gap-12 lg:gap-20 ">
+
                     <div className="lg:w-1/2 space-y-8 lg:border-r border-black
  lg:pr-10  ">
                         {commitments.map((item, index) => (
@@ -24,13 +27,23 @@ const QualityCommitment: React.FC = () => {
                                 <div className={`flex-shrink-0 w-8 h-8 rounded-full flex justify-center items-center text-white font-bold ${item.iconBg}`}>
                                     {item.iconText}
                                 </div>
-                                
+
                                 <div className="flex-1 pt-0.5">
                                     <h2 className="text-lg font-bold text-gray-700 mb-1">
-                                        {item.title}
+                                        {lang === 'en' ? (
+                                            item.title === 'Bảo Mật Tuyệt Đối' ? 'Absolute Security' :
+                                                item.title === 'Phát Triển Linh Hoạt' ? 'Agile Development' :
+                                                    item.title === 'Bảo Hành Dài Hạn' ? 'Long-term Warranty' :
+                                                        item.title === 'Thời Gian Phản Hồi' ? 'Response Time' : item.title
+                                        ) : item.title}
                                     </h2>
                                     <p className="text-sm text-gray-600">
-                                        {item.description}
+                                        {lang === 'en' ? (
+                                            item.title === 'Bảo Mật Tuyệt Đối' ? 'Protecting customer data is our top priority with multi-layer security and rigorous controls.' :
+                                                item.title === 'Phát Triển Linh Hoạt' ? 'Agile methods ensure rapid adaptation to changes and customer needs.' :
+                                                    item.title === 'Bảo Hành Dài Hạn' ? '6–12 month warranty for every product, with ongoing technical support and upgrades.' :
+                                                        item.title === 'Thời Gian Phản Hồi' ? 'We respond to support requests within 2 hours and resolve incidents within 24 hours.' : item.description
+                                        ) : item.description}
                                     </p>
                                 </div>
                             </div>
@@ -39,18 +52,21 @@ const QualityCommitment: React.FC = () => {
 
                     <div className="lg:w-1/2 pt-4 lg:pt-0">
                         <p className="text-base text-gray-700 mb-4 ">
-                            DeepCode áp dụng các tiêu chuẩn quốc tế trong quy trình phát triển phần mềm:
+                            {lang === 'en' ? 'DeepCode adopts international standards in software development:' : 'DeepCode áp dụng các tiêu chuẩn quốc tế trong quy trình phát triển phần mềm:'}
                         </p>
-                        
+
                         <ul className="list-disc pl-5 space-y-2 text-gray-600">
                             {standards.map((standard, index) => (
                                 <li key={index} className="text-sm">
-                                    {standard}
+                                    {lang === 'en' && standard.startsWith('ISO 9001') && 'ISO 9001:2015 - Quality management system'}
+                                    {lang === 'en' && standard.startsWith('ISO/IEC 27001') && 'ISO/IEC 27001 - Information security management'}
+                                    {lang === 'en' && standard.startsWith('CMMI') && 'CMMI Level 4 - Capability Maturity Model Integration'}
+                                    {lang === 'vi' && standard}
                                 </li>
                             ))}
                         </ul>
                     </div>
-                </div>
+                </FadeUp>
             </div>
         </section>
     );

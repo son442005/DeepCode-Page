@@ -14,3 +14,20 @@ body,
 #root {
     height: 100%;
 }
+
+/* Simple in-view animation utilities */
+.animate-fade-up {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 600ms cubic-bezier(0.22, 1, 0.36, 1), transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.animate-fade-in {
+    opacity: 0;
+    transition: opacity 700ms ease;
+}
+
+.is-inview {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}

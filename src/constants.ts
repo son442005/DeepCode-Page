@@ -2,6 +2,7 @@ export type Feature = {
     title: string
     description: string
     icon: string
+    color?: string
 }
 
 export type Testimonial = {
@@ -27,19 +28,28 @@ export const site = {
 }
 export const features: Feature[] = [
     {
-        title: 'Tư vấn & Chiến lược',
-        description: 'Đồng hành từ ý tưởng tới chiến lược công nghệ phù hợp.',
-        icon: 'strategy',
+        title: 'Phát Triển Website',
+        description: 'Thiết kế và xây dựng website hiện đại, tối ưu trải nghiệm, SEO và hiệu năng.',
+        icon: 'web',
+        color: '#E0F2FE',
     },
     {
-        title: 'Thiết kế & Phát triển',
-        description: 'Xây dựng sản phẩm hiệu suất cao, trải nghiệm mượt mà.',
-        icon: 'dev',
+        title: 'Ứng Dụng Di Động',
+        description: 'Phát triển ứng dụng iOS/Android đa nền tảng với UI/UX trực quan.',
+        icon: 'mobile',
+        color: '#E9FBE7',
     },
     {
-        title: 'Triển khai & Vận hành',
-        description: 'Cloud-native, CI/CD, bảo mật, theo dõi và tối ưu liên tục.',
-        icon: 'deploy',
+        title: 'Trí Tuệ Nhân Tạo (AI)',
+        description: 'Tư vấn và triển khai AI/ML, chatbot, OCR, khai phá dữ liệu.',
+        icon: 'ai',
+        color: '#FEF3C7',
+    },
+    {
+        title: 'Blockchain',
+        description: 'Xây dựng smart contract, ví, DApp và tích hợp chuỗi khối cho sản phẩm.',
+        icon: 'blockchain',
+        color: '#FCE7F3',
     },
 ]
 
@@ -97,44 +107,44 @@ export const projects: Project[] = [
     },
 ]
 export const partnerLogos = [
-  { name: "SkySoft Technologies", src: "softsky.webp" },
-  { name: "Ambassador Cruise", src: "Ambassador-Cruise-Logo.png" },
-  { name: "MoMo", src: "momo.png" },
-  { name: "VNPay", src: "VNPAY.webp" },
+    { name: "SkySoft Technologies", src: "softsky.webp" },
+    { name: "Ambassador Cruise", src: "Ambassador-Cruise-Logo.png" },
+    { name: "MoMo", src: "momo.png" },
+    { name: "VNPay", src: "VNPAY.webp" },
 ];
 
 
 export const clientTestimonial = {
-  quote:
-    "DeepCode đã giúp chúng tôi chuyển đổi toàn bộ vận hành lên nền tảng số, nâng cao hiệu suất, tiết kiệm chi phí và tạo lợi thế cạnh tranh vượt trội trong thị trường công nghệ.",
-  author: "Ông Nguyễn Trương Giang",
-  role: "Tổng Giám Đốc SkySoft",
+    quote:
+        "DeepCode đã giúp chúng tôi chuyển đổi toàn bộ vận hành lên nền tảng số, nâng cao hiệu suất, tiết kiệm chi phí và tạo lợi thế cạnh tranh vượt trội trong thị trường công nghệ.",
+    author: "Ông Nguyễn Trương Giang",
+    role: "Tổng Giám Đốc SkySoft",
 };
 
 export const commitments = [
     {
         title: "Bảo Mật Tuyệt Đối",
         description: "Bảo vệ dữ liệu khách hàng là ưu tiên hàng đầu với hệ thống bảo mật đa lớp và quy trình kiểm soát nghiêm ngặt.",
-        iconBg: "bg-[#8BC34A]", 
-        iconText: "🛡️" 
+        iconBg: "bg-[#8BC34A]",
+        iconText: "🛡️"
     },
     {
         title: "Phát Triển Linh Hoạt",
         description: "Áp dụng phương pháp Agile, đảm bảo thích ứng nhanh với yêu cầu thay đổi và theo sát nhu cầu khách hàng.",
-        iconBg: "bg-[#FFC107]", 
-        iconText: "⚙️" 
+        iconBg: "bg-[#FFC107]",
+        iconText: "⚙️"
     },
     {
         title: "Bảo Hành Dài Hạn",
         description: "Cam kết bảo hành 6-12 tháng cho mọi sản phẩm, hỗ trợ kỹ thuật và nâng cấp liên tục.",
-        iconBg: "bg-[#FF9800]", 
-        iconText: "✍️" 
+        iconBg: "bg-[#FF9800]",
+        iconText: "✍️"
     },
     {
         title: "Thời Gian Phản Hồi",
         description: "Cam kết phản hồi mọi yêu cầu hỗ trợ trong vòng 2 giờ và khắc phục sự cố trong 24 giờ.",
-        iconBg: "bg-[#4CAF50]", 
-        iconText: "🖥️" 
+        iconBg: "bg-[#4CAF50]",
+        iconText: "🖥️"
     },
 ];
 
@@ -148,7 +158,7 @@ export const standards = [
 export const expertData = {
     name: "Thạc sĩ Đinh Văn Đông",
     role: "Nhà sáng lập & Giám đốc Công nghệ",
-    profileImage: "/project-6.png", 
+    profileImage: "/project-6.png",
     items: [
         { id: 1, title: "Học Vấn", details: ["Thạc sĩ Khoa học Máy tính, Đại học Bách Khoa Hà Nội (2018)", "Kỹ sư Công nghệ Thông tin, ĐH Bách Khoa Hà Nội (2014)"] },
         { id: 2, title: "Kinh Nghiệm", details: ["15+ năm kinh nghiệm trong lĩnh vực phát triển phần mềm", "Nguyên Vice Academic Director tại TEKY HOLDING (2020-2022)", "Giảng viên Khoa CNTT, BTEC FPT Hà Nội (2022-2025)"] },
@@ -186,7 +196,7 @@ export const contactItems = [
         details: [
             "Tầng 2, nhà 2.1B5, khu CT2, KĐT thành phố giao lưu, 234 đường, Phường Phú Diễn, TP Hà Nội, Việt Nam"
         ],
-        icon: "🏢" 
+        icon: "🏢"
     },
     {
         title: "Liên Hệ",
@@ -195,13 +205,13 @@ export const contactItems = [
             "Email: info@deepcode.vn",
             "Website: www.deepcode.vn"
         ],
-        icon: "📞" 
+        icon: "📞"
     },
     {
         title: "Mạng Xã Hội",
         details: [
             "Facebook: fb/deepcode.vn"
         ],
-        icon: "🐦" 
+        icon: "🐦"
     },
 ];

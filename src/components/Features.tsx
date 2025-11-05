@@ -1,32 +1,89 @@
 import { features } from '../constants'
+import { useLang } from '../lang'
+import { FadeUp } from './Anim'
 
 const Icon = ({ name }: { name: string }) => {
-    if (name === 'strategy') return <div className="h-6 w-6 rounded bg-secondary" />
-    if (name === 'dev') return <div className="h-6 w-6 rounded bg-primary" />
-    if (name === 'deploy') return <div className="h-6 w-6 rounded bg-white/60" />
-    return <div className="h-6 w-6 rounded bg-white/40" />
+    if (name === 'ai') {
+        return (
+            <svg viewBox="0 0 24 24" className="h-6 w-6 text-slate-800" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="4" />
+                <path d="M8 16V8h2.5a2.5 2.5 0 1 1 0 5H8" />
+                <path d="M14 16V8h2" />
+            </svg>
+        )
+    }
+    if (name === 'web') {
+        return (
+            <svg viewBox="0 0 24 24" className="h-6 w-6 text-slate-800" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="9" />
+                <path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18" />
+            </svg>
+        )
+    }
+    if (name === 'mobile') {
+        return (
+            <svg viewBox="0 0 24 24" className="h-6 w-6 text-slate-800" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="7" y="2" width="10" height="20" rx="2" />
+                <path d="M11 18h2" />
+            </svg>
+        )
+    }
+    if (name === 'cloud') {
+        return (
+            <svg viewBox="0 0 24 24" className="h-6 w-6 text-slate-800" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M20 17.5A4.5 4.5 0 0 0 17 9a6 6 0 0 0-11 2.4A4 4 0 0 0 6 19h12" />
+            </svg>
+        )
+    }
+    if (name === 'blockchain') {
+        return (
+            <svg viewBox="0 0 24 24" className="h-6 w-6 text-slate-800" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="3" y="3" width="7" height="7" rx="1.5" />
+                <rect x="14" y="14" width="7" height="7" rx="1.5" />
+                <path d="M10 6.5h4M6.5 10v4M14 10v4M10 17.5h4" />
+            </svg>
+        )
+    }
+    return <div className="h-6 w-6 rounded bg-slate-700" />
 }
 
 export const Features = () => {
+    const { lang } = useLang()
     return (
-        <section id="features" className="p-20 bg-stone-50 from-[#F8F4EB] to-[#F4EFE4] rounded-3xl">
-            <div className="flex flex-col gap-10">
-                <div className="">
-                    <h2 className="text-2xl font-bold">Dịch vụ & Thế mạnh</h2>
-                    <p className="">Những gì chúng tôi làm tốt nhất để giúp doanh nghiệp tăng trưởng.</p>
-                </div>
-                <div className="flex gap-7  ">
+        <section id="features" className="pt-10 pb-20">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <FadeUp className="max-w-2xl">
+                    <h2 className="text-3xl font-bold text-slate-900">{lang === 'en' ? 'Services' : 'Dịch vụ'}</h2>
+                    <p className="mt-3 text-slate-700">{lang === 'en' ? 'Comprehensive technology solutions for businesses.' : 'Giải pháp công nghệ toàn diện cho doanh nghiệp.'}</p>
+                </FadeUp>
+                <div className="mt-10 grid gap-6 sm:grid-cols-2">
                     {features.map((f) => (
-                        <div key={f.title} className="bg-white gap-1 flex flex-col p-6 rounded-lg ">
-                            <Icon name={f.icon} />
-                            <h3 className="">{f.title}</h3>
-                            <p className="">{f.description}</p>
-                        </div>
+                        <FadeUp key={f.title} className="rounded-2xl p-6 shadow ring-1 ring-slate-200" style={{ backgroundColor: f.color }}>
+                            <div className="flex items-center gap-3">
+                                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/70 ring-1 ring-slate-200">
+                                    <Icon name={f.icon} />
+                                </div>
+                                <h3 className="text-xl font-semibold text-slate-900">{lang === 'en' ? (
+                                    f.icon === 'web' ? 'Website Development' :
+                                        f.icon === 'mobile' ? 'Mobile Apps' :
+                                            f.icon === 'ai' ? 'Artificial Intelligence (AI)' :
+                                                f.icon === 'blockchain' ? 'Blockchain' : f.title
+                                ) : f.title}</h3>
+                            </div>
+                            <p className="mt-3 text-slate-800">{lang === 'en' ? (
+                                f.icon === 'web' ? 'Designing and building modern websites with optimized UX, SEO and performance.' :
+                                    f.icon === 'mobile' ? 'Developing cross-platform iOS/Android apps with intuitive UI/UX.' :
+                                        f.icon === 'ai' ? 'Consulting and implementing AI/ML, chatbots, OCR and data mining.' :
+                                            f.icon === 'blockchain' ? 'Building smart contracts, wallets, DApps and blockchain integrations.' : f.description
+                            ) : f.description}</p>
+                        </FadeUp>
                     ))}
                 </div>
             </div>
         </section>
     )
 }
+
+
 
 
