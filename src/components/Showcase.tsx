@@ -6,31 +6,29 @@ import { useLang } from '../lang'
 
 // --- Cấu hình Slider ---
 var settings = {
-    dots: false,
+    dots: true,
     infinite: true,
     speed: 500,
-
     autoplay: true,
-    autoplaySpeed: 2000,
-
-    slidesToShow: 3,
+    autoplaySpeed: 3000,
+    adaptiveHeight: true,
+    slidesToShow: 3, // mặc định trên màn lớn
     slidesToScroll: 1,
-
     responsive: [
         {
-            breakpoint: 1024,
+            breakpoint: 1024, // < 1024px: hiển thị 2
             settings: {
                 slidesToShow: 2,
                 slidesToScroll: 1,
             }
         },
         {
-            breakpoint: 1280, // Màn hình rất lớn (xl)
+            breakpoint: 640, // < 640px: hiển thị 1
             settings: {
-                slidesToShow: 3,
+                slidesToShow: 1,
                 slidesToScroll: 1,
             }
-        },
+        }
     ]
 };
 
@@ -60,12 +58,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ p }) => {
             <div className="h-full rounded-xl border border-slate-200 bg-white shadow flex flex-col cursor-pointer
                         transition duration-300 ease-in-out 
                         hover:-translate-y-1 hover:shadow-xl">
-                <div className=" aspect-[9/3] w-full h-[250px] overflow-hidden rounded-t-xl bg-slate-100">
+                <div className="aspect-[16/9] w-full overflow-hidden rounded-t-xl bg-slate-100">
                     <img src={p.image} alt={tp.title} className="h-full w-full object-cover" />
                 </div>
-                <div className="flex-1 p-4 flex flex-col">
+                <div className="flex-1 p-4 sm:p-6 flex flex-col">
                     <div className="font-semibold text-slate-900 leading-snug">{tp.title}</div>
-                    <div className="mt-2 text-sm text-slate-700 line-clamp-3 overflow-hidden h-20 leading-relaxed">
+                    <div className="mt-2 text-sm sm:text-base text-slate-700 leading-relaxed">
                         {tp.description}
                     </div>
                 </div>

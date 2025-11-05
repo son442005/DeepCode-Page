@@ -24,14 +24,14 @@ export const Header = () => {
         setIsOpen(false)
     }
     return (
-        <header className={`fixed top-0 z-50 left-0 right-0 bg-white ${isScrolled ? 'shadow-md' : ''}`}>
+        <header className={`fixed top-0 z-50 left-0 right-0 bg-white ${isScrolled ? 'shadow-md' : ''} overflow-x-hidden`}>
             <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex h-14 sm:h-16 items-center justify-between">
+                <div className="flex h-12 sm:h-14 items-center justify-between">
                     <div className="flex items-center gap-2">
-                        <div className="h-10 w-10 rounded-lg bg-white ring-1 ring-slate-300 shadow-sm flex items-center justify-center overflow-hidden">
-                            <img src={`${import.meta.env.BASE_URL}logo.jpg`} alt={`${site.company} logo`} className="max-h-8 max-w-8 object-contain" />
+                        <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-lg bg-white ring-1 ring-slate-300 shadow-sm flex items-center justify-center overflow-hidden">
+                            <img src={`${import.meta.env.BASE_URL}logo.jpg`} alt={`${site.company} logo`} className="max-h-7 sm:max-h-8 max-w-8 object-contain" />
                         </div>
-                        <span className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 tracking-tight">{site.company}</span>
+                        <span className="text-base sm:text-lg md:text-xl font-bold text-slate-900 tracking-tight">{site.company}</span>
                     </div>
                     <nav className="hidden md:flex items-center gap-4 lg:gap-6">
                         {/* primary links */}

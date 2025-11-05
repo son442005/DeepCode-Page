@@ -50,27 +50,27 @@ const Icon = ({ name }: { name: string }) => {
 export const Features = () => {
     const { lang } = useLang()
     return (
-        <section id="features" className="pt-10 pb-20">
+        <section id="features" className="pt-8 sm:pt-10 pb-14 sm:pb-20">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <FadeUp className="max-w-2xl">
-                    <h2 className="text-3xl font-bold text-slate-900">{lang === 'en' ? 'Services' : 'Dịch vụ'}</h2>
-                    <p className="mt-3 text-slate-700">{lang === 'en' ? 'Comprehensive technology solutions for businesses.' : 'Giải pháp công nghệ toàn diện cho doanh nghiệp.'}</p>
+                    <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">{lang === 'en' ? 'Services' : 'Dịch vụ'}</h2>
+                    <p className="mt-2 sm:mt-3 text-slate-700 text-sm sm:text-base">{lang === 'en' ? 'Comprehensive technology solutions for businesses.' : 'Giải pháp công nghệ toàn diện cho doanh nghiệp.'}</p>
                 </FadeUp>
-                <div className="mt-10 grid gap-6 sm:grid-cols-2">
+                <div className="mt-8 sm:mt-10 grid gap-4 sm:gap-6 sm:grid-cols-2">
                     {features.map((f) => (
-                        <FadeUp key={f.title} className="rounded-2xl p-6 shadow ring-1 ring-slate-200" style={{ backgroundColor: f.color }}>
-                            <div className="flex items-center gap-3">
-                                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/70 ring-1 ring-slate-200">
+                        <FadeUp key={f.title} className="rounded-2xl p-4 sm:p-6 shadow ring-1 ring-slate-200" style={{ backgroundColor: f.color }}>
+                            <div className="flex items-center gap-2 sm:gap-3">
+                                <div className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-lg bg-white/70 ring-1 ring-slate-200">
                                     <Icon name={f.icon} />
                                 </div>
-                                <h3 className="text-xl font-semibold text-slate-900">{lang === 'en' ? (
+                                <h3 className="text-lg sm:text-xl font-semibold text-slate-900">{lang === 'en' ? (
                                     f.icon === 'web' ? 'Website Development' :
                                         f.icon === 'mobile' ? 'Mobile Apps' :
                                             f.icon === 'ai' ? 'Artificial Intelligence (AI)' :
                                                 f.icon === 'blockchain' ? 'Blockchain' : f.title
                                 ) : f.title}</h3>
                             </div>
-                            <p className="mt-3 text-slate-800">{lang === 'en' ? (
+                            <p className="mt-2 sm:mt-3 text-slate-800 text-sm sm:text-base">{lang === 'en' ? (
                                 f.icon === 'web' ? 'Designing and building modern websites with optimized UX, SEO and performance.' :
                                     f.icon === 'mobile' ? 'Developing cross-platform iOS/Android apps with intuitive UI/UX.' :
                                         f.icon === 'ai' ? 'Consulting and implementing AI/ML, chatbots, OCR and data mining.' :

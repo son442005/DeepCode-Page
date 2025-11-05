@@ -16,10 +16,12 @@ const ClientsPartners: React.FC = () => {
           </p>
         </FadeUp>
 
-        <FadeUp className="grid grid-cols-2 sm:grid-cols-4  items-center">
+        <FadeUp className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 items-center">
           {partnerLogos.map((logo, i) => (
-            <div key={i} className="flex justify-center opacity-80 hover:opacity-100 transition">
-              <img src={logo.src} alt={logo.name} className="h-10 md:h-12 object-contain" />
+            <div key={i} className="flex justify-center">
+              <div className="w-full max-w-[180px] rounded-xl bg-white border border-gray-200 shadow-sm px-3 py-2 sm:px-4 sm:py-3 flex items-center justify-center">
+                <img src={logo.src} alt={logo.name} className="h-12 sm:h-14 md:h-16 w-auto object-contain" />
+              </div>
             </div>
           ))}
         </FadeUp>
