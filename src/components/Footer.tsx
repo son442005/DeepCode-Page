@@ -19,7 +19,7 @@ export const Footer = () => {
                     {/* Brand + description */}
                     <div>
                         <div className="flex items-center gap-3">
-                            <img src="/logo.svg" alt={`${site.company} logo`} className="h-8 w-auto object-contain brightness-0 invert" />
+                            <img src={`${import.meta.env.BASE_URL}logo.svg`} alt={`${site.company} logo`} className="h-8 w-auto object-contain brightness-0 invert" />
                             <div className="text-xl font-semibold">{site.company}</div>
                         </div>
                         <p className="mt-4 text-sm text-white/70 max-w-md">

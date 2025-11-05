@@ -29,7 +29,7 @@ export const Header = () => {
                 <div className="flex h-16 items-center justify-between">
                     <div className="flex items-center gap-2">
                         <div className="h-10 w-10 rounded-lg bg-white ring-1 ring-slate-300 shadow-sm flex items-center justify-center overflow-hidden">
-                            <img src="/logo.svg" alt={`${site.company} logo`} className="max-h-8 max-w-8 object-contain" />
+                            <img src={`${import.meta.env.BASE_URL}logo.jpg`} alt={`${site.company} logo`} className="max-h-8 max-w-8 object-contain" />
                         </div>
                         <span className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">{site.company}</span>
                     </div>

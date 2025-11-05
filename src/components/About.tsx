@@ -17,7 +17,7 @@ export const About = () => {
                         </p>
                     </div>
                     <div className="flex items-center justify-end mt-8 lg:mt-0">
-                        <img src="/logo.svg" alt={`${site.company} logo`} className="h-24 sm:h-28 md:h-36 lg:h-44 xl:h-48 w-auto object-contain" />
+                        <img src={`${import.meta.env.BASE_URL}logo.jpg`} alt={`${site.company} logo`} className="h-24 sm:h-28 md:h-36 lg:h-44 xl:h-48 w-auto object-contain" />
                     </div>
                 </FadeUp>
             </div>
