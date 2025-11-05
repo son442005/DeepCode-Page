@@ -18,7 +18,10 @@ export const Hero = () => {
     const { lang } = useLang()
     return (
         <section className="relative pt-20 h-screen" aria-label="Hero">
-            <div className="absolute top-0 left-1/2 z-0 h-full w-screen -translate-x-1/2 bg-[url('/hero-background.png')] bg-cover bg-center" />
+            <div
+                className="absolute top-0 left-1/2 z-0 h-full w-screen -translate-x-1/2 bg-cover bg-center"
+                style={{ backgroundImage: `url(${import.meta.env.BASE_URL}hero-background.png)` }}
+            />
             {/* Left dark overlay to highlight text */}
             <div className="pointer-events-none absolute top-0 left-1/2 z-0 h-full w-screen -translate-x-1/2 bg-[linear-gradient(to_right,rgba(0,0,0,0.8)_0%,rgba(0,0,0,0.6)_35%,rgba(0,0,0,0.3)_55%,rgba(0,0,0,0)_72%)]" />
             {/* Right soft light overlay */}

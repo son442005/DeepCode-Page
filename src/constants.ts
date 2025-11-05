@@ -83,34 +83,34 @@ export const projects: Project[] = [
     {
         title: 'Nền tảng bán khoá học online',
         description: 'Là hệ thống kết nối giữa người sáng tạo nội dung giáo dục và đội ngũ tiếp thị liên kết',
-        image: '/project-1.png',
+        image: `${import.meta.env.BASE_URL}project-1.png`,
     },
     {
         title: 'App gọi xe',
         description: 'Ứng dụng đa nền tảng trên cả IOS và Android, hệ thống điều phối thông minh kết nối tài xế và khách hàng',
-        image: '/project-2.png',
+        image: `${import.meta.env.BASE_URL}project-2.png`,
     },
     {
         title: 'Nền tảng ELearning',
         description: 'Hệ thống học tập trực tuyến tích hợp đầy đủ tính năng từ quản lý nội dung, tương tác học viên đến đánh giá học tập',
-        image: '/project-3.png',
+        image: `${import.meta.env.BASE_URL}project-3.png`,
     },
     {
         title: 'AI chatbot doanh nghiệp',
         description: 'Hỗ trợ khách hàng 24/7, tự động trả lời theo kiến thức ngành và học hỏi liên tục. Được huấn luyện từ dữ liệu doanh nghiệp, kịch bản chuyên ngành và mô hình NLP',
-        image: '/project-4.png',
+        image: `${import.meta.env.BASE_URL}project-4.png`,
     },
     {
         title: 'Hồ sơ ý tế thông minh',
         description: 'OCR MyHealth giúp số hoá quản lý hồ sơ y tế, từ đơn thuốc đến phiếu xét nghiệm và hồ sơ bệnh án',
-        image: '/project-5.png',
+        image: `${import.meta.env.BASE_URL}project-5.png`,
     },
 ]
 export const partnerLogos = [
-    { name: "SkySoft Technologies", src: "softsky.webp" },
-    { name: "Ambassador Cruise", src: "Ambassador-Cruise-Logo.png" },
-    { name: "MoMo", src: "momo.png" },
-    { name: "VNPay", src: "VNPAY.webp" },
+    { name: "SkySoft Technologies", src: `${import.meta.env.BASE_URL}softsky.webp` },
+    { name: "Ambassador Cruise", src: `${import.meta.env.BASE_URL}Ambassador-Cruise-Logo.png` },
+    { name: "MoMo", src: `${import.meta.env.BASE_URL}momo.png` },
+    { name: "VNPay", src: `${import.meta.env.BASE_URL}VNPAY.webp` },
 ];
 
 
@@ -158,7 +158,7 @@ export const standards = [
 export const expertData = {
     name: "Thạc sĩ Đinh Văn Đông",
     role: "Nhà sáng lập & Giám đốc Công nghệ",
-    profileImage: "/project-6.png",
+    profileImage: `${import.meta.env.BASE_URL}project-6.png`,
     items: [
         { id: 1, title: "Học Vấn", details: ["Thạc sĩ Khoa học Máy tính, Đại học Bách Khoa Hà Nội (2018)", "Kỹ sư Công nghệ Thông tin, ĐH Bách Khoa Hà Nội (2014)"] },
         { id: 2, title: "Kinh Nghiệm", details: ["15+ năm kinh nghiệm trong lĩnh vực phát triển phần mềm", "Nguyên Vice Academic Director tại TEKY HOLDING (2020-2022)", "Giảng viên Khoa CNTT, BTEC FPT Hà Nội (2022-2025)"] },
