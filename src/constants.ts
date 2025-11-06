@@ -82,27 +82,27 @@ export const nav = [
 export const projects: Project[] = [
     {
         title: 'Nền tảng bán khoá học online',
-        description: 'Là hệ thống kết nối giữa người sáng tạo nội dung giáo dục và đội ngũ tiếp thị liên kết',
+        description: 'Cosale.vn kết nối chuyên gia, nhà sáng tạo nội dung giáo dục và cộng tác viên affiliate; hỗ trợ học viên trực tuyến. Công nghệ: Back‑end Laravel, Front‑end VueJS + Bootstrap, CSDL MySQL/Redis; cổng thanh toán VNPay, MoMo.',
         image: `${import.meta.env.BASE_URL}project-1.png`,
     },
     {
         title: 'App gọi xe',
-        description: 'Ứng dụng đa nền tảng trên cả IOS và Android, hệ thống điều phối thông minh kết nối tài xế và khách hàng',
+        description: 'Ứng dụng gọi xe đa nền tảng iOS/Android, điều phối thông minh kết nối tài xế với khách. Hỗ trợ nhiều phương thức thanh toán. Định hướng: Flutter front‑end, NodeJS back‑end, Google Maps API; xử lý >5.000 cuốc/ngày, phản hồi <2s.',
         image: `${import.meta.env.BASE_URL}project-2.png`,
     },
     {
         title: 'Nền tảng ELearning',
-        description: 'Hệ thống học tập trực tuyến tích hợp đầy đủ tính năng từ quản lý nội dung, tương tác học viên đến đánh giá học tập',
+        description: 'Nền tảng học trực tuyến: Giáo viên tạo khóa học, tài liệu, bài học; giao bài và theo dõi tiến trình. Học sinh học bài, thảo luận, làm bài/kiểm tra và nhận phản hồi. Quản trị viên quản lý người dùng, phân quyền, theo dõi hoạt động và phân tích dữ liệu.',
         image: `${import.meta.env.BASE_URL}project-3.png`,
     },
     {
         title: 'AI chatbot doanh nghiệp',
-        description: 'Hỗ trợ khách hàng 24/7, tự động trả lời theo kiến thức ngành và học hỏi liên tục. Được huấn luyện từ dữ liệu doanh nghiệp, kịch bản chuyên ngành và mô hình NLP',
+        description: 'Chatbot doanh nghiệp hỗ trợ 24/7; trả lời tự động theo tri thức chuyên ngành; học hỏi qua từng tương tác. Quy trình: thu thập dữ liệu, xây dựng kịch bản, huấn luyện chuyên sâu. Công nghệ: NLP Python, RASA; xử lý TV Việt; tích hợp Facebook Messenger, Zalo, Website; phân tích cảm xúc.',
         image: `${import.meta.env.BASE_URL}project-4.png`,
     },
     {
         title: 'Hồ sơ ý tế thông minh',
-        description: 'OCR MyHealth giúp số hoá quản lý hồ sơ y tế, từ đơn thuốc đến phiếu xét nghiệm và hồ sơ bệnh án',
+        description: 'OCR MyHealth số hóa và quản lý hồ sơ y tế: đơn thuốc, kết quả xét nghiệm, bệnh án. AI + Computer Vision nhận dạng chữ bác sĩ với độ chính xác ~95%. Đã triển khai tại 15 bệnh viện và 50+ phòng khám. Công nghệ: TensorFlow, OpenCV, PyTorch.',
         image: `${import.meta.env.BASE_URL}project-5.png`,
     },
 ]
