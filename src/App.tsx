@@ -16,7 +16,7 @@ import ContactInfo from './components/ContactInfo'
 import { FloatButton } from './components/FloatButton'
 const App = () => {
     return (
-        <div className="flex flex-col mt-7 min-h-screen bg-[#EEEEEE] text-black">
+        <div className="flex flex-col mt-7 min-h-screen bg-[#EEEEEE] text-black overflow-x-hidden w-full">
             <Header />
             <main className="flex flex-col gap-12 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <Hero />

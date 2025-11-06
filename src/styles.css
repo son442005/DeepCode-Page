@@ -13,6 +13,8 @@ html,
 body,
 #root {
     height: 100%;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 /* Simple in-view animation utilities */
@@ -147,7 +149,7 @@ body,
     
     #showcase .slick-list {
         margin: 0 !important;
-        padding: 0 45px !important;
+        padding: 0 10px !important;
         overflow: hidden !important;
     }
     

@@ -176,11 +176,11 @@ export const Showcase: React.FC = () => {
                     <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">{lang === 'en' ? 'Projects' : lang === 'vi' ? 'Dự án tiêu biểu' : '代表性项目'}</h2>
                 </FadeUp>
 
-                <FadeUp className="relative w-full max-w-7xl mx-auto px-4 sm:px-4 lg:px-8 overflow-visible">
+                <FadeUp className="relative w-full max-w-7xl mx-auto px-4 sm:px-4 lg:px-8 overflow-hidden">
                     <style>{`
                         .showcase-slider .slick-slide { padding-left: 0px; padding-right: 0px; }
                         .showcase-slider .slick-slide > div { width: 100%; height: 100%; }
-                        .showcase-slider .slick-list { overflow: visible; }
+                        .showcase-slider .slick-list { overflow: hidden !important; }
                         .showcase-slider .slick-track { display: flex !important; align-items: stretch; }
                         .showcase-slider .slick-slide { height: auto !important; }
                     `}</style>
