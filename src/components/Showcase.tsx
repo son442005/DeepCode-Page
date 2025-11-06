@@ -1,77 +1,13 @@
-import React, { useRef, useEffect } from 'react';
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import React from 'react';
 import { projects } from '../constants';
 import { FadeUp } from './Anim'
 import { useLang } from '../lang'
 
-// --- Cấu hình Slider ---
-// react-slick breakpoint: áp dụng khi màn hình <= breakpoint
-// Breakpoints được xử lý từ lớn xuống nhỏ
-var settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    pauseOnHover: true,
-    pauseOnFocus: true,
-    adaptiveHeight: false, // tắt để đồng đều chiều cao
-    slidesToShow: 3, // mặc định desktop lớn (> 1024px): 3
-    slidesToScroll: 1,
-    arrows: true,
-    swipeToSlide: true,
-    touchThreshold: 12,
-    lazyLoad: 'ondemand',
-    cssEase: 'ease-in-out',
-    centerMode: false,
-    variableWidth: false,
-    centerPadding: '0px',
-    responsive: [
-        {
-            breakpoint: 1280, // <= 1280px: vẫn 3 nhưng ẩn bớt arrow gây tràn
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                arrows: true,
-            }
-        },
-        {
-            breakpoint: 1024, // <= 1024px: hiển thị 2 (tablet)
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                arrows: true,
-                infinite: true,
-                autoplay: true,
-            }
-        },
-        {
-            breakpoint: 768, // <= 768px: hiển thị 1 (mobile)
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                arrows: true,
-                infinite: true,
-                autoplay: true,
-                autoplaySpeed: 3000,
-                pauseOnHover: true,
-            }
-        },
-        {
-            breakpoint: 480, // <= 480px: 1 slide, đảm bảo không tràn ngang
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                arrows: true,
-            }
-        }
-    ]
-};
+// Static list (no slider)
 
 interface ProjectCardProps {
     p: { title: string, description: string, image: string };
+    reverse?: boolean;
 }
 
 const translateProject = (p: { title: string, description: string }, lang: 'vi' | 'en' | 'zh') => {
@@ -99,23 +35,39 @@ const translateProject = (p: { title: string, description: string }, lang: 'vi' 
     return p
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ p }) => {
+const ProjectCard: React.FC<ProjectCardProps> = ({ p, reverse }) => {
     const { lang } = useLang()
     const tp = translateProject(p, lang)
+    const pills = lang === 'en'
+        ? ['Seamless experience', 'Fast processing', 'Secure']
+        : lang === 'vi'
+            ? ['Trải nghiệm mượt mà', 'Xử lý nhanh', 'Bảo mật']
+            : ['流畅体验', '快速处理', '安全']
     return (
-        <div className="flex flex-col px-1 sm:px-3 outline-none h-full">
-            <div className="h-full rounded-xl border border-slate-200 bg-white shadow flex flex-col cursor-pointer
-                        transition duration-300 ease-in-out 
-                        hover:-translate-y-1 hover:shadow-xl">
-                <div className="aspect-[16/9] w-full flex-shrink-0 overflow-hidden rounded-t-xl bg-slate-100">
-                    <img src={p.image} alt={tp.title} className="h-full w-full object-cover" />
+        <div className="flex flex-col px-0 outline-none h-full mb-6 sm:mb-8">
+            <div className={`grid md:grid-cols-2 gap-6 items-center`}>
+                <div className={`relative rounded-2xl overflow-hidden shadow-xl bg-slate-100 ${reverse ? 'md:order-2' : 'md:order-1'}`}>
+                    <div className="aspect-[16/9] w-full">
+                        <img src={p.image} alt={tp.title} className="h-full w-full object-cover" />
+                    </div>
                 </div>
-                <div className="flex-1 p-4 sm:p-6 flex flex-col justify-between">
-                    <div>
-                        <div className="font-semibold text-base sm:text-lg text-slate-900 leading-snug mb-2">{tp.title}</div>
-                        <div className="text-sm sm:text-base text-slate-700 leading-relaxed line-clamp-3">
-                            {tp.description}
+                <div className={`flex flex-col gap-3 sm:gap-4 ${reverse ? 'md:order-1' : 'md:order-2'}`}>
+                    <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900">{tp.title}</h3>
+                    <p className="text-sm sm:text-base text-slate-700 leading-relaxed">{tp.description}</p>
+                    <div className="mt-1 grid gap-2">
+                        <div className="flex items-start gap-2">
+                            <svg className="h-5 w-5 flex-shrink-0 text-sky-500" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-7.07 7.07a1 1 0 01-1.415 0l-3.535-3.535a1 1 0 111.414-1.414l2.828 2.828 6.364-6.364a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                            <span className="text-sm sm:text-base text-slate-800">{lang === 'en' ? 'Key features and solid architecture' : lang === 'vi' ? 'Tính năng nổi bật và kiến trúc vững chắc' : '关键功能与稳健架构'}</span>
                         </div>
+                        <div className="flex items-start gap-2">
+                            <svg className="h-5 w-5 flex-shrink-0 text-sky-500" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-7.07 7.07a1 1 0 01-1.415 0l-3.535-3.535a1 1 0 111.414-1.414l2.828 2.828 6.364-6.364a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                            <span className="text-sm sm:text-base text-slate-800">{lang === 'en' ? 'Optimized for speed and reliability' : lang === 'vi' ? 'Tối ưu tốc độ và độ tin cậy' : '针对速度与可靠性优化'}</span>
+                        </div>
+                    </div>
+                    <div className="mt-2 flex flex-wrap gap-2">
+                        {pills.map((x) => (
+                            <span key={x} className="px-3 py-1 rounded-full text-xs sm:text-sm bg-sky-50 text-sky-700 ring-1 ring-sky-200">{x}</span>
+                        ))}
                     </div>
                 </div>
             </div>
@@ -125,49 +77,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ p }) => {
 
 export const Showcase: React.FC = () => {
     const { lang } = useLang()
-    const sliderRef = useRef<any>(null)
-
-    useEffect(() => {
-        const handleResize = () => {
-            // Force react-slick reinitialize khi resize bằng cách gọi slickGoTo
-            if (sliderRef.current) {
-                try {
-                    const currentSlide = sliderRef.current.innerSlider?.state?.currentSlide || 0
-                    sliderRef.current.slickGoTo(currentSlide, false)
-                } catch (e) {
-                    // Nếu lỗi, chỉ cần gọi slickGoTo với slide hiện tại
-                    sliderRef.current.slickGoTo(0, false)
-                }
-            }
-        }
-
-        // Debounce resize để tránh gọi quá nhiều
-        let timeoutId: ReturnType<typeof setTimeout>
-        const debouncedResize = () => {
-            clearTimeout(timeoutId)
-            timeoutId = setTimeout(handleResize, 250)
-        }
-
-        window.addEventListener('resize', debouncedResize)
-        return () => {
-            window.removeEventListener('resize', debouncedResize)
-            clearTimeout(timeoutId)
-        }
-    }, [])
-
-    // Force reflow on mount for small screens to ensure correct width calc
-    useEffect(() => {
-        const id = setTimeout(() => {
-            try {
-                if (window.innerWidth <= 1024) {
-                    sliderRef.current?.slickSetOption('slidesToShow', 1, true)
-                    sliderRef.current?.slickSetOption('slidesToScroll', 1, true)
-                }
-                sliderRef.current?.slickGoTo(0, true)
-            } catch { }
-        }, 0)
-        return () => clearTimeout(id)
-    }, [])
 
     return (
         <section id="showcase" className="py-8 sm:py-10">
@@ -176,19 +85,12 @@ export const Showcase: React.FC = () => {
                     <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">{lang === 'en' ? 'Projects' : lang === 'vi' ? 'Dự án tiêu biểu' : '代表性项目'}</h2>
                 </FadeUp>
 
-                <FadeUp className="relative w-full max-w-7xl mx-auto px-4 sm:px-4 lg:px-8 overflow-hidden">
-                    <style>{`
-                        .showcase-slider .slick-slide { padding-left: 0px; padding-right: 0px; }
-                        .showcase-slider .slick-slide > div { width: 100%; height: 100%; }
-                        .showcase-slider .slick-list { overflow: hidden !important; }
-                        .showcase-slider .slick-track { display: flex !important; align-items: stretch; }
-                        .showcase-slider .slick-slide { height: auto !important; }
-                    `}</style>
-                    <Slider className="showcase-slider" ref={sliderRef} {...settings}>
+                <FadeUp className="relative w-full max-w-7xl mx-auto px-0 pb-4 sm:pb-6 lg:pb-8">
+                    <>
                         {projects.map((p, i) => (
-                            <ProjectCard key={p.title} p={p} />
+                            <ProjectCard key={p.title} p={p} reverse={i % 2 === 1} />
                         ))}
-                    </Slider>
+                    </>
                 </FadeUp>
             </div>
         </section>

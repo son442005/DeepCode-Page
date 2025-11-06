@@ -9,7 +9,7 @@ const QualityCommitment: React.FC = () => {
 
     const { lang } = useLang()
     return (
-        <section id='Commit' className={`px-4 py-12 sm:px-6 sm:py-14 md:px-8 md:py-16 lg:p-20 bg-stone-50 rounded-3xl overflow-x-hidden ${bgColor}`}>
+        <section id='Commit' className={`px-4 py-12 sm:px-6 sm:py-14 md:px-8 md:py-16 lg:p-20 bg-stone-50 overflow-x-hidden ${bgColor} rounded-3xl`}>
             <div className="">
 
                 <header className="flex justify-between items-start mb-8 sm:mb-10 md:mb-12">
