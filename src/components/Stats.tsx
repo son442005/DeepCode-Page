@@ -15,7 +15,11 @@ export const Stats = () => {
                                 s.label === 'Dự án hoàn thành' ? 'Completed projects' :
                                     s.label === 'Khách hàng doanh nghiệp' ? 'Business clients' :
                                         s.label === 'Tỉ lệ hài lòng' ? 'Satisfaction rate' : s.label
-                            ) : s.label}</div>
+                            ) : lang === 'vi' ? s.label : (
+                                s.label === 'Dự án hoàn thành' ? '已完成项目' :
+                                    s.label === 'Khách hàng doanh nghiệp' ? '企业客户' :
+                                        s.label === 'Tỉ lệ hài lòng' ? '满意度' : s.label
+                            )}</div>
                         </div>
                     ))}
                 </FadeUp>

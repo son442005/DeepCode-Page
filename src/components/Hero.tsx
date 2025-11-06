@@ -42,23 +42,23 @@ const HeroText = () => {
     const { lang } = useLang()
     return (
         <div ref={ref} className="flex flex-col justify-start h-full pt-16 md:pt-24 animate-fade-up">
-            <span className="text-sky-300 font-semibold">{lang === 'en' ? 'Software technology for business' : site.tagline}</span>
+            <span className="text-sky-300 font-semibold">{lang === 'en' ? 'Software technology for business' : lang === 'vi' ? site.tagline : '企业软件技术'}</span>
             <h1 className="mt-2 text-4xl sm:text-5xl font-bold tracking-tight text-white">
-                {lang === 'en' ? 'Grow faster with modern software solutions' : site.hero.headline}
+                {lang === 'en' ? 'Grow faster with modern software solutions' : lang === 'vi' ? site.hero.headline : '通过现代软件解决方案更快发展'}
             </h1>
             <p className="mt-4 text-lg text-white/80">
-                {lang === 'en' ? 'Consulting, designing and developing software tailored for your business.' : site.hero.subheading}
+                {lang === 'en' ? 'Consulting, designing and developing software tailored for your business.' : lang === 'vi' ? site.hero.subheading : '咨询、设计和开发适合您业务的软件。'}
             </p>
             <div className="mt-8 flex gap-3">
                 <button onClick={() => {
                     const el = document.querySelector('#contact'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
                 }} className="rounded-md bg-primary px-5 py-3 font-medium text-white shadow hover:brightness-110 transition">
-                    {lang === 'en' ? 'Contact us' : site.hero.primaryCta}
+                    {lang === 'en' ? 'Contact us' : lang === 'vi' ? site.hero.primaryCta : '联系我们'}
                 </button>
                 <button onClick={() => {
                     const el = document.querySelector('#about'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
                 }} className="rounded-md border border-white/60 bg-transparent px-5 py-3 font-medium text-white hover:bg-white/10 transition">
-                    {lang === 'en' ? 'Learn more' : site.hero.secondaryCta}
+                    {lang === 'en' ? 'Learn more' : lang === 'vi' ? site.hero.secondaryCta : '了解更多'}
                 </button>
             </div>
         </div>

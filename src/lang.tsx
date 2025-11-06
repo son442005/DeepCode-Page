@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useMemo, useState } from 'react'
 
-export type Lang = 'vi' | 'en'
+export type Lang = 'vi' | 'en' | 'zh'
 
 type LangContextValue = {
     lang: Lang

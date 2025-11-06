@@ -31,3 +31,167 @@ body,
     opacity: 1 !important;
     transform: translateY(0) !important;
 }
+
+/* Float button animation */
+@keyframes bounce-subtle {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.animate-bounce-subtle {
+    animation: bounce-subtle 3s ease-in-out infinite;
+}
+
+/* Float button wave animation - ripple effect (5 times per second) */
+@keyframes wave {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.4;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+.float-button-wave {
+    position: relative;
+}
+
+.float-button-wave::before,
+.float-button-wave::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 2px solid currentColor;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.float-button-wave::before {
+    animation: wave 0.4s ease-out infinite;
+}
+
+.float-button-wave::after {
+    animation: wave 0.4s ease-out 0.2s infinite;
+}
+
+/* Slick slider responsive fixes */
+#showcase .slick-track {
+    display: flex !important;
+    align-items: stretch !important;
+}
+
+#showcase .slick-slide {
+    height: auto !important;
+}
+
+#showcase .slick-slide > div {
+    height: 100% !important;
+}
+
+/* Style arrows để hiển thị tốt hơn */
+#showcase .slick-prev,
+#showcase .slick-next {
+    z-index: 10;
+    width: 40px !important;
+    height: 40px !important;
+}
+
+#showcase .slick-prev {
+    left: -10px !important;
+}
+
+#showcase .slick-next {
+    right: -10px !important;
+}
+
+#showcase .slick-prev:before,
+#showcase .slick-next:before {
+    font-size: 24px !important;
+    color: #475569 !important;
+    opacity: 0.8;
+}
+
+#showcase .slick-prev:hover:before,
+#showcase .slick-next:hover:before {
+    opacity: 1;
+}
+
+/* Desktop: giữ nguyên như hiện tại (> 1024px) - không cần CSS đặc biệt */
+
+/* Tablet: 2 slides (<= 1024px) - không cần CSS đặc biệt */
+
+/* Mobile: 1 slide với arrows và autoplay (<= 768px) */
+@media (max-width: 768px) {
+    /* Force 1 slide trên mobile - chỉ ép width, để react-slick tự quản lý display */
+    #showcase .slick-slide {
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+    }
+    
+    #showcase .slick-list {
+        margin: 0 !important;
+        padding: 0 45px !important;
+        overflow: hidden !important;
+    }
+    
+    #showcase .slick-track {
+        width: 100% !important;
+        display: flex !important;
+        align-items: stretch !important;
+    }
+    
+    #showcase .slick-slide > div {
+        width: 100% !important;
+    }
+    
+    /* Arrows trên mobile - luôn hiển thị */
+    #showcase .slick-prev,
+    #showcase .slick-next {
+        width: 36px !important;
+        height: 36px !important;
+        z-index: 10;
+        background: rgba(255, 255, 255, 0.95) !important;
+        border-radius: 50% !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+    
+    #showcase .slick-prev {
+        left: 5px !important;
+    }
+    
+    #showcase .slick-next {
+        right: 5px !important;
+    }
+    
+    #showcase .slick-prev:before,
+    #showcase .slick-next:before {
+        font-size: 20px !important;
+        color: #475569 !important;
+        opacity: 0.9;
+    }
+    
+    #showcase .slick-prev:hover:before,
+    #showcase .slick-next:hover:before {
+        opacity: 1;
+    }
+}

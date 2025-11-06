@@ -8,7 +8,9 @@ export const Footer = () => {
     const addressVi = contactItems.find((i) => i.title === 'Trụ Sở Chính')?.details[0] ?? 'Hanoi, Vietnam'
     const address = lang === 'en'
         ? '2nd Floor, Building 21B5, CT2 Urban Area, 234 Street, Phu Dien Ward, Hanoi, Vietnam'
-        : addressVi
+        : lang === 'vi'
+        ? addressVi
+        : '越南河内富典区234街CT2城市区21B5号楼2层'
 
     const quickLinks = nav.filter((n) => ['#about', '#vision', '#features', '#showcase'].includes(n.href))
 
@@ -23,7 +25,7 @@ export const Footer = () => {
                             <div className="text-xl font-semibold">{site.company}</div>
                         </div>
                         <p className="mt-4 text-sm text-white/70 max-w-md">
-                            {lang === 'en' ? 'Leading provider of custom software solutions and digital transformation for businesses.' : 'Nhà cung cấp hàng đầu các giải pháp phần mềm theo yêu cầu và chuyển đổi số cho doanh nghiệp.'}
+                            {lang === 'en' ? 'Leading provider of custom software solutions and digital transformation for businesses.' : lang === 'vi' ? 'Nhà cung cấp hàng đầu các giải pháp phần mềm theo yêu cầu và chuyển đổi số cho doanh nghiệp.' : '为企业提供定制软件解决方案和数字化转型的领先供应商。'}
                         </p>
                         <div className="mt-6 flex items-center gap-3">
                             <a href="#" aria-label="Facebook" className="h-9 w-9 rounded-md bg-white/10 hover:bg-white/20 transition flex items-center justify-center">
@@ -43,7 +45,7 @@ export const Footer = () => {
 
                     {/* Quick links */}
                     <div>
-                        <h4 className="text-white font-semibold mb-4">{lang === 'en' ? 'Quick Links' : 'Liên kết nhanh'}</h4>
+                        <h4 className="text-white font-semibold mb-4">{lang === 'en' ? 'Quick Links' : lang === 'vi' ? 'Liên kết nhanh' : '快速链接'}</h4>
                         <ul className="space-y-3 text-white/80 text-sm">
                             {quickLinks.map((l) => (
                                 <li key={l.href}><a href={l.href} className="hover:text-white transition">{lang === 'en' ? (
@@ -51,16 +53,21 @@ export const Footer = () => {
                                         l.href === '#vision' ? 'Vision' :
                                             l.href === '#features' ? 'Services' :
                                                 l.href === '#showcase' ? 'Projects' : l.label
-                                ) : l.label}</a></li>
+                                ) : lang === 'vi' ? l.label : (
+                                    l.href === '#about' ? '关于' :
+                                        l.href === '#vision' ? '愿景' :
+                                            l.href === '#features' ? '服务' :
+                                                l.href === '#showcase' ? '项目' : l.label
+                                )}</a></li>
                             ))}
-                            <li><a href="#privacy" className="hover:text-white transition">{lang === 'en' ? 'Privacy Policy' : 'Chính sách bảo mật'}</a></li>
-                            <li><a href="#terms" className="hover:text-white transition">{lang === 'en' ? 'Terms of Service' : 'Điều khoản dịch vụ'}</a></li>
+                            <li><a href="#privacy" className="hover:text-white transition">{lang === 'en' ? 'Privacy Policy' : lang === 'vi' ? 'Chính sách bảo mật' : '隐私政策'}</a></li>
+                            <li><a href="#terms" className="hover:text-white transition">{lang === 'en' ? 'Terms of Service' : lang === 'vi' ? 'Điều khoản dịch vụ' : '服务条款'}</a></li>
                         </ul>
                     </div>
 
                     {/* Contact */}
                     <div>
-                        <h4 className="text-white font-semibold mb-4">{lang === 'en' ? 'Contact' : 'Liên hệ'}</h4>
+                        <h4 className="text-white font-semibold mb-4">{lang === 'en' ? 'Contact' : lang === 'vi' ? 'Liên hệ' : '联系'}</h4>
                         <ul className="space-y-3 text-white/80 text-sm">
                             <li><a className="hover:text-white" href={`mailto:${email}`}>{email}</a></li>
                             <li><a className="hover:text-white" href={`tel:${phone}`}>{phone}</a></li>
@@ -70,7 +77,7 @@ export const Footer = () => {
                 </div>
 
                 <div className="mt-10 border-t border-white/10 pt-6 text-center text-white/60 text-sm">
-                    {lang === 'en' ? `© ${new Date().getFullYear()} ${site.company}. All rights reserved.` : `© ${new Date().getFullYear()} ${site.company}. Bảo lưu mọi quyền.`}
+                    {lang === 'en' ? `© ${new Date().getFullYear()} ${site.company}. All rights reserved.` : lang === 'vi' ? `© ${new Date().getFullYear()} ${site.company}. Bảo lưu mọi quyền.` : `© ${new Date().getFullYear()} ${site.company}。保留所有权利。`}
                 </div>
             </div>
         </footer>

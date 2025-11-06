@@ -13,6 +13,7 @@ import StaffStats from './components/StaffStats'
 import Commit from './components/Commit'
 import ClientsPartners from './components/ClientsPartners'
 import ContactInfo from './components/ContactInfo'
+import { FloatButton } from './components/FloatButton'
 const App = () => {
     return (
         <div className="flex flex-col mt-7 min-h-screen bg-[#EEEEEE] text-black">
@@ -33,6 +34,7 @@ const App = () => {
                 <ContactInfo />
             </main>
             <Footer />
+            <FloatButton />
         </div>
     )
 }

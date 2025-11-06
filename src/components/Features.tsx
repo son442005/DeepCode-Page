@@ -53,8 +53,8 @@ export const Features = () => {
         <section id="features" className="pt-8 sm:pt-10 pb-14 sm:pb-20">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <FadeUp className="max-w-2xl">
-                    <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">{lang === 'en' ? 'Services' : 'Dịch vụ'}</h2>
-                    <p className="mt-2 sm:mt-3 text-slate-700 text-sm sm:text-base">{lang === 'en' ? 'Comprehensive technology solutions for businesses.' : 'Giải pháp công nghệ toàn diện cho doanh nghiệp.'}</p>
+                    <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">{lang === 'en' ? 'Services' : lang === 'vi' ? 'Dịch vụ' : '服务'}</h2>
+                    <p className="mt-2 sm:mt-3 text-slate-700 text-sm sm:text-base">{lang === 'en' ? 'Comprehensive technology solutions for businesses.' : lang === 'vi' ? 'Giải pháp công nghệ toàn diện cho doanh nghiệp.' : '为企业提供全面的技术解决方案。'}</p>
                 </FadeUp>
                 <div className="mt-8 sm:mt-10 grid gap-4 sm:gap-6 sm:grid-cols-2">
                     {features.map((f) => (
@@ -68,14 +68,24 @@ export const Features = () => {
                                         f.icon === 'mobile' ? 'Mobile Apps' :
                                             f.icon === 'ai' ? 'Artificial Intelligence (AI)' :
                                                 f.icon === 'blockchain' ? 'Blockchain' : f.title
-                                ) : f.title}</h3>
+                                ) : lang === 'vi' ? f.title : (
+                                    f.icon === 'web' ? '网站开发' :
+                                        f.icon === 'mobile' ? '移动应用' :
+                                            f.icon === 'ai' ? '人工智能 (AI)' :
+                                                f.icon === 'blockchain' ? '区块链' : f.title
+                                )}</h3>
                             </div>
                             <p className="mt-2 sm:mt-3 text-slate-800 text-sm sm:text-base">{lang === 'en' ? (
                                 f.icon === 'web' ? 'Designing and building modern websites with optimized UX, SEO and performance.' :
                                     f.icon === 'mobile' ? 'Developing cross-platform iOS/Android apps with intuitive UI/UX.' :
                                         f.icon === 'ai' ? 'Consulting and implementing AI/ML, chatbots, OCR and data mining.' :
                                             f.icon === 'blockchain' ? 'Building smart contracts, wallets, DApps and blockchain integrations.' : f.description
-                            ) : f.description}</p>
+                            ) : lang === 'vi' ? f.description : (
+                                f.icon === 'web' ? '设计和构建具有优化用户体验、SEO和性能的现代网站。' :
+                                    f.icon === 'mobile' ? '开发具有直观UI/UX的跨平台iOS/Android应用。' :
+                                        f.icon === 'ai' ? '咨询和实施AI/ML、聊天机器人、OCR和数据挖掘。' :
+                                            f.icon === 'blockchain' ? '构建智能合约、钱包、DApp和区块链集成。' : f.description
+                            )}</p>
                         </FadeUp>
                     ))}
                 </div>

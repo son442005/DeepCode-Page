@@ -1,3 +1,5 @@
+import { useLang } from '../lang'
+
 const IconBulb = () => (
     <svg viewBox="0 0 24 24" className="h-6 w-6 text-white/90" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M9 18h6" />
@@ -32,21 +34,22 @@ const IconDiamond = () => (
 )
 
 export const CoreValues = () => {
+    const { lang } = useLang()
     return (
         <section id="values" className="">
             <div className="">
                 <div className="rounded-3xl border border-[#E3D5B5] bg-[#F2E4C8] shadow-sm ">
-                    <h2 className="text-4xl font-bold text-slate-900 tracking-tight font-serif">Giá Trị Cốt Lõi</h2>
+                    <h2 className="text-4xl font-bold text-slate-900 tracking-tight font-serif">{lang === 'en' ? 'Core Values' : lang === 'vi' ? 'Giá Trị Cốt Lõi' : '核心价值观'}</h2>
                     <div className="mt-10 grid lg:grid-cols-2 items-start">
                         {/* Left texts */}
                         <div className="space-y-12">
                             <div>
-                                <h3 className="text-2xl font-semibold text-slate-900">Sáng Tạo</h3>
-                                <p className="mt-2 text-slate-700">Không ngừng đổi mới, tìm tòi các giải pháp công nghệ tiên phong</p>
+                                <h3 className="text-2xl font-semibold text-slate-900">{lang === 'en' ? 'Innovation' : lang === 'vi' ? 'Sáng Tạo' : '创新'}</h3>
+                                <p className="mt-2 text-slate-700">{lang === 'en' ? 'Continuously innovating and exploring pioneering technology solutions' : lang === 'vi' ? 'Không ngừng đổi mới, tìm tòi các giải pháp công nghệ tiên phong' : '不断创新，探索前沿技术解决方案'}</p>
                             </div>
                             <div>
-                                <h3 className="text-2xl font-semibold text-slate-900">Hiệu Quả</h3>
-                                <p className="mt-2 text-slate-700">Tối ưu quy trình, đảm bảo tiến độ và kết quả vượt kỳ vọng</p>
+                                <h3 className="text-2xl font-semibold text-slate-900">{lang === 'en' ? 'Efficiency' : lang === 'vi' ? 'Hiệu Quả' : '效率'}</h3>
+                                <p className="mt-2 text-slate-700">{lang === 'en' ? 'Optimize processes, ensure progress and results exceed expectations' : lang === 'vi' ? 'Tối ưu quy trình, đảm bảo tiến độ và kết quả vượt kỳ vọng' : '优化流程，确保进度和结果超出预期'}</p>
                             </div>
                         </div>
 
@@ -81,23 +84,23 @@ export const CoreValues = () => {
                             {/* Right texts */}
                             <div className="space-y-8">
                                 <div>
-                                    <h3 className="text-2xl font-semibold text-slate-900">Tận Tâm</h3>
-                                    <p className="mt-2 text-slate-700">Đặt lợi ích khách hàng lên hàng đầu, cam kết đồng hành trong mọi dự án</p>
+                                    <h3 className="text-2xl font-semibold text-slate-900">{lang === 'en' ? 'Dedication' : lang === 'vi' ? 'Tận Tâm' : '专注'}</h3>
+                                    <p className="mt-2 text-slate-700">{lang === 'en' ? 'Put customer interests first, committed to accompanying in every project' : lang === 'vi' ? 'Đặt lợi ích khách hàng lên hàng đầu, cam kết đồng hành trong mọi dự án' : '将客户利益放在首位，承诺在每个项目中陪伴'}</p>
                                 </div>
                                 <div>
-                                    <h3 className="text-2xl font-semibold text-slate-900">Chính Trực</h3>
-                                    <p className="mt-2 text-slate-700">Minh bạch trong mọi hoạt động, giữ vững cam kết và lời hứa</p>
+                                    <h3 className="text-2xl font-semibold text-slate-900">{lang === 'en' ? 'Integrity' : lang === 'vi' ? 'Chính Trực' : '正直'}</h3>
+                                    <p className="mt-2 text-slate-700">{lang === 'en' ? 'Transparent in all activities, maintaining commitments and promises' : lang === 'vi' ? 'Minh bạch trong mọi hoạt động, giữ vững cam kết và lời hứa' : '在所有活动中保持透明，维护承诺和诺言'}</p>
                                 </div>
                                 <div>
-                                    <h3 className="text-2xl font-semibold text-slate-900">Chất Lượng</h3>
-                                    <p className="mt-2 text-slate-700">Luôn hướng đến sự hoàn hảo trong từng dòng code và sản phẩm</p>
+                                    <h3 className="text-2xl font-semibold text-slate-900">{lang === 'en' ? 'Quality' : lang === 'vi' ? 'Chất Lượng' : '质量'}</h3>
+                                    <p className="mt-2 text-slate-700">{lang === 'en' ? 'Always aiming for perfection in every line of code and product' : lang === 'vi' ? 'Luôn hướng đến sự hoàn hảo trong từng dòng code và sản phẩm' : '始终追求每一行代码和产品的完美'}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <p className="mt-12 text-slate-700">
-                        Những giá trị cốt lõi này không chỉ là kim chỉ nam trong mọi hoạt động nội bộ mà còn là cam kết vững chắc của chúng tôi đối với khách hàng và đối tác.
+                        {lang === 'en' ? 'These core values are not only the guiding principles in all internal activities but also our firm commitment to customers and partners.' : lang === 'vi' ? 'Những giá trị cốt lõi này không chỉ là kim chỉ nam trong mọi hoạt động nội bộ mà còn là cam kết vững chắc của chúng tôi đối với khách hàng và đối tác.' : '这些核心价值观不仅是我们所有内部活动的指导原则，也是我们对客户和合作伙伴的坚定承诺。'}
                     </p>
                 </div>
             </div>
