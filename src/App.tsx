@@ -7,7 +7,7 @@ import { Showcase } from './components/Showcase'
 import { Testimonials } from './components/Testimonials'
 import { CTA } from './components/CTA'
 import { Footer } from './components/Footer'
-import  Vision from './components/Vision'
+import Vision from './components/Vision'
 import ExpertProfile from './components/ExpertProfile'
 import StaffStats from './components/StaffStats'
 import Commit from './components/Commit'
@@ -18,8 +18,8 @@ const App = () => {
     return (
         <div className="flex flex-col mt-7 min-h-screen bg-[#EEEEEE] text-black overflow-x-hidden w-full">
             <Header />
+            <Hero />
             <main className="flex flex-col gap-12 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <Hero />
                 <About />
                 <Vision />
                 <Features />
@@ -29,7 +29,7 @@ const App = () => {
                 {/* <Testimonials /> */}
                 <StaffStats />
                 <Commit />
-                <ClientsPartners/>
+                <ClientsPartners />
                 <CTA />
                 <ContactInfo />
             </main>

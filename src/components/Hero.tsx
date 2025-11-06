@@ -17,17 +17,17 @@ export const Hero = () => {
 
     const { lang } = useLang()
     return (
-        <section className="relative pt-20 h-screen overflow-hidden" aria-label="Hero">
+        <section className="relative pt-20 h-screen overflow-x-hidden w-full" aria-label="Hero">
             <div
                 className="absolute top-0 left-0 right-0 z-0 h-full w-full bg-cover bg-center"
-                style={{ backgroundImage: `url(${import.meta.env.BASE_URL}hero-background.png)` }}
+                style={{ backgroundImage: `url(${import.meta.env.BASE_URL}hero-background.png)`, minWidth: '100vw' }}
             />
             {/* Left dark overlay to highlight text */}
-            <div className="pointer-events-none absolute top-0 left-0 right-0 z-0 h-full w-full bg-[linear-gradient(to_right,rgba(0,0,0,0.8)_0%,rgba(0,0,0,0.6)_35%,rgba(0,0,0,0.3)_55%,rgba(0,0,0,0)_72%)]" />
+            <div className="pointer-events-none absolute top-0 left-0 right-0 z-0 h-full w-full bg-[linear-gradient(to_right,rgba(0,0,0,0.8)_0%,rgba(0,0,0,0.6)_35%,rgba(0,0,0,0.3)_55%,rgba(0,0,0,0)_72%)]" style={{ minWidth: '100vw' }} />
             {/* Right soft light overlay */}
-            <div className="pointer-events-none absolute top-0 left-0 right-0 z-0 h-full w-full bg-[linear-gradient(to_left,rgba(255,255,255,0.25)_0%,rgba(255,255,255,0.12)_22%,rgba(255,255,255,0.06)_45%,rgba(255,255,255,0)_70%)]" />
+            <div className="pointer-events-none absolute top-0 left-0 right-0 z-0 h-full w-full bg-[linear-gradient(to_left,rgba(255,255,255,0.25)_0%,rgba(255,255,255,0.12)_22%,rgba(255,255,255,0.06)_45%,rgba(255,255,255,0)_70%)]" style={{ minWidth: '100vw' }} />
             {/* Global dim to darken background overall */}
-            <div className="pointer-events-none absolute top-0 left-0 right-0 z-0 h-full w-full bg-black/20" />
+            <div className="pointer-events-none absolute top-0 left-0 right-0 z-0 h-full w-full bg-black/20" style={{ minWidth: '100vw' }} />
             <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid gap-10 lg:grid-cols-2 items-center h-full">
                     <HeroText />
