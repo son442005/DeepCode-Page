@@ -229,13 +229,13 @@ export const Showcase: React.FC = () => {
     const { lang } = useLang()
 
     return (
-        <section id="showcase" className="py-8 sm:py-10">
+        <section id="showcase" className="py-8 p-20 sm:py-10 bg-white rounded-3xl">
             <div className="flex flex-col gap-6 sm:gap-8 w-full">
-                <FadeUp className="">
+                <FadeUp className=" ">
                     <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">{lang === 'en' ? 'Projects' : lang === 'vi' ? 'Dự án tiêu biểu' : '代表性项目'}</h2>
                 </FadeUp>
 
-                <FadeUp className="relative w-full max-w-7xl mx-auto px-0 pb-4 sm:pb-6 lg:pb-8">
+                <FadeUp className="flex flex-col gap-10 relative w-full max-w-7xl mx-auto px-2 pb-4 sm:pb-6 lg:pb-8">
                     <>
                         {projects.map((p, i) => (
                             <ProjectCard key={p.title} p={p} reverse={i % 2 === 1} />
