@@ -9,11 +9,11 @@ const QualityCommitment: React.FC = () => {
 
     const { lang } = useLang()
     return (
-        <section id='Commit' className={`p-20 bg-stone-50 rounded-3xl ${bgColor}`}>
+        <section id='Commit' className={`px-4 py-12 sm:px-6 sm:py-14 md:px-8 md:py-16 lg:p-20 bg-stone-50 rounded-3xl overflow-x-hidden ${bgColor}`}>
             <div className="">
 
-                <header className="flex justify-between items-start mb-12">
-                    <h1 className={`text-5xl font-serif font-medium ${titleColor}`}>
+                <header className="flex justify-between items-start mb-8 sm:mb-10 md:mb-12">
+                    <h1 className={`text-3xl sm:text-4xl md:text-5xl leading-tight font-serif font-medium break-words hyphens-auto ${titleColor}`}>
                         {lang === 'en' ? 'Quality Commitment' : lang === 'vi' ? 'Cam Kết Chất Lượng' : '质量承诺'}
                     </h1>
                 </header>
@@ -29,7 +29,7 @@ const QualityCommitment: React.FC = () => {
                                 </div>
 
                                 <div className="flex-1 pt-0.5">
-                                    <h2 className="text-lg font-bold text-gray-700 mb-1">
+                                    <h2 className="text-lg font-bold text-gray-700 mb-1 break-words hyphens-auto">
                                         {lang === 'en' ? (
                                             item.title === 'Bảo Mật Tuyệt Đối' ? 'Absolute Security' :
                                                 item.title === 'Phát Triển Linh Hoạt' ? 'Agile Development' :
@@ -42,7 +42,7 @@ const QualityCommitment: React.FC = () => {
                                                         item.title === 'Thời Gian Phản Hồi' ? '响应时间' : item.title
                                         )}
                                     </h2>
-                                    <p className="text-sm text-gray-600">
+                                    <p className="text-sm text-gray-600 break-words hyphens-auto">
                                         {lang === 'en' ? (
                                             item.title === 'Bảo Mật Tuyệt Đối' ? 'Protecting customer data is our top priority with multi-layer security and rigorous controls.' :
                                                 item.title === 'Phát Triển Linh Hoạt' ? 'Agile methods ensure rapid adaptation to changes and customer needs.' :
@@ -61,11 +61,11 @@ const QualityCommitment: React.FC = () => {
                     </div>
 
                     <div className="lg:w-1/2 pt-4 lg:pt-0">
-                        <p className="text-base text-gray-700 mb-4 ">
+                        <p className="text-base text-gray-700 mb-4 break-words hyphens-auto">
                             {lang === 'en' ? 'DeepCode adopts international standards in software development:' : lang === 'vi' ? 'DeepCode áp dụng các tiêu chuẩn quốc tế trong quy trình phát triển phần mềm:' : 'DeepCode在软件开发中采用国际标准：'}
                         </p>
 
-                        <ul className="list-disc pl-5 space-y-2 text-gray-600">
+                        <ul className="list-disc pl-5 space-y-2 text-gray-600 break-words hyphens-auto">
                             {standards.map((standard, index) => (
                                 <li key={index} className="text-sm">
                                     {lang === 'en' && standard.startsWith('ISO 9001') && 'ISO 9001:2015 - Quality management system'}
