@@ -4,8 +4,8 @@ import { FadeUp } from './Anim'
 import { useLang } from '../lang'
 
 const QualityCommitment: React.FC = () => {
-    const bgColor = 'bg-[#F9F5EC]';
-    const titleColor = 'text-[#7B6E5B]';
+    const bgColor = 'bg-gradient-to-br from-slate-50 to-blue-50';
+    const titleColor = 'text-slate-800';
 
     const { lang } = useLang()
     return (

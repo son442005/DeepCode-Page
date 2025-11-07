@@ -39,7 +39,7 @@ const ExpertProfileTailwind: React.FC<ExpertProfileTailwindProps> = () => {
     }
     return (
         <section id="ExpertProfile" aria-label="About Us">
-            <div className="rounded-3xl p-16 font-sans bg-stone-50 text-gray-800 ">
+            <div className="rounded-3xl p-16 font-sans bg-gradient-to-br from-slate-50 to-blue-50 text-slate-800 ">
 
                 <header className="flex justify-between  ">
                     <h1 className="text-4xl font-bold text-gray-700">{lang === 'en' ? 'Expert Team' : lang === 'vi' ? 'Đội Ngũ Chuyên Gia' : '专家团队'}</h1>
@@ -61,17 +61,17 @@ const ExpertProfileTailwind: React.FC<ExpertProfileTailwindProps> = () => {
 
                         <div className="flex flex-col gap-8 pl-10 relative">
 
-                            <div className={` absolute top-4 bottom-4 left-[56px] w-0.5 bg-orange-600 z-0`}></div>
+                            <div className={` absolute top-4 bottom-4 left-[56px] w-0.5 bg-primary z-0`}></div>
 
                             {expertData.items.map((item, index) => (
                                 <div key={item.id} className="flex  gap-5 relative z-10 items-center">
 
-                                    <div className={`flex-shrink-0 w-8 h-8 rounded-full bg-orange-600 text-white font-bold text-lg flex justify-center items-center mt-1`}>
+                                    <div className={`flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white font-bold text-lg flex justify-center items-center mt-1`}>
                                         {item.id}
                                     </div>
 
                                     <div className="flex-1 pt-1 ">
-                                        <h3 className={`text-xl font-bold text-orange-600 mb-1`}>{lang === 'en' ? (titleMap[item.title]?.en || item.title) : lang === 'vi' ? item.title : (titleMap[item.title]?.zh || item.title)}</h3>
+                                        <h3 className={`text-xl font-bold text-primary mb-1`}>{lang === 'en' ? (titleMap[item.title]?.en || item.title) : lang === 'vi' ? item.title : (titleMap[item.title]?.zh || item.title)}</h3>
                                         {item.details.map((detail, detailIndex) => (
                                             <p key={detailIndex} className="text-sm leading-relaxed mb-1">
                                                 <span dangerouslySetInnerHTML={{

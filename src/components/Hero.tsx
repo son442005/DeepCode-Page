@@ -42,7 +42,7 @@ const HeroText = () => {
     const { lang } = useLang()
     return (
         <div ref={ref} className="flex flex-col justify-start h-full pt-16 md:pt-24 px-0 sm:px-0 animate-fade-up">
-            <span className="text-sky-300 font-semibold">{lang === 'en' ? 'Software technology for business' : lang === 'vi' ? site.tagline : '企业软件技术'}</span>
+            <span className="text-primary/90 font-semibold">{lang === 'en' ? 'Software technology for business' : lang === 'vi' ? site.tagline : '企业软件技术'}</span>
             <h1 className="mt-2 text-4xl sm:text-5xl font-bold tracking-tight text-white">
                 {lang === 'en' ? 'Grow faster with modern software solutions' : lang === 'vi' ? site.hero.headline : '通过现代软件解决方案更快发展'}
             </h1>

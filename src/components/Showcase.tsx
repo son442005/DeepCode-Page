@@ -235,14 +235,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ p, reverse }) => {
                     <div className="mt-1 grid gap-2">
                         {getProjectBullets(p.title, lang).map((item) => (
                             <div key={item} className="flex items-start gap-2">
-                                <svg className="h-5 w-5 flex-shrink-0 text-sky-500" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-7.07 7.07a1 1 0 01-1.415 0l-3.535-3.535a1 1 0 111.414-1.414l2.828 2.828 6.364-6.364a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                                <svg className="h-5 w-5 flex-shrink-0 text-primary" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-7.07 7.07a1 1 0 01-1.415 0l-3.535-3.535a1 1 0 111.414-1.414l2.828 2.828 6.364-6.364a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
                                 <span className="text-sm sm:text-base text-slate-800">{item}</span>
                             </div>
                         ))}
                     </div>
                     <div className="mt-2 flex flex-wrap gap-2">
                         {pills.map((x) => (
-                            <span key={x} className="px-3 py-1 rounded-full text-xs sm:text-sm bg-sky-50 text-sky-700 ring-1 ring-sky-200">{x}</span>
+                            <span key={x} className="px-3 py-1 rounded-full text-xs sm:text-sm bg-primary/10 text-primary ring-1 ring-primary/20">{x}</span>
                         ))}
                     </div>
                 </div>
