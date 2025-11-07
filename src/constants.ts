@@ -31,25 +31,25 @@ export const features: Feature[] = [
         title: 'Phát Triển Website',
         description: 'Thiết kế và xây dựng website hiện đại, tối ưu trải nghiệm, SEO và hiệu năng.',
         icon: 'web',
-        color: '#E0F2FE', // Soft sky blue
+        color: '#DBEAFE', // Modern bright blue
     },
     {
         title: 'Ứng Dụng Di Động',
         description: 'Phát triển ứng dụng iOS/Android đa nền tảng với UI/UX trực quan.',
         icon: 'mobile',
-        color: '#ECFDF5', // Soft mint green
+        color: '#E9D5FF', // Modern vibrant purple
     },
     {
         title: 'Trí Tuệ Nhân Tạo (AI)',
         description: 'Tư vấn và triển khai AI/ML, chatbot, OCR, khai phá dữ liệu.',
         icon: 'ai',
-        color: '#FEF3C7', // Soft amber
+        color: '#FED7AA', // Modern warm orange
     },
     {
         title: 'Blockchain',
         description: 'Xây dựng smart contract, ví, DApp và tích hợp chuỗi khối cho sản phẩm.',
         icon: 'blockchain',
-        color: '#F3E8FF', // Soft purple
+        color: '#C7D2FE', // Modern indigo blue
     },
 ]
 

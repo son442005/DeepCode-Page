@@ -58,9 +58,9 @@ export const Features = () => {
                 </FadeUp>
                 <div className="mt-8 sm:mt-10 grid gap-4 sm:gap-6 sm:grid-cols-2">
                     {features.map((f, index) => (
-                        <SlideIn key={f.title} direction={index % 2 === 0 ? 'left' : 'right'} className="feature-block rounded-2xl p-4 sm:p-6 shadow ring-1 ring-slate-200" style={{ backgroundColor: f.color }}>
+                        <SlideIn key={f.title} direction={index % 2 === 0 ? 'left' : 'right'} className="feature-block rounded-2xl p-4 sm:p-6 shadow-lg ring-1 ring-slate-200/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1" style={{ backgroundColor: f.color }}>
                             <div className="flex items-center gap-2 sm:gap-3">
-                                <div className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-lg bg-white/70 ring-1 ring-slate-200">
+                                <div className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-lg bg-white/80 ring-1 ring-slate-200/50 shadow-sm">
                                     <Icon name={f.icon} />
                                 </div>
                                 <h3 className="text-lg sm:text-xl font-semibold text-slate-900">{lang === 'en' ? (
