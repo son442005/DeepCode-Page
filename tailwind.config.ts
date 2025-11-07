@@ -8,11 +8,12 @@ export default {
     theme: {
             extend: {
                 colors: {
-                    primary: '#FF6B35',
-                    // 'background': '#F9F5EC',
-                    secondary: '#FF8C42',
-                    dark: '#0B1220',
-                    rbg: '#B7B7B7',
+                    primary: '#0EA5E9', // Modern sky blue - professional and friendly
+                    secondary: '#F59E0B', // Warm amber - for accents
+                    accent: '#10B981', // Emerald green - for success/positive elements
+                    dark: '#1E293B', // Soft navy - easier on eyes than pure black
+                    background: '#FEF9F3', // Warm cream - soft and inviting
+                    rbg: '#94A3B8', // Updated gray
                 },
                 fontFamily: {
                     sans: [

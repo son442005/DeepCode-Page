@@ -15,7 +15,7 @@ export const Footer = () => {
     const quickLinks = nav.filter((n) => ['#about', '#vision', '#features', '#showcase'].includes(n.href))
 
     return (
-        <footer className="mt-16 bg-[#0B1220] text-white relative w-full overflow-x-hidden">
+        <footer className="mt-16 bg-dark text-white relative w-full overflow-x-hidden">
             <div className="mx-auto max-w-7xl px-6 py-14">
                 <div className="grid gap-10 lg:grid-cols-3">
                     {/* Brand + description */}

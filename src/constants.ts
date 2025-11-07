@@ -31,25 +31,25 @@ export const features: Feature[] = [
         title: 'Phát Triển Website',
         description: 'Thiết kế và xây dựng website hiện đại, tối ưu trải nghiệm, SEO và hiệu năng.',
         icon: 'web',
-        color: '#E0F2FE',
+        color: '#E0F2FE', // Soft sky blue
     },
     {
         title: 'Ứng Dụng Di Động',
         description: 'Phát triển ứng dụng iOS/Android đa nền tảng với UI/UX trực quan.',
         icon: 'mobile',
-        color: '#E9FBE7',
+        color: '#ECFDF5', // Soft mint green
     },
     {
         title: 'Trí Tuệ Nhân Tạo (AI)',
         description: 'Tư vấn và triển khai AI/ML, chatbot, OCR, khai phá dữ liệu.',
         icon: 'ai',
-        color: '#FEF3C7',
+        color: '#FEF3C7', // Soft amber
     },
     {
         title: 'Blockchain',
         description: 'Xây dựng smart contract, ví, DApp và tích hợp chuỗi khối cho sản phẩm.',
         icon: 'blockchain',
-        color: '#FCE7F3',
+        color: '#F3E8FF', // Soft purple
     },
 ]
 
@@ -125,25 +125,25 @@ export const commitments = [
     {
         title: "Bảo Mật Tuyệt Đối",
         description: "Bảo vệ dữ liệu khách hàng là ưu tiên hàng đầu với hệ thống bảo mật đa lớp và quy trình kiểm soát nghiêm ngặt.",
-        iconBg: "bg-[#8BC34A]",
+        iconBg: "bg-[#10B981]", // Emerald green
         iconText: "🛡️"
     },
     {
         title: "Phát Triển Linh Hoạt",
         description: "Áp dụng phương pháp Agile, đảm bảo thích ứng nhanh với yêu cầu thay đổi và theo sát nhu cầu khách hàng.",
-        iconBg: "bg-[#FFC107]",
+        iconBg: "bg-[#F59E0B]", // Amber
         iconText: "⚙️"
     },
     {
         title: "Bảo Hành Dài Hạn",
         description: "Cam kết bảo hành 6-12 tháng cho mọi sản phẩm, hỗ trợ kỹ thuật và nâng cấp liên tục.",
-        iconBg: "bg-[#FF9800]",
+        iconBg: "bg-[#0EA5E9]", // Sky blue
         iconText: "✍️"
     },
     {
         title: "Thời Gian Phản Hồi",
         description: "Cam kết phản hồi mọi yêu cầu hỗ trợ trong vòng 2 giờ và khắc phục sự cố trong 24 giờ.",
-        iconBg: "bg-[#4CAF50]",
+        iconBg: "bg-[#8B5CF6]", // Purple
         iconText: "🖥️"
     },
 ];

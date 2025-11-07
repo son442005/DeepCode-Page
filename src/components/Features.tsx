@@ -50,7 +50,7 @@ const Icon = ({ name }: { name: string }) => {
 export const Features = () => {
     const { lang } = useLang()
     return (
-        <section id="features" className="pt-8 sm:pt-10 pb-14 sm:pb-20">
+        <section id="features" className="pt-8 sm:pt-10 pb-14 sm:pb-20 bg-blue-50 rounded-3xl">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <FadeUp className="max-w-2xl">
                     <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">{lang === 'en' ? 'Services' : lang === 'vi' ? 'Dịch vụ' : '服务'}</h2>

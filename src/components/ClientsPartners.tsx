@@ -5,10 +5,10 @@ import { useLang } from '../lang'
 const ClientsPartners: React.FC = () => {
   const { lang } = useLang()
   return (
-    <section id="ClientsPartners" className="p-6 sm:p-12 lg:p-20 bg-stone-50 from-[#F8F4EB] to-[#F4EFE4] rounded-3xl">
+    <section id="ClientsPartners" className="p-6 sm:p-12 lg:p-20 bg-gradient-to-br from-slate-50 to-blue-50 rounded-3xl">
       <div className="flex flex-col gap-8 sm:gap-12 lg:gap-16">
         <FadeUp className=" text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-[#6E5C43]">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-slate-800">
             {lang === 'en' ? 'Clients & Partners' : lang === 'vi' ? 'Khách Hàng & Đối Tác' : '客户与合作伙伴'}
           </h2>
           <p className="mt-4 text-base sm:text-lg text-gray-700 max-w-3xl mx-auto px-4">
@@ -27,7 +27,7 @@ const ClientsPartners: React.FC = () => {
         </FadeUp>
 
         <FadeUp className="relative max-w-3xl mx-auto bg-white shadow-xl rounded-2xl p-6 sm:p-8 lg:p-10 border border-gray-200">
-          <span className="absolute -top-3 sm:-top-5 left-4 sm:left-8 text-4xl sm:text-5xl lg:text-6xl text-[#BFA98A]">"</span>
+          <span className="absolute -top-3 sm:-top-5 left-4 sm:left-8 text-4xl sm:text-5xl lg:text-6xl text-primary/30">"</span>
 
           <p className="text-lg sm:text-xl md:text-2xl text-gray-800 italic leading-relaxed">
             {lang === 'en' ? 'DeepCode helped us digitize our operations end-to-end, improving efficiency, reducing costs, and gaining a strong competitive advantage.' : lang === 'vi' ? clientTestimonial.quote : 'DeepCode帮助我们端到端数字化运营，提高效率，降低成本，并获得了强大的竞争优势。'}

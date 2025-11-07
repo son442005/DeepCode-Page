@@ -7,11 +7,11 @@ import { useLang } from '../lang'
 const ContactInfo: React.FC = () => {
     const { lang } = useLang()
     return (
-        <section id="ContactInfo" className={`p-6 sm:p-12 lg:p-20  bg-stone-50 bg-[#F9F5EC rounded-3xl `}>
+        <section id="ContactInfo" className={`p-6 sm:p-12 lg:p-20 bg-gradient-to-br from-slate-50 to-blue-50 rounded-3xl `}>
             <div className="">
 
                 <header className="mb-8 sm:mb-12">
-                    <h1 className={`text-3xl sm:text-4xl lg:text-5xl font-serif font-medium text-[#7B6E5B]`}>
+                    <h1 className={`text-3xl sm:text-4xl lg:text-5xl font-serif font-medium text-slate-800`}>
                         {lang === 'en' ? 'Contact Information' : lang === 'vi' ? 'Thông Tin Liên Hệ' : '联系信息'}
                     </h1>
                 </header>
@@ -30,12 +30,12 @@ const ContactInfo: React.FC = () => {
                         {contactItems.map((item, index) => (
                             <div key={index} className="flex items-start gap-4">
 
-                                <div className={`flex-shrink-0 w-8 h-8 flex justify-center items-center text-xl text-[#7B6E5B]`}>
+                                <div className={`flex-shrink-0 w-8 h-8 flex justify-center items-center text-xl text-primary`}>
                                     {item.icon}
                                 </div>
 
                                 <div className="flex-1">
-                                    <h2 className={`text-lg font-bold text-[#7B6E5B] mb-1`}>
+                                    <h2 className={`text-lg font-bold text-slate-800 mb-1`}>
                                         {lang === 'en' ? (
                                             item.title === 'Trụ Sở Chính' ? 'Headquarters' :
                                                 item.title === 'Liên Hệ' ? 'Contact' :
