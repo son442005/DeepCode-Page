@@ -52,12 +52,12 @@ const HeroText = () => {
             <div className="mt-8 flex gap-3">
                 <button onClick={() => {
                     const el = document.querySelector('#contact'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-                }} className="rounded-md bg-primary px-5 py-3 font-medium text-white shadow hover:brightness-110 transition">
+                }} className="shadow-3d-primary shadow-3d-hover rounded-md bg-primary px-5 py-3 font-medium text-white hover:brightness-110 transition">
                     {lang === 'en' ? 'Contact us' : lang === 'vi' ? site.hero.primaryCta : '联系我们'}
                 </button>
                 <button onClick={() => {
                     const el = document.querySelector('#about'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-                }} className="rounded-md border border-white/60 bg-transparent px-5 py-3 font-medium text-white hover:bg-white/10 transition">
+                }} className="shadow-3d shadow-3d-hover rounded-md border border-white/60 bg-white/10 backdrop-blur-sm px-5 py-3 font-medium text-white hover:bg-white/20 transition">
                     {lang === 'en' ? 'Learn more' : lang === 'vi' ? site.hero.secondaryCta : '了解更多'}
                 </button>
             </div>

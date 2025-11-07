@@ -44,7 +44,7 @@ export const Header = () => {
 
     const currentLang = languages.find(l => l.code === lang) || languages[0]
     return (
-        <header className={`fixed top-0 z-50 left-0 right-0 bg-white p-3 ${isScrolled ? 'shadow-md' : ''}`}>
+        <header className={`fixed top-0 z-50 left-0 right-4 bg-white p-3 ${isScrolled ? 'shadow-3d' : ''}`}>
             <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
                 <div className="flex h-12 sm:h-14 items-center justify-between">
                     <div className="flex items-center gap-2">

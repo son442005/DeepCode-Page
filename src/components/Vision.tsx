@@ -6,7 +6,7 @@ const Vision = () => {
     return (
         <section id="vision" className="pt-20 pb-10">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <FadeUp className="rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-50 to-blue-50 shadow-sm p-8 sm:p-12">
+                <FadeUp className="shadow-3d-lg rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-50 to-blue-50 p-8 sm:p-12">
                     <h2 className="text-3xl sm:text-4xl font-bold text-slate-800 tracking-tight font-serif">{lang === 'en' ? 'Vision' : lang === 'vi' ? 'Tầm Nhìn' : '愿景'}</h2>
                     <div className="mt-6 text-center">
                         <p className="mx-auto max-w-5xl text-xl sm:text-2xl leading-relaxed font-serif text-slate-700">
@@ -15,7 +15,7 @@ const Vision = () => {
                     </div>
 
                     <div className="mt-10 grid gap-8 lg:grid-cols-2">
-                        <div className="rounded-[32px] border-2 border-primary/20 bg-white/80 backdrop-blur-sm p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="shadow-3d shadow-3d-hover rounded-[32px] border-2 border-primary/20 bg-white/80 backdrop-blur-sm p-6 sm:p-8 transition-shadow">
                             <h3 className="text-2xl font-serif font-semibold text-slate-800">{lang === 'en' ? 'Strategic Directions' : lang === 'vi' ? 'Định Hướng Chiến Lược' : '战略方向'}</h3>
                             <ul className="mt-6 space-y-3 text-base text-slate-700">
                                 <li className="list-disc ml-6">{lang === 'en' ? 'Invest heavily in R&D for AI and Blockchain' : lang === 'vi' ? 'Đầu tư mạnh mẽ vào nghiên cứu và phát triển công nghệ AI, Blockchain' : '大力投资人工智能和区块链的研发'}</li>
@@ -23,7 +23,7 @@ const Vision = () => {
                                 <li className="list-disc ml-6">{lang === 'en' ? 'Develop a comprehensive digital product ecosystem for SMEs' : lang === 'vi' ? 'Phát triển hệ sinh thái sản phẩm số toàn diện cho doanh nghiệp vừa và nhỏ' : '为中小企业开发全面的数字产品生态系统'}</li>
                             </ul>
                         </div>
-                        <div className="rounded-[32px] border-2 border-primary/20 bg-white/80 backdrop-blur-sm p-6 sm:p-8 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="shadow-3d shadow-3d-hover rounded-[32px] border-2 border-primary/20 bg-white/80 backdrop-blur-sm p-6 sm:p-8 transition-shadow">
                             <h3 className="text-2xl font-serif font-semibold text-slate-800">{lang === 'en' ? 'Desired Position' : lang === 'vi' ? 'Vị Thế Mong Muốn' : '目标地位'}</h3>
                             <ul className="mt-6 space-y-3 text-base text-slate-700">
                                 <li className="list-disc ml-6">{lang === 'en' ? 'Top 10 software development companies in Vietnam' : lang === 'vi' ? 'Top 10 công ty phát triển phần mềm tại Việt Nam' : '越南前10大软件开发公司'}</li>

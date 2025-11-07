@@ -224,7 +224,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ p, reverse }) => {
     return (
         <div className="flex flex-col px-0 outline-none h-full mb-6 sm:mb-8">
             <div className={`grid md:grid-cols-2 gap-6 items-center`}>
-                <div className={`relative rounded-2xl overflow-hidden shadow-xl bg-slate-100 ${reverse ? 'md:order-2' : 'md:order-1'}`}>
+                <div className={`shadow-3d-lg shadow-3d-hover relative rounded-2xl overflow-hidden bg-slate-100 ${reverse ? 'md:order-2' : 'md:order-1'}`}>
                     <div className="aspect-[16/9] w-full">
                         <img src={p.image} alt={tp.title} className="h-full w-full object-cover" />
                     </div>
@@ -255,7 +255,7 @@ export const Showcase: React.FC = () => {
     const { lang } = useLang()
 
     return (
-        <section id="showcase" className="py-8 px-10 sm:py-10 bg-white rounded-3xl">
+        <section id="showcase" className="shadow-3d-lg py-8 px-10 sm:py-10 bg-white rounded-3xl">
             <div className="flex flex-col gap-6 sm:gap-8 w-full">
                 <FadeUp className=" ">
                     <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">{lang === 'en' ? 'Projects' : lang === 'vi' ? 'Dự án tiêu biểu' : '代表性项目'}</h2>
