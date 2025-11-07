@@ -1,6 +1,6 @@
 import { features } from '../constants'
 import { useLang } from '../lang'
-import { FadeUp } from './Anim'
+import { FadeUp, SlideIn } from './Anim'
 
 const Icon = ({ name }: { name: string }) => {
     if (name === 'ai') {
@@ -57,8 +57,8 @@ export const Features = () => {
                     <p className="mt-2 sm:mt-3 text-slate-700 text-sm sm:text-base">{lang === 'en' ? 'Comprehensive technology solutions for businesses.' : lang === 'vi' ? 'Giải pháp công nghệ toàn diện cho doanh nghiệp.' : '为企业提供全面的技术解决方案。'}</p>
                 </FadeUp>
                 <div className="mt-8 sm:mt-10 grid gap-4 sm:gap-6 sm:grid-cols-2">
-                    {features.map((f) => (
-                        <FadeUp key={f.title} className="rounded-2xl p-4 sm:p-6 shadow ring-1 ring-slate-200" style={{ backgroundColor: f.color }}>
+                    {features.map((f, index) => (
+                        <SlideIn key={f.title} direction={index % 2 === 0 ? 'left' : 'right'} className="feature-block rounded-2xl p-4 sm:p-6 shadow ring-1 ring-slate-200" style={{ backgroundColor: f.color }}>
                             <div className="flex items-center gap-2 sm:gap-3">
                                 <div className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-lg bg-white/70 ring-1 ring-slate-200">
                                     <Icon name={f.icon} />
@@ -86,7 +86,7 @@ export const Features = () => {
                                         f.icon === 'ai' ? '咨询和实施AI/ML、聊天机器人、OCR和数据挖掘。' :
                                             f.icon === 'blockchain' ? '构建智能合约、钱包、DApp和区块链集成。' : f.description
                             )}</p>
-                        </FadeUp>
+                        </SlideIn>
                     ))}
                 </div>
             </div>

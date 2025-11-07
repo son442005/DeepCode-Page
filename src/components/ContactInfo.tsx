@@ -7,7 +7,7 @@ import { useLang } from '../lang'
 const ContactInfo: React.FC = () => {
     const { lang } = useLang()
     return (
-        <section id="ContactInfo" className={`p-6 sm:p-12 lg:p-20 bg-stone-50 bg-[#F9F5EC rounded-3xl `}>
+        <section id="ContactInfo" className={`p-6 sm:p-12 lg:p-20  bg-stone-50 bg-[#F9F5EC rounded-3xl `}>
             <div className="">
 
                 <header className="mb-8 sm:mb-12">
