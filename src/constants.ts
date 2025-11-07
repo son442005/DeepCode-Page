@@ -105,6 +105,11 @@ export const projects: Project[] = [
         description: 'OCR MyHealth số hóa và quản lý hồ sơ y tế: đơn thuốc, kết quả xét nghiệm, bệnh án. AI + Computer Vision nhận dạng chữ bác sĩ với độ chính xác ~95%. Đã triển khai tại 15 bệnh viện và 50+ phòng khám. Công nghệ: TensorFlow, OpenCV, PyTorch.',
         image: `${import.meta.env.BASE_URL}project-5.png`,
     },
+    {
+        title: 'BinanceBot Pro - Trading Bot AI',
+        description: 'Tool trading tự động hàng đầu cho sàn Binance với AI trading bot tiên tiến. Tự động hóa giao dịch 24/7, quản lý rủi ro thông minh với stop-loss và take-profit tự động. Ứng dụng mobile iOS/Android để theo dõi portfolio và điều khiển bot mọi lúc mọi nơi. Hơn 100 chỉ báo kỹ thuật và pattern recognition tự động. Công nghệ: Node.js, React Native, Binance API, Machine Learning.',
+        image: `${import.meta.env.BASE_URL}project-6.png`,
+    },
 ]
 export const partnerLogos = [
     { name: "SkySoft Technologies", src: `${import.meta.env.BASE_URL}softsky.webp` },
@@ -158,7 +163,7 @@ export const standards = [
 export const expertData = {
     name: "Thạc sĩ Đinh Văn Đông",
     role: "Nhà sáng lập & Giám đốc Công nghệ",
-    profileImage: `${import.meta.env.BASE_URL}project-6.png`,
+    profileImage: `${import.meta.env.BASE_URL}expert.png`,
     items: [
         { id: 1, title: "Học Vấn", details: ["Thạc sĩ Khoa học Máy tính, Đại học Bách Khoa Hà Nội (2018)", "Kỹ sư Công nghệ Thông tin, ĐH Bách Khoa Hà Nội (2014)"] },
         { id: 2, title: "Kinh Nghiệm", details: ["15+ năm kinh nghiệm trong lĩnh vực phát triển phần mềm", "Nguyên Vice Academic Director tại TEKY HOLDING (2020-2022)", "Giảng viên Khoa CNTT, BTEC FPT Hà Nội (2022-2025)"] },

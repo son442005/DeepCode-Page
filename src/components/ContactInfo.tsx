@@ -1,6 +1,6 @@
 import React from 'react';
 import { contactItems } from "../constants";
-const meetingImage = `${import.meta.env.BASE_URL}project-7.jpg`;
+const meetingImage = `${import.meta.env.BASE_URL}contact.jpg`;
 import { FadeUp } from './Anim'
 import { useLang } from '../lang'
 

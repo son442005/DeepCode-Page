@@ -34,6 +34,10 @@ const translateProject = (p: { title: string, description: string }, lang: 'vi' 
                 t: 'Smart medical record (OCR MyHealth)',
                 d: 'Digitizes medical records: prescriptions, lab results and charts. AI + Computer Vision reaches ~95% accuracy for handwriting. Deployed at 15 hospitals and 50+ clinics. Tech: TensorFlow, OpenCV, PyTorch.'
             },
+            'BinanceBot Pro - Trading Bot AI': {
+                t: 'BinanceBot Pro - AI Trading Bot',
+                d: 'Leading automated trading tool for Binance exchange with advanced AI trading bot. Automates trading 24/7, smart risk management with automatic stop-loss and take-profit. Mobile app iOS/Android to track portfolio and control bot anytime, anywhere. Over 100 technical indicators and automatic pattern recognition. Tech: Node.js, React Native, Binance API, Machine Learning.'
+            },
         }
         if (map[p.title]) return { title: map[p.title].t, description: map[p.title].d }
     }
@@ -58,6 +62,10 @@ const translateProject = (p: { title: string, description: string }, lang: 'vi' 
             'Hồ sơ ý tế thông minh': {
                 t: '智能医疗记录（OCR MyHealth）',
                 d: '数字化处方、检验结果与病历等医疗文档。AI + 计算机视觉对医生手写识别准确率约 95%。已在 15 家医院与 50+ 家诊所部署。技术：TensorFlow、OpenCV、PyTorch。'
+            },
+            'BinanceBot Pro - Trading Bot AI': {
+                t: 'BinanceBot Pro - AI 交易机器人',
+                d: '币安交易所领先的自动化交易工具，配备先进的 AI 交易机器人。7×24 自动交易，智能风险管理，自动止损和止盈。iOS/Android 移动应用，随时随地跟踪投资组合并控制机器人。超过 100 个技术指标和自动模式识别。技术：Node.js、React Native、Binance API、机器学习。'
             },
         }
         if (map[p.title]) return { title: map[p.title].t, description: map[p.title].d }
@@ -93,6 +101,11 @@ const getProjectBullets = (titleVi: string, lang: 'vi' | 'en' | 'zh') => {
             'Nhận dạng chữ bác sĩ ~95% bằng AI & Computer Vision',
             'Triển khai tại 15 bệnh viện và 50+ phòng khám'
         ],
+        'BinanceBot Pro - Trading Bot AI': [
+            'AI trading bot tự động giao dịch 24/7 trên Binance',
+            'Quản lý rủi ro thông minh: stop-loss, take-profit tự động',
+            'Mobile app iOS/Android, 10K+ users, $50M+ volume, 99.9% uptime'
+        ],
     }
     const en: Record<string, string[]> = {
         'Nền tảng bán khoá học online': [
@@ -119,6 +132,11 @@ const getProjectBullets = (titleVi: string, lang: 'vi' | 'en' | 'zh') => {
             'Digitizes medical records: prescriptions, labs, charts',
             '~95% doctor handwriting recognition via AI & CV',
             'Deployed in 15 hospitals and 50+ clinics'
+        ],
+        'BinanceBot Pro - Trading Bot AI': [
+            'AI trading bot automates trading 24/7 on Binance',
+            'Smart risk management: automatic stop-loss and take-profit',
+            'Mobile app iOS/Android, 10K+ users, $50M+ volume, 99.9% uptime'
         ],
     }
     const zh: Record<string, string[]> = {
@@ -147,6 +165,11 @@ const getProjectBullets = (titleVi: string, lang: 'vi' | 'en' | 'zh') => {
             'AI+视觉 ~95% 医生手写识别',
             '已在 15 家医院与 50+ 诊所部署'
         ],
+        'BinanceBot Pro - Trading Bot AI': [
+            'AI 交易机器人 7×24 自动交易于币安',
+            '智能风险管理：自动止损与止盈',
+            'iOS/Android 移动应用，10K+ 用户，$50M+ 交易量，99.9% 正常运行时间'
+        ],
     }
     if (lang === 'vi' && vi[titleVi]) return vi[titleVi]
     if (lang === 'en' && en[titleVi]) return en[titleVi]
@@ -166,6 +189,7 @@ const getProjectPills = (titleVi: string, lang: 'vi' | 'en' | 'zh') => {
         'Nền tảng ELearning': ['Quản lý khóa học', 'Tương tác', 'Đánh giá'],
         'AI chatbot doanh nghiệp': ['Hỗ trợ 24/7', 'RASA NLP', 'Tích hợp đa kênh'],
         'Hồ sơ ý tế thông minh': ['OCR ~95%', '15 BV + 50+ PK', 'TensorFlow/OpenCV'],
+        'BinanceBot Pro - Trading Bot AI': ['AI Trading', '10K+ Users', 'Node.js/React Native'],
     }
     const en: Record<string, string[]> = {
         'Nền tảng bán khoá học online': ['Affiliate', 'Laravel/Vue', 'Payments'],
@@ -173,6 +197,7 @@ const getProjectPills = (titleVi: string, lang: 'vi' | 'en' | 'zh') => {
         'Nền tảng ELearning': ['Course mgmt', 'Interaction', 'Assessment'],
         'AI chatbot doanh nghiệp': ['24/7 support', 'RASA NLP', 'Omnichannel'],
         'Hồ sơ ý tế thông minh': ['OCR ~95%', '15 hospitals+50 clinics', 'TensorFlow/OpenCV'],
+        'BinanceBot Pro - Trading Bot AI': ['AI Trading', '10K+ Users', 'Node.js/React Native'],
     }
     const zh: Record<string, string[]> = {
         'Nền tảng bán khoá học online': ['联盟推广', 'Laravel/Vue', '支付'],
@@ -180,6 +205,7 @@ const getProjectPills = (titleVi: string, lang: 'vi' | 'en' | 'zh') => {
         'Nền tảng ELearning': ['课程管理', '互动', '评测'],
         'AI chatbot doanh nghiệp': ['7×24', 'RASA NLP', '全渠道'],
         'Hồ sơ ý tế thông minh': ['OCR ~95%', '15 医院+50 诊所', 'TensorFlow/OpenCV'],
+        'BinanceBot Pro - Trading Bot AI': ['AI 交易', '10K+ 用户', 'Node.js/React Native'],
     }
     if (lang === 'vi' && vi[titleVi]) return vi[titleVi]
     if (lang === 'en' && en[titleVi]) return en[titleVi]
