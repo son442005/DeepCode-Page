@@ -70,27 +70,9 @@ const ContactInfo: React.FC = () => {
                                 <img
                                     src={meetingImage}
                                     alt={lang === 'en' ? 'DeepCode Meeting Room' : lang === 'vi' ? 'Phòng họp DeepCode' : 'DeepCode会议室'}
-                                    className="w-full h-[300px] object-cover group-hover:scale-105 transition-transform duration-300"
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
-                            </div>
-                        </FadeUp>
-
-                        <FadeUp>
-                            <div className="relative shadow-3d-md hover:shadow-3d-lg transition-all duration-300 overflow-hidden rounded-2xl">
-                                <div className="aspect-video w-full">
-                                    <iframe
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2231.2168219951527!2d105.77818175002164!3d21.053376215288342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454d3134d65eb%3A0x18f539304ea7c4ce!2sB5%20-%20Chung%20c%C6%B0%20Green%20Stars!5e0!3m2!1svi!2s!4v1762490387529!5m2!1svi!2s"
-                                        width="100%"
-                                        height="100%"
-                                        style={{ border: 0 }}
-                                        allowFullScreen
-                                        loading="lazy"
-                                        referrerPolicy="no-referrer-when-downgrade"
-                                        className="w-full h-full"
-                                        title={lang === 'en' ? 'Our Location' : lang === 'vi' ? 'Vị trí của chúng tôi' : '我们的位置'}
-                                    />
-                                </div>
                             </div>
                         </FadeUp>
                     </div>

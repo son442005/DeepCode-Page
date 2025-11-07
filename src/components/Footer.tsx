@@ -9,8 +9,8 @@ export const Footer = () => {
     const address = lang === 'en'
         ? '2nd Floor, Building 21B5, CT2 Urban Area, 234 Street, Phu Dien Ward, Hanoi, Vietnam'
         : lang === 'vi'
-        ? addressVi
-        : '越南河内富典区234街CT2城市区21B5号楼2层'
+            ? addressVi
+            : '越南河内富典区234街CT2城市区21B5号楼2层'
 
     const quickLinks = nav.filter((n) => ['#about', '#vision', '#features', '#showcase'].includes(n.href))
 
@@ -66,13 +66,29 @@ export const Footer = () => {
                     </div>
 
                     {/* Contact */}
-                    <div>
+                    <div className='flex flex-col gap-4'>
                         <h4 className="text-white font-semibold mb-4">{lang === 'en' ? 'Contact' : lang === 'vi' ? 'Liên hệ' : '联系'}</h4>
                         <ul className="space-y-3 text-white/80 text-sm">
                             <li><a className="hover:text-white" href={`mailto:${email}`}>{email}</a></li>
                             <li><a className="hover:text-white" href={`tel:${phone}`}>{phone}</a></li>
                             <li className="max-w-sm">{address}</li>
                         </ul>
+                        <div className="relative shadow-3d-md hover:shadow-3d-lg transition-all duration-300 overflow-hidden rounded-2xl">
+                            <div className="aspect-video w-full">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2231.2168219951527!2d105.77818175002164!3d21.053376215288342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454d3134d65eb%3A0x18f539304ea7c4ce!2sB5%20-%20Chung%20c%C6%B0%20Green%20Stars!5e0!3m2!1svi!2s!4v1762490387529!5m2!1svi!2s"
+                                    width="50%"
+                                    height="50%"
+                                    style={{ border: 0 }}
+                                    allowFullScreen
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                    className="w-full h-full"
+                                    title={lang === 'en' ? 'Our Location' : lang === 'vi' ? 'Vị trí của chúng tôi' : '我们的位置'}
+                                />
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
