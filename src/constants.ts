@@ -199,24 +199,24 @@ export const contactItems = [
     {
         title: "Trụ Sở Chính",
         details: [
-            "208, Vạn Phúc, Hà Đông, Hà Nội"
+            "208 Đường Vạn Phúc, Vạn Phúc, Hà Đông, Hà Nội, Việt Nam"
         ],
         icon: "🏢"
     },
     {
         title: "Liên Hệ",
         details: [
-            "Hotline: +84965741.051",
-            "Email: info@deepcode.vn",
-            "Website: www.deepcode.vn"
+            "Hotline: +848 1444 8877",
+            "hlgcongnghe.vn@gmail.com",
+            "Website: https://www.hlg68.com/"
         ],
         icon: "📞"
     },
     {
         title: "Mạng Xã Hội",
         details: [
-            "Facebook: fb/deepcode.vn"
+            "Facebook: www.facebook.com/hlgvietnam68"
         ],
         icon: "🐦"
-    },
+    },  
 ];

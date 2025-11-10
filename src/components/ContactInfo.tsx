@@ -11,7 +11,11 @@ const ContactInfo: React.FC = () => {
     const getDisplayText = (item: typeof contactItems[0], detail: string, detailIndex: number) => {
         if (lang === 'en') {
             if (item.title === 'Trụ Sở Chính' && detailIndex === 0) {
+
                 return '208, Van Phuc, Ha Dong, Hanoi'
+
+                return '208 Van Phuc Street, Van Phuc, Ha Dong, Hanoi, Vietnam'
+
             }
             if (detail.startsWith('Hotline')) return detail.replace('Hotline', 'Hotline')
             if (detail.startsWith('Email')) return detail.replace('Email', 'Email')
@@ -20,7 +24,11 @@ const ContactInfo: React.FC = () => {
         }
         if (lang === 'zh') {
             if (item.title === 'Trụ Sở Chính' && detailIndex === 0) {
+
                 return '越南河内市河东区万福208号'
+
+                return '越南河内市河东区万福街208号'
+
             }
             if (detail.startsWith('Hotline')) return detail.replace('Hotline', '热线')
             if (detail.startsWith('Email')) return detail.replace('Email', '邮箱')
@@ -45,7 +53,7 @@ const ContactInfo: React.FC = () => {
     }
 
     return (
-        <section id="ContactInfo" className="p-6 sm:p-12 lg:p-20 bg-gradient-to-br from-slate-50 to-blue-50 rounded-3xl shadow-3d-lg">
+        <section id="ContactInfo" className="p-6 sm:p-12 lg:p-20 bg-gradient-to-br from-slate-50 to-blue-50 rounded-3xl ">
             <div className="space-y-10 sm:space-y-12 lg:space-y-16">
                 {/* Header */}
                 <header className="">

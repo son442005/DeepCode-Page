@@ -39,7 +39,7 @@ const ExpertProfileTailwind: React.FC<ExpertProfileTailwindProps> = () => {
     }
     return (
         <section id="ExpertProfile" aria-label="About Us">
-            <div className="shadow-3d-lg rounded-3xl p-16 font-sans bg-gradient-to-br from-slate-50 to-blue-50 text-slate-800 ">
+            <div className=" rounded-3xl p-16 font-sans bg-gradient-to-br from-slate-50 to-blue-50 text-slate-800 ">
 
                 <header className="flex justify-between  ">
                     <h1 className="text-4xl font-bold text-gray-700">{lang === 'en' ? 'Expert Team' : lang === 'vi' ? 'Đội Ngũ Chuyên Gia' : '专家团队'}</h1>

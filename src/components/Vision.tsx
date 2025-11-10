@@ -6,7 +6,7 @@ const Vision = () => {
     return (
         <section id="vision" className="pt-20 pb-10">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <FadeUp className="shadow-3d-lg rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-50 to-blue-50 p-8 sm:p-12">
+                <FadeUp className="rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-50 to-blue-50 p-8 sm:p-12">
                     <h2 className="text-3xl sm:text-4xl font-bold text-slate-800 tracking-tight font-serif">{lang === 'en' ? 'Vision' : lang === 'vi' ? 'Tầm Nhìn' : '愿景'}</h2>
                     <div className="mt-6 text-center">
                         <p className="mx-auto max-w-5xl text-xl sm:text-2xl leading-relaxed font-serif text-slate-700">

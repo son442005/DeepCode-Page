@@ -3,7 +3,7 @@ import { useLang } from '../lang'
 
 export const Footer = () => {
     const { lang } = useLang()
-    const email = contactItems.find((i) => i.title === 'Liên Hệ')?.details.find((d) => d.startsWith('Email'))?.split(': ')[1] ?? 'info@example.com'
+    const email = contactItems.find((i) => i.title === 'Liên Hệ')?.details.find((d) => d.startsWith('Email'))?.split(': ')[1] ?? 'hlgcongnghe.vn@gmail.com'
     const phone = contactItems.find((i) => i.title === 'Liên Hệ')?.details.find((d) => d.startsWith('Hotline'))?.split(': ')[1] ?? '+84 000 000 000'
     const addressVi = contactItems.find((i) => i.title === 'Trụ Sở Chính')?.details[0] ?? 'Hanoi, Vietnam'
     const address = lang === 'en'
@@ -76,7 +76,7 @@ export const Footer = () => {
                         <div className="relative shadow-3d-md hover:shadow-3d-lg transition-all duration-300 overflow-hidden rounded-2xl">
                             <div className="aspect-video w-full">
                                 <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14901.233202635633!2d105.77032909999998!3d20.9802753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313453011825b86f%3A0x559206e57bb9e397!2zQ8O0bmcgVHkgQ1AgQ8O0bmcgTmdo4buHIEhMRyBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1762759119262!5m2!1svi!2s"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4650.443408254163!2d105.76932529472457!3d20.979395854141526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3134532fda316fe5%3A0xc893c5dcdf369ce!2zMjA4IMSQxrDhu51uZyBW4bqhbiBQaMO6YywgVuG6oW4gUGjDumMsIEjDoCDEkMO0bmcsIEjDoCBO4buZaSwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1762759878880!5m2!1svi!2s"
                                     width="50%"
                                     height="50%"
                                     style={{ border: 0 }}
