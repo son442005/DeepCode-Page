@@ -7,11 +7,11 @@ import { useLang } from '../lang'
 
 const ContactInfo: React.FC = () => {
     const { lang } = useLang()
-    
+
     const getDisplayText = (item: typeof contactItems[0], detail: string, detailIndex: number) => {
         if (lang === 'en') {
             if (item.title === 'Trụ Sở Chính' && detailIndex === 0) {
-                return '2nd Floor, Building 21B5, CT2 Urban Area, 234 Street, Phu Dien Ward, Hanoi, Vietnam'
+                return '208, Van Phuc, Ha Dong, Hanoi'
             }
             if (detail.startsWith('Hotline')) return detail.replace('Hotline', 'Hotline')
             if (detail.startsWith('Email')) return detail.replace('Email', 'Email')
@@ -20,7 +20,7 @@ const ContactInfo: React.FC = () => {
         }
         if (lang === 'zh') {
             if (item.title === 'Trụ Sở Chính' && detailIndex === 0) {
-                return '越南河内富典区234街CT2城市区21B5号楼2层'
+                return '越南河内市河东区万福208号'
             }
             if (detail.startsWith('Hotline')) return detail.replace('Hotline', '热线')
             if (detail.startsWith('Email')) return detail.replace('Email', '邮箱')
@@ -53,11 +53,11 @@ const ContactInfo: React.FC = () => {
                         {lang === 'en' ? 'Contact Information' : lang === 'vi' ? 'Thông Tin Liên Hệ' : '联系信息'}
                     </h1>
                     <p className="text-base sm:text-lg text-slate-600 max-w-2xl">
-                        {lang === 'en' 
-                            ? 'Get in touch with us. We are here to help you with your software development needs.' 
-                            : lang === 'vi' 
-                            ? 'Liên hệ với chúng tôi. Chúng tôi sẵn sàng hỗ trợ bạn với nhu cầu phát triển phần mềm.'
-                            : '与我们联系。我们随时准备帮助您满足软件开发需求。'}
+                        {lang === 'en'
+                            ? 'Get in touch with us. We are here to help you with your software development needs.'
+                            : lang === 'vi'
+                                ? 'Liên hệ với chúng tôi. Chúng tôi sẵn sàng hỗ trợ bạn với nhu cầu phát triển phần mềm.'
+                                : '与我们联系。我们随时准备帮助您满足软件开发需求。'}
                     </p>
                 </header>
 
@@ -97,13 +97,13 @@ const ContactInfo: React.FC = () => {
                                                 {item.details.map((detail, detailIndex) => {
                                                     const display = getDisplayText(item, detail, detailIndex)
                                                     const isLink = display.includes('@') || display.includes('www.') || display.includes('fb/')
-                                                    
+
                                                     return (
                                                         <div key={detailIndex} className="flex items-start gap-2">
-                                                            <svg 
-                                                                className="w-5 h-5 flex-shrink-0 text-primary mt-0.5" 
-                                                                fill="none" 
-                                                                stroke="currentColor" 
+                                                            <svg
+                                                                className="w-5 h-5 flex-shrink-0 text-primary mt-0.5"
+                                                                fill="none"
+                                                                stroke="currentColor"
                                                                 viewBox="0 0 24 24"
                                                             >
                                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -111,13 +111,13 @@ const ContactInfo: React.FC = () => {
                                                             {isLink ? (
                                                                 <a
                                                                     href={
-                                                                        display.includes('@') 
-                                                                            ? `mailto:${display.split(': ')[1] || display}` 
-                                                                            : display.includes('www.') 
-                                                                            ? `http://${display.split(': ')[1] || display}` 
-                                                                            : display.includes('fb/')
-                                                                            ? `https://${display.split(': ')[1] || display}`
-                                                                            : display
+                                                                        display.includes('@')
+                                                                            ? `mailto:${display.split(': ')[1] || display}`
+                                                                            : display.includes('www.')
+                                                                                ? `http://${display.split(': ')[1] || display}`
+                                                                                : display.includes('fb/')
+                                                                                    ? `https://${display.split(': ')[1] || display}`
+                                                                                    : display
                                                                     }
                                                                     className="text-primary hover:text-primary/80 hover:underline transition-colors break-words"
                                                                     target={display.includes('@') ? undefined : '_blank'}

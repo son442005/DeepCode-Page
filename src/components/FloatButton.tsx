@@ -9,21 +9,23 @@ export const FloatButton: React.FC = () => {
         setIsOpen(!isOpen);
     };
 
+    const handleWechat = () => {
+        window.open('https://u.wechat.com/kEat7lQcv3GbnPcme-I_Zq8', '_blank');
+        setIsOpen(false);
+    };
+
     const handleTelegram = () => {
-        window.open('https://t.me/your_telegram', '_blank');
+        window.open('https://t.me/dingvandong1234', '_blank');
         setIsOpen(false);
     };
 
     const handleZalo = () => {
-        window.open('https://zalo.me/your_zalo', '_blank');
+        window.open('https://zalo.me/0353303605', '_blank');
         setIsOpen(false);
     };
 
-    const handleMessage = () => {
-        const contactEl = document.querySelector('#ContactInfo') || document.querySelector('#contact');
-        if (contactEl) {
-            contactEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+    const handleFacebook = () => {
+        window.open('https://www.facebook.com/truongson.le.5473/', '_blank');
         setIsOpen(false);
     };
 
@@ -31,15 +33,28 @@ export const FloatButton: React.FC = () => {
         <div className="fixed bottom-6 right-6 z-50">
             {/* Menu buttons */}
             <div className={`absolute bottom-20 right-0 flex flex-col gap-3 transition-all duration-300 ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
+                {/* Wechat Button */}
+                <button
+                    onClick={handleWechat}
+                    aria-label="Wechat"
+                    className="w-12 h-12 bg-[#FFFFFF] text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center outline-none focus:outline-none hover:scale-110"
+                >
+                    <img
+                        src={`${import.meta.env.BASE_URL}wechat-app-icon.png`}
+                        alt="Wechat"
+                        className="w-8 h-8 object-contain drop-shadow-sm"
+                    />
+                </button>
+
                 {/* Telegram Button */}
                 <button
                     onClick={handleTelegram}
                     aria-label="Telegram"
-                    className="w-12 h-12 bg-[#0088cc] hover:bg-[#0077b5] text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center outline-none focus:outline-none hover:scale-110"
+                    className="w-12 h-12 bg-[#FFFFFF] text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center outline-none focus:outline-none hover:scale-110"
                 >
                     <svg
                         viewBox="0 0 24 24"
-                        fill="currentColor"
+                        fill="#0088cc"
                         className="w-7 h-7 drop-shadow-sm"
                     >
                         <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.193l-1.87 8.815c-.139.625-.518.775-1.048.481l-2.89-2.13-1.395 1.34c-.151.151-.282.282-.576.282l.206-2.92 5.342-4.826c.234-.207-.05-.323-.362-.116l-6.597 4.15-2.844-.894c-.618-.193-.635-.618.132-.928l11.132-4.287c.516-.193.966.119.797.904z" />
@@ -50,26 +65,25 @@ export const FloatButton: React.FC = () => {
                 <button
                     onClick={handleZalo}
                     aria-label="Zalo"
-                    className="w-12 h-12 bg-[#0068FF] hover:bg-[#0052CC] text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center outline-none focus:outline-none hover:scale-110"
+                    className="w-12 h-12 bg-[#FFFFFF] text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center outline-none focus:outline-none hover:scale-110"
                 >
                     <img
                         src={`${import.meta.env.BASE_URL}zalo-icon.svg`}
                         alt="Zalo"
-                        className="w-8 h-8 object-contain brightness-0 invert drop-shadow-sm"
+                        className="w-8 h-8 object-contain drop-shadow-sm"
                     />
                 </button>
 
-                {/* Message Button - Facebook Messenger */}
+                {/* Facebook Button */}
                 <button
-                    onClick={handleMessage}
-                    aria-label={lang === 'en' ? 'Message' : lang === 'vi' ? 'Tin nhắn' : '消息'}
-                    className="w-12 h-12 bg-[#0084FF] hover:bg-[#0066CC] text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center outline-none focus:outline-none hover:scale-110"
+                    onClick={handleFacebook}
+                    aria-label="Facebook"
+                    className="w-12 h-12 bg-[#FFFFFF] text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center outline-none focus:outline-none hover:scale-110"
                 >
                     <img
-                        src={`${import.meta.env.BASE_URL}mes-icon.svg`}
-                        alt={lang === 'en' ? 'Message' : lang === 'vi' ? 'Tin nhắn' : '消息'}
+                        src={`${import.meta.env.BASE_URL}face-icon.png`}
+                        alt="Facebook"
                         className="w-8 h-8 object-contain drop-shadow-sm"
-                        style={{ filter: 'brightness(0) invert(1)' }}
                     />
                 </button>
             </div>

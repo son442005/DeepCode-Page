@@ -7,10 +7,10 @@ export const Footer = () => {
     const phone = contactItems.find((i) => i.title === 'Liên Hệ')?.details.find((d) => d.startsWith('Hotline'))?.split(': ')[1] ?? '+84 000 000 000'
     const addressVi = contactItems.find((i) => i.title === 'Trụ Sở Chính')?.details[0] ?? 'Hanoi, Vietnam'
     const address = lang === 'en'
-        ? '2nd Floor, Building 21B5, CT2 Urban Area, 234 Street, Phu Dien Ward, Hanoi, Vietnam'
+        ? '208, Van Phuc, Ha Dong, Hanoi'
         : lang === 'vi'
             ? addressVi
-            : '越南河内富典区234街CT2城市区21B5号楼2层'
+            : '越南河内市河东区万福208号'
 
     const quickLinks = nav.filter((n) => ['#about', '#vision', '#features', '#showcase'].includes(n.href))
 
@@ -76,7 +76,7 @@ export const Footer = () => {
                         <div className="relative shadow-3d-md hover:shadow-3d-lg transition-all duration-300 overflow-hidden rounded-2xl">
                             <div className="aspect-video w-full">
                                 <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2231.2168219951527!2d105.77818175002164!3d21.053376215288342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454d3134d65eb%3A0x18f539304ea7c4ce!2sB5%20-%20Chung%20c%C6%B0%20Green%20Stars!5e0!3m2!1svi!2s!4v1762490387529!5m2!1svi!2s"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14901.233202635633!2d105.77032909999998!3d20.9802753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313453011825b86f%3A0x559206e57bb9e397!2zQ8O0bmcgVHkgQ1AgQ8O0bmcgTmdo4buHIEhMRyBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1762759119262!5m2!1svi!2s"
                                     width="50%"
                                     height="50%"
                                     style={{ border: 0 }}

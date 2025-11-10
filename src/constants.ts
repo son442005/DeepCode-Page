@@ -199,7 +199,7 @@ export const contactItems = [
     {
         title: "Trụ Sở Chính",
         details: [
-            "Tầng 2, nhà 2.1B5, khu CT2, KĐT thành phố giao lưu, 234 đường, Phường Phú Diễn, TP Hà Nội, Việt Nam"
+            "208, Vạn Phúc, Hà Đông, Hà Nội"
         ],
         icon: "🏢"
     },
