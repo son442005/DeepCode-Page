@@ -258,7 +258,7 @@ export const Showcase: React.FC = () => {
         <section id="showcase" className=" py-8 px-10 sm:py-10 bg-white ">
             <div className="flex flex-col gap-6 sm:gap-8 w-full">
                 <FadeUp className=" ">
-                    <h2 className="text-2xl sm:text-3xl font-bold text-blue-800">{lang === 'en' ? 'Projects' : lang === 'vi' ? 'Dự án tiêu biểu' : '代表性项目'}</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold text-blue-800 text-center">{lang === 'en' ? 'Projects' : lang === 'vi' ? 'Dự án tiêu biểu' : '代表性项目'}</h2>
                 </FadeUp>
 
                 <FadeUp className="flex flex-col gap-10 relative w-full max-w-7xl mx-auto px-2 pb-4 sm:pb-6 lg:pb-8">
