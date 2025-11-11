@@ -1,5 +1,5 @@
 import { nav, site } from '../constants'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useLang } from '../lang'
 
 export const Header = () => {
@@ -7,6 +7,7 @@ export const Header = () => {
     const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false)
     const [isScrolled, setIsScrolled] = useState(false)
     const { lang, setLang } = useLang()
+    const langDropdownRef = useRef<HTMLDivElement | null>(null)
 
     useEffect(() => {
         const handleScroll = () => {
@@ -18,7 +19,9 @@ export const Header = () => {
 
     useEffect(() => {
         const handleClickOutside = (e: MouseEvent) => {
-            if (isLangDropdownOpen && !(e.target as Element).closest('.lang-dropdown')) {
+            if (!isLangDropdownOpen) return
+            const target = e.target as Node | null
+            if (langDropdownRef.current && target && !langDropdownRef.current.contains(target)) {
                 setIsLangDropdownOpen(false)
             }
         }
@@ -44,35 +47,36 @@ export const Header = () => {
 
     const currentLang = languages.find(l => l.code === lang) || languages[0]
     return (
-        <header className={`shadow-3d fixed top-0 z-50 left-0 right-0 p-3 relative overflow-hidden ${isScrolled ? 'shadow-xl opacity-75' : ''}`}>
-        <div className="absolute inset-0 z-0">
-            <div className="absolute inset-0 bg-white"></div>
-            <div className="absolute inset-0 bg-orange-400" style={{ clipPath: 'polygon(0 0, 30% 0, 20% 100%, 0% 100%)' }}></div>
-        </div>
+        <header className={`shadow-3d fixed top-0 z-[1000] left-0 right-0 p-3 overflow-hidden bg-white ${isScrolled ? 'shadow-xl opacity-75' : ''}`}>
+            <div className="absolute inset-0 z-0">
+                <div className="absolute inset-0 bg-white"></div>
+                <div className="absolute inset-0 bg-orange-400" style={{ clipPath: 'polygon(0 0, 30% 0, 20% 100%, 0% 100%)' }}></div>
+            </div>
             <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 ">
                 <div className="flex h-12 sm:h-14 items-center justify-between">
                     <div className="flex items-center gap-2">
-                            <img src={`${import.meta.env.BASE_URL}HLG-logo.png`} alt={`${site.company} logo `} className="h-12 w-12 sm:h-14 sm:w-14" />
+                        <img src={`${import.meta.env.BASE_URL}HLG-logo.png`} alt={`${site.company} logo `} className="h-12 w-12 sm:h-14 sm:w-14" />
                         <span className="text-base sm:text-lg md:text-xl font-bold text-blue-700 tracking-tight">{site.company}</span>
                     </div>
                     <nav className="hidden md:flex items-center gap-2">
-                        {/* primary links */} 
+                        {/* primary links */}
                         <button onClick={() => handleNavClick('#about')} className="text-base text-black hover:text-white hover:bg-primary transition-all duration-200 p-2 w-24 rounded-xl">{lang === 'en' ? 'About' : lang === 'vi' ? 'Giới thiệu' : '关于'}</button>
                         <button onClick={() => handleNavClick('#features')} className="text-base text-black hover:text-white hover:bg-primary transition-all duration-200 p-2 w-24 rounded-xl">{lang === 'en' ? 'Services' : lang === 'vi' ? 'Dịch vụ' : '服务'}</button>
                         <button onClick={() => handleNavClick('#contact')} className="text-base text-black hover:text-white hover:bg-primary transition-all duration-200 p-2 w-24 rounded-xl">{lang === 'en' ? 'Contact' : lang === 'vi' ? 'Liên hệ' : '联系'}</button>
 
                         {/* language dropdown */}
-                        <div className="relative lang-dropdown">
+                        <div ref={langDropdownRef} className="relative lang-dropdown">
                             <button
                                 onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
+                                type="button"
                                 className="flex items-center gap-2 px-3 py-1.5 rounded-lg ring-1 ring-slate-300 bg-white hover:bg-slate-50 transition-colors text-sm font-medium text-slate-700"
                             >
                                 <span className="text-lg">{currentLang.flag}</span>
                                 <span>{currentLang.name}</span>
-                                <svg 
+                                <svg
                                     className={`w-4 h-4 transition-transform ${isLangDropdownOpen ? 'rotate-180' : ''}`}
-                                    fill="none" 
-                                    stroke="currentColor" 
+                                    fill="none"
+                                    stroke="currentColor"
                                     viewBox="0 0 24 24"
                                 >
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -87,9 +91,8 @@ export const Header = () => {
                                                 setLang(l.code)
                                                 setIsLangDropdownOpen(false)
                                             }}
-                                            className={`w-full flex items-center gap-3 px-4 py-2.5 text-left text-sm hover:bg-slate-50 transition-colors ${
-                                                lang === l.code ? 'bg-primary/10 text-blue-600 font-semibold' : 'text-slate-700'
-                                            }`}
+                                            className={`w-full flex items-center gap-3 px-4 py-2.5 text-left text-sm hover:bg-slate-50 transition-colors ${lang === l.code ? 'bg-primary/10 text-blue-600 font-semibold' : 'text-slate-700'
+                                                }`}
                                         >
                                             <span className="text-lg">{l.flag}</span>
                                             <span>{l.name}</span>
@@ -152,10 +155,10 @@ export const Header = () => {
                                             <span className="text-lg">{currentLang.flag}</span>
                                             <span>{currentLang.name}</span>
                                         </div>
-                                        <svg 
+                                        <svg
                                             className={`w-4 h-4 transition-transform ${isLangDropdownOpen ? 'rotate-180' : ''}`}
-                                            fill="none" 
-                                            stroke="currentColor" 
+                                            fill="none"
+                                            stroke="currentColor"
                                             viewBox="0 0 24 24"
                                         >
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -171,9 +174,8 @@ export const Header = () => {
                                                         setIsLangDropdownOpen(false)
                                                     }}
                                                     type="button"
-                                                    className={`w-full flex items-center gap-3 px-4 py-2.5 text-left text-sm hover:bg-slate-50 transition-colors touch-manipulation ${
-                                                        lang === l.code ? 'bg-primary/10 text-blue-600 font-semibold' : 'text-slate-700'
-                                                    }`}
+                                                    className={`w-full flex items-center gap-3 px-4 py-2.5 text-left text-sm hover:bg-slate-50 transition-colors touch-manipulation ${lang === l.code ? 'bg-primary/10 text-blue-600 font-semibold' : 'text-slate-700'
+                                                        }`}
                                                 >
                                                     <span className="text-lg">{l.flag}</span>
                                                     <span>{l.name}</span>
