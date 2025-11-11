@@ -9,7 +9,7 @@ export const About = () => {
             <div className="">
                 <FadeUp className="grid lg:grid-cols-2 items-center">
                     <div>
-                        <h2 className="text-3xl font-bold text-gradient-brand text-orange-400 items-center border-b-2 border-orange-300 pb-4">{lang === 'en' ? `About ${site.company}` : lang === 'vi' ? `Về ${site.company}` : `关于${site.company}`}</h2>
+                        <h2 className="text-3xl font-bold text-blue-700 text-gradient-brand text-orange-400 items-center border-b-2 border-orange-300 pb-4">{lang === 'en' ? `About ${site.company}` : lang === 'vi' ? `Về ${site.company}` : `关于${site.company}`}</h2>
                         <p className="mt-3 text-blue-400">
                             {lang === 'en'
                                 ? 'We are a team of software engineers focusing on quality, user experience, and efficiency. From strategy consulting to implementation and operations, we accompany businesses throughout the product lifecycle.'

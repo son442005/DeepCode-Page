@@ -22,7 +22,7 @@ export const Footer = () => {
                     <div>
                         <div className="flex items-center gap-3">
                             <img src={`${import.meta.env.BASE_URL}logo.svg`} alt={`${site.company} logo`} className="h-8 w-auto object-contain brightness-0 invert" />
-                            <div className="text-xl font-semibold">{site.company}</div>
+                            <div className="text-xl font-semibold text-blue-400">{site.company}</div>
                         </div>
                         <p className="mt-4 text-sm text-white/70 max-w-md">
                             {lang === 'en' ? 'Leading provider of custom software solutions and digital transformation for businesses.' : lang === 'vi' ? 'Nhà cung cấp hàng đầu các giải pháp phần mềm theo yêu cầu và chuyển đổi số cho doanh nghiệp.' : '为企业提供定制软件解决方案和数字化转型的领先供应商。'}
@@ -48,7 +48,7 @@ export const Footer = () => {
                         <h4 className="text-white font-semibold mb-4">{lang === 'en' ? 'Quick Links' : lang === 'vi' ? 'Liên kết nhanh' : '快速链接'}</h4>
                         <ul className="space-y-3 text-white/80 text-sm">
                             {quickLinks.map((l) => (
-                                <li key={l.href}><a href={l.href} className="hover:text-white transition">{lang === 'en' ? (
+                                <li key={l.href}><a href={l.href} className="hover:text-orange-300 transition">{lang === 'en' ? (
                                     l.href === '#about' ? 'About' :
                                         l.href === '#vision' ? 'Vision' :
                                             l.href === '#features' ? 'Services' :
@@ -60,8 +60,8 @@ export const Footer = () => {
                                                 l.href === '#showcase' ? '项目' : l.label
                                 )}</a></li>
                             ))}
-                            <li><a href="#privacy" className="hover:text-white transition">{lang === 'en' ? 'Privacy Policy' : lang === 'vi' ? 'Chính sách bảo mật' : '隐私政策'}</a></li>
-                            <li><a href="#terms" className="hover:text-white transition">{lang === 'en' ? 'Terms of Service' : lang === 'vi' ? 'Điều khoản dịch vụ' : '服务条款'}</a></li>
+                            <li><a href="#privacy" className="hover:text-orange-300 transition">{lang === 'en' ? 'Privacy Policy' : lang === 'vi' ? 'Chính sách bảo mật' : '隐私政策'}</a></li>
+                            <li><a href="#terms" className="hover:text-orange-300 transition">{lang === 'en' ? 'Terms of Service' : lang === 'vi' ? 'Điều khoản dịch vụ' : '服务条款'}</a></li>
                         </ul>
                     </div>
 
@@ -69,8 +69,8 @@ export const Footer = () => {
                     <div className='flex flex-col gap-4'>
                         <h4 className="text-white font-semibold mb-4">{lang === 'en' ? 'Contact' : lang === 'vi' ? 'Liên hệ' : '联系'}</h4>
                         <ul className="space-y-3 text-white/80 text-sm">
-                            <li><a className="hover:text-white" href={`mailto:${email}`}>{email}</a></li>
-                            <li><a className="hover:text-white" href={`tel:${phone}`}>{phone}</a></li>
+                            <li><a className="hover:text-orange-300" href={`mailto:${email}`}>{email}</a></li>
+                            <li><a className="hover:text-orange-300" href={`tel:${phone}`}>{phone}</a></li>
                             <li className="max-w-sm">{address}</li>
                         </ul>
                         <div className="relative shadow-3d-md hover:shadow-3d-lg transition-all duration-300 overflow-hidden rounded-2xl">
