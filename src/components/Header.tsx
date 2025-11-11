@@ -47,7 +47,7 @@ export const Header = () => {
 
     const currentLang = languages.find(l => l.code === lang) || languages[0]
     return (
-        <header className={`shadow-3d fixed top-0 z-50 left-0 right-0 p-3 relative overflow-hidden ${isScrolled ? 'shadow-xl opacity-75' : ''}`}>
+        <header className={`shadow-3d fixed top-0 z-50 left-0 right-0 p-3  overflow-hidden ${isScrolled ? 'shadow-xl opacity-75' : ''}`}>
         <div className="absolute inset-0 z-0">
             <div className="absolute inset-0 bg-white"></div>
             <div className="absolute inset-0 bg-orange-400" style={{ clipPath: 'polygon(0 0, 30% 0, 20% 100%, 0% 100%)' }}></div>
