@@ -44,22 +44,20 @@ export const Header = () => {
 
     const currentLang = languages.find(l => l.code === lang) || languages[0]
     return (
-        <header className={`shadow-3d fixed top-0 z-50 left-0 right-0 p-3 relative overflow-hidden ${isScrolled ? 'shadow-xl opacity-75' : ''}`}>
-        <div className="absolute inset-0 z-0">
-            <div className="absolute inset-0 bg-white"></div>
-            <div className="absolute inset-0 bg-orange-400" style={{ clipPath: 'polygon(0 0, 30% 0, 20% 100%, 0% 100%)' }}></div>
-        </div>
-            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 ">
+        <header className={`shadow-3d fixed top-0 z-50 left-0 right-0 bg-orange-500 p-3 ${isScrolled ? 'shadow-xl opacity-75' : ''}`}>
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative  ">
                 <div className="flex h-12 sm:h-14 items-center justify-between">
                     <div className="flex items-center gap-2">
-                            <img src={`${import.meta.env.BASE_URL}HLG-logo.png`} alt={`${site.company} logo `} className="h-12 w-12 sm:h-14 sm:w-14" />
-                        <span className="text-base sm:text-lg md:text-xl font-bold text-blue-700 tracking-tight">{site.company}</span>
+                        <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-lg bg-white ring-1 ring-slate-300 shadow-sm flex items-center justify-center overflow-hidden">
+                            <img src={`${import.meta.env.BASE_URL}logo.jpg`} alt={`${site.company} logo`} className="max-h-7 sm:max-h-8 max-w-8 object-contain" />
+                        </div>
+                        <span className="text-base sm:text-lg md:text-xl font-bold text-slate-900 tracking-tight">{site.company}</span>
                     </div>
                     <nav className="hidden md:flex items-center gap-2">
                         {/* primary links */} 
-                        <button onClick={() => handleNavClick('#about')} className="text-base text-black hover:text-white hover:bg-primary transition-all duration-200 p-2 w-24 rounded-xl">{lang === 'en' ? 'About' : lang === 'vi' ? 'Giới thiệu' : '关于'}</button>
-                        <button onClick={() => handleNavClick('#features')} className="text-base text-black hover:text-white hover:bg-primary transition-all duration-200 p-2 w-24 rounded-xl">{lang === 'en' ? 'Services' : lang === 'vi' ? 'Dịch vụ' : '服务'}</button>
-                        <button onClick={() => handleNavClick('#contact')} className="text-base text-black hover:text-white hover:bg-primary transition-all duration-200 p-2 w-24 rounded-xl">{lang === 'en' ? 'Contact' : lang === 'vi' ? 'Liên hệ' : '联系'}</button>
+                        <button onClick={() => handleNavClick('#about')} className="text-base text-slate-700 hover:text-white hover:bg-blue-500 transition-all duration-200 p-2 w-24 rounded-xl">{lang === 'en' ? 'About' : lang === 'vi' ? 'Giới thiệu' : '关于'}</button>
+                        <button onClick={() => handleNavClick('#features')} className="text-base text-slate-700 hover:text-white hover:bg-blue-500 transition-all duration-200 p-2 w-24 rounded-xl">{lang === 'en' ? 'Services' : lang === 'vi' ? 'Dịch vụ' : '服务'}</button>
+                        <button onClick={() => handleNavClick('#contact')} className="text-base text-slate-700 hover:text-white hover:bg-blue-500 transition-all duration-200 p-2 w-24 rounded-xl">{lang === 'en' ? 'Contact' : lang === 'vi' ? 'Liên hệ' : '联系'}</button>
 
                         {/* language dropdown */}
                         <div className="relative lang-dropdown">
@@ -88,13 +86,13 @@ export const Header = () => {
                                                 setIsLangDropdownOpen(false)
                                             }}
                                             className={`w-full flex items-center gap-3 px-4 py-2.5 text-left text-sm hover:bg-slate-50 transition-colors ${
-                                                lang === l.code ? 'bg-primary/10 text-blue-600 font-semibold' : 'text-slate-700'
+                                                lang === l.code ? 'bg-primary/10 text-primary font-semibold' : 'text-slate-700'
                                             }`}
                                         >
                                             <span className="text-lg">{l.flag}</span>
                                             <span>{l.name}</span>
                                             {lang === l.code && (
-                                                <svg className="w-4 h-4 ml-auto text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                                <svg className="w-4 h-4 ml-auto text-primary" fill="currentColor" viewBox="0 0 20 20">
                                                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                                                 </svg>
                                             )}
@@ -172,13 +170,13 @@ export const Header = () => {
                                                     }}
                                                     type="button"
                                                     className={`w-full flex items-center gap-3 px-4 py-2.5 text-left text-sm hover:bg-slate-50 transition-colors touch-manipulation ${
-                                                        lang === l.code ? 'bg-primary/10 text-blue-600 font-semibold' : 'text-slate-700'
+                                                        lang === l.code ? 'bg-primary/10 text-primary font-semibold' : 'text-slate-700'
                                                     }`}
                                                 >
                                                     <span className="text-lg">{l.flag}</span>
                                                     <span>{l.name}</span>
                                                     {lang === l.code && (
-                                                        <svg className="w-4 h-4 ml-auto text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                                        <svg className="w-4 h-4 ml-auto text-primary" fill="currentColor" viewBox="0 0 20 20">
                                                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                                                         </svg>
                                                     )}
