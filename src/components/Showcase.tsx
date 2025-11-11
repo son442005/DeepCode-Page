@@ -222,7 +222,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ p, reverse }) => {
     const tp = translateProject(p, lang)
     const pills = getProjectPills(p.title, lang)
     return (
-        <div className="flex flex-col px-0 outline-none h-full mb-6 sm:mb-8">
+        <div className="flex flex-col px-0 outline-none h-full mb-6 sm:mb-8  rounded-2xl bg-gray-50 sm:p-6" >
             <div className={`grid md:grid-cols-2 gap-6 items-center`}>
                 <div className={`shadow-3d-lg shadow-3d-hover relative rounded-2xl overflow-hidden bg-slate-100 ${reverse ? 'md:order-2' : 'md:order-1'}`}>
                     <div className="aspect-[16/9] w-full">
@@ -230,13 +230,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ p, reverse }) => {
                     </div>
                 </div>
                 <div className={`flex flex-col gap-3 sm:gap-4 ${reverse ? 'md:order-1' : 'md:order-2'}`}>
-                    <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900">{tp.title}</h3>
-                    <p className="text-sm sm:text-base text-slate-700 leading-relaxed">{tp.description}</p>
+                    <h3 className="text-xl sm:text-2xl font-extrabold text-orange-500">{tp.title}</h3>
+                    <p className="text-sm sm:text-base text-black leading-relaxed">{tp.description}</p>
                     <div className="mt-1 grid gap-2">
                         {getProjectBullets(p.title, lang).map((item) => (
                             <div key={item} className="flex items-start gap-2">
                                 <svg className="h-5 w-5 flex-shrink-0 text-primary" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-7.07 7.07a1 1 0 01-1.415 0l-3.535-3.535a1 1 0 111.414-1.414l2.828 2.828 6.364-6.364a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
-                                <span className="text-sm sm:text-base text-slate-800">{item}</span>
+                                <span className="text-sm sm:text-base text-blue-700 ">{item}</span>
                             </div>
                         ))}
                     </div>
@@ -255,10 +255,10 @@ export const Showcase: React.FC = () => {
     const { lang } = useLang()
 
     return (
-        <section id="showcase" className=" py-8 px-10 sm:py-10 bg-white rounded-3xl">
+        <section id="showcase" className=" py-8 px-10 sm:py-10 bg-white ">
             <div className="flex flex-col gap-6 sm:gap-8 w-full">
                 <FadeUp className=" ">
-                    <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">{lang === 'en' ? 'Projects' : lang === 'vi' ? 'Dự án tiêu biểu' : '代表性项目'}</h2>
+                    <h2 className="text-2xl sm:text-3xl font-bold text-blue-800">{lang === 'en' ? 'Projects' : lang === 'vi' ? 'Dự án tiêu biểu' : '代表性项目'}</h2>
                 </FadeUp>
 
                 <FadeUp className="flex flex-col gap-10 relative w-full max-w-7xl mx-auto px-2 pb-4 sm:pb-6 lg:pb-8">

@@ -44,20 +44,20 @@ export const Header = () => {
 
     const currentLang = languages.find(l => l.code === lang) || languages[0]
     return (
-        <header className={`fixed top-0 z-50 left-0 right-0 bg-white p-3 ${isScrolled ? 'shadow-3d' : ''}`}>
-            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <header className={`shadow-3d fixed top-0 z-50 left-0 right-0 bg-secondary p-3 ${isScrolled ? 'shadow-xl opacity-75' : ''}`}>
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative  ">
                 <div className="flex h-12 sm:h-14 items-center justify-between">
                     <div className="flex items-center gap-2">
-                        <div className="h-8 w-8 sm:h-10 sm:w-10 rounded-lg bg-white ring-1 ring-slate-300 shadow-sm flex items-center justify-center overflow-hidden">
-                            <img src={`${import.meta.env.BASE_URL}logo.jpg`} alt={`${site.company} logo`} className="max-h-7 sm:max-h-8 max-w-8 object-contain" />
+                        <div className="h-8 w-8 sm:h-10 sm:w-10 ">
+                            <img src={`${import.meta.env.BASE_URL}logo.jpg`} alt={`${site.company} logo `} className="" />
                         </div>
                         <span className="text-base sm:text-lg md:text-xl font-bold text-slate-900 tracking-tight">{site.company}</span>
                     </div>
                     <nav className="hidden md:flex items-center gap-2">
                         {/* primary links */} 
-                        <button onClick={() => handleNavClick('#about')} className="text-base text-slate-700 hover:text-white hover:bg-blue-500 transition-all duration-200 p-2 w-24 rounded-xl">{lang === 'en' ? 'About' : lang === 'vi' ? 'Giới thiệu' : '关于'}</button>
-                        <button onClick={() => handleNavClick('#features')} className="text-base text-slate-700 hover:text-white hover:bg-blue-500 transition-all duration-200 p-2 w-24 rounded-xl">{lang === 'en' ? 'Services' : lang === 'vi' ? 'Dịch vụ' : '服务'}</button>
-                        <button onClick={() => handleNavClick('#contact')} className="text-base text-slate-700 hover:text-white hover:bg-blue-500 transition-all duration-200 p-2 w-24 rounded-xl">{lang === 'en' ? 'Contact' : lang === 'vi' ? 'Liên hệ' : '联系'}</button>
+                        <button onClick={() => handleNavClick('#about')} className="text-base text-white hover:text-white hover:bg-primary transition-all duration-200 p-2 w-24 rounded-xl">{lang === 'en' ? 'About' : lang === 'vi' ? 'Giới thiệu' : '关于'}</button>
+                        <button onClick={() => handleNavClick('#features')} className="text-base text-white hover:text-white hover:bg-primary transition-all duration-200 p-2 w-24 rounded-xl">{lang === 'en' ? 'Services' : lang === 'vi' ? 'Dịch vụ' : '服务'}</button>
+                        <button onClick={() => handleNavClick('#contact')} className="text-base text-white hover:text-white hover:bg-primary transition-all duration-200 p-2 w-24 rounded-xl">{lang === 'en' ? 'Contact' : lang === 'vi' ? 'Liên hệ' : '联系'}</button>
 
                         {/* language dropdown */}
                         <div className="relative lang-dropdown">

@@ -42,7 +42,7 @@ const StaffStats: React.FC = () => {
     }
 
     return (
-        <section id="StaffStats" className={`p-6 sm:p-12 lg:p-20 bg-gradient-to-br from-slate-50 to-blue-50 text-slate-800 rounded-3xl `}>
+        <section id="StaffStats" className={`p-6 sm:p-12 lg:p-20 bg-gradient-to-br from-slate-50 to-blue-50 text-slate-800  `}>
             <div className="flex flex-col gap-8 sm:gap-12">
                 <div className="">
                     <h1 className={`text-3xl sm:text-4xl lg:text-5xl font-serif font-medium ${titleColor}`}>

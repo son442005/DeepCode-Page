@@ -39,13 +39,13 @@ const ExpertProfileTailwind: React.FC<ExpertProfileTailwindProps> = () => {
     }
     return (
         <section id="ExpertProfile" aria-label="About Us">
-            <div className=" rounded-3xl p-16 font-sans bg-gradient-to-br from-slate-50 to-blue-50 text-slate-800 ">
+            <div className="  p-16 font-sans bg-gradient-to-br from-slate-50 to-blue-50 ">
 
-                <header className="flex justify-between  ">
-                    <h1 className="text-4xl font-bold text-gray-700">{lang === 'en' ? 'Expert Team' : lang === 'vi' ? 'Đội Ngũ Chuyên Gia' : '专家团队'}</h1>
+                <header className="flex justify-between text-orange-500 items-center border-b-2 border-orange-300 pb-4">
+                    <h1 className="text-4xl font-bold">{lang === 'en' ? 'Expert Team' : lang === 'vi' ? 'Đội Ngũ Chuyên Gia' : '专家团队'}</h1>
                 </header>
 
-                <section className="flex flex-col lg:flex-row lg:gap-16  item-center mt-10">
+                <section className="flex flex-col lg:flex-row lg:gap-16 item-center mt-10">
 
                     <div className="lg:w-1/3 w-full">
                         <img
@@ -56,7 +56,7 @@ const ExpertProfileTailwind: React.FC<ExpertProfileTailwindProps> = () => {
                     </div>
 
                     <div className="lg:w-2/3 w-full pt-5 relative">
-                        <h2 className="text-3xl font-bold text-gray-800 mt-0">{name}</h2>
+                        <h2 className="text-3xl font-bold text-orange-500 mt-0">{name}</h2>
                         <p className="text-lg text-gray-600 mb-8">{role}</p>
 
                         <div className="flex flex-col gap-8 pl-10 relative">

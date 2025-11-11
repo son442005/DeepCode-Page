@@ -50,11 +50,11 @@ const Icon = ({ name }: { name: string }) => {
 export const Features = () => {
     const { lang } = useLang()
     return (
-        <section id="features" className="pt-8 sm:pt-10 pb-14 sm:pb-20 bg-blue-50 rounded-3xl">
+        <section id="features" className="pt-8 sm:pt-10 pb-14 sm:pb-20 bg-white ">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <FadeUp className="max-w-2xl">
-                    <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">{lang === 'en' ? 'Services' : lang === 'vi' ? 'Dịch vụ' : '服务'}</h2>
-                    <p className="mt-2 sm:mt-3 text-slate-700 text-sm sm:text-base">{lang === 'en' ? 'Comprehensive technology solutions for businesses.' : lang === 'vi' ? 'Giải pháp công nghệ toàn diện cho doanh nghiệp.' : '为企业提供全面的技术解决方案。'}</p>
+                    <h2 className="text-2xl sm:text-3xl font-serif text-blue-900">{lang === 'en' ? 'Services' : lang === 'vi' ? 'Dịch vụ' : '服务'}</h2>
+                    <p className="mt-2 sm:mt-3 text-blue-700 text-sm sm:text-base items-center border-b-2 border-orange-300 pb-4">{lang === 'en' ? 'Comprehensive technology solutions for businesses.' : lang === 'vi' ? 'Giải pháp công nghệ toàn diện cho doanh nghiệp.' : '为企业提供全面的技术解决方案。'}</p>
                 </FadeUp>
                 <div className="mt-8 sm:mt-10 grid gap-4 sm:gap-6 sm:grid-cols-2">
                     {features.map((f, index) => (
