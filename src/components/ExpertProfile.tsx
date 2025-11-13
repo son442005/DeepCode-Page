@@ -39,49 +39,54 @@ const ExpertProfileTailwind: React.FC<ExpertProfileTailwindProps> = () => {
     }
     return (
         <section id="ExpertProfile" aria-label="About Us">
-            <div className="p-16 font-sans bg-gradient-to-br from-primary/5 to-secondary/10 ">
-
-                <div className="w-full bg-white p-14  rounded-xl">
-                    <header className="flex text-orange-500 items-center border-b-2 border-orange-300 pb-4">
-                        <h1 className="text-4xl font-bold">{lang === 'en' ? 'Expert Team' : lang === 'vi' ? 'Đội Ngũ Chuyên Gia' : '专家团队'}</h1>
+            <div className="px-4 py-10 sm:px-8 md:px-12 lg:px-16 font-sans bg-gradient-to-br from-primary/5 to-secondary/10">
+                <div className="w-full bg-white px-6 py-8 sm:px-10 sm:py-12 lg:p-14 rounded-xl">
+                    <header className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-orange-500 border-b-2 border-orange-300 pb-4">
+                        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold">
+                            {lang === 'en' ? 'Expert Team' : lang === 'vi' ? 'Đội Ngũ Chuyên Gia' : '专家团队'}
+                        </h1>
                     </header>
 
-                    <section className="flex flex-col lg:flex-row lg:gap-16 items-center mt-10">
-
-                        <div className="lg:w-1/3 w-full">
+                    <section className="flex flex-col lg:flex-row lg:gap-16 items-center mt-8 lg:mt-10">
+                        <div className="w-full lg:w-1/3 flex justify-center">
                             <img
                                 src={expertData.profileImage}
                                 alt={name}
-                                className="shadow-3d-lg shadow-3d-hover mt-10 w-full h-auto object-cover block border border-gray-300 text-center"
+                                className="shadow-3d-lg shadow-3d-hover mt-6 sm:mt-8 lg:mt-10 w-full max-w-xs sm:max-w-sm lg:max-w-full h-auto object-cover rounded-2xl border border-gray-200"
                             />
                         </div>
 
-                        <div className="lg:w-2/3 w-full pt-5 relative">
-                            <h2 className="text-3xl font-bold text-orange-500 mt-0">{name}</h2>
-                            <p className="text-lg text-blue-600 mb-8">{role}</p>
+                        <div className="w-full lg:w-2/3 pt-6 lg:pt-5 relative">
+                            <h2 className="text-2xl md:text-3xl font-bold text-orange-500">{name}</h2>
+                            <p className="text-base md:text-lg text-blue-600 mb-6 md:mb-8">{role}</p>
 
-                            <div className="flex flex-col gap-8 pl-10 relative">
+                            <div className="flex flex-col gap-6 sm:gap-8 pl-6 sm:pl-10 relative">
+                                <div className="absolute top-3 sm:top-4 bottom-3 sm:bottom-4 left-3 sm:left-[56px] w-0.5 bg-primary z-0"></div>
 
-                                <div className={` absolute top-4 bottom-4 left-[56px] w-0.5 bg-primary z-0`}></div>
-
-                                {expertData.items.map((item, index) => (
-                                    <div key={item.id} className="flex gap-5 relative z-10 items-center">
-
-                                        <div className={`flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white font-bold text-lg flex justify-center items-center mt-1`}>
+                                {expertData.items.map((item) => (
+                                    <div key={item.id} className="flex gap-4 sm:gap-5 relative z-10 items-start">
+                                        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary text-white font-bold text-lg flex justify-center items-center">
                                             {item.id}
                                         </div>
 
-                                        <div className="flex-1 pt-1 ">
-                                            <h3 className={`text-xl font-bold text-primary mb-1`}>{lang === 'en' ? (titleMap[item.title]?.en || item.title) : lang === 'vi' ? item.title : (titleMap[item.title]?.zh || item.title)}</h3>
+                                        <div className="flex-1">
+                                            <h3 className="text-lg sm:text-xl font-bold text-primary mb-1">
+                                                {lang === 'en'
+                                                    ? (titleMap[item.title]?.en || item.title)
+                                                    : lang === 'vi'
+                                                        ? item.title
+                                                        : (titleMap[item.title]?.zh || item.title)}
+                                            </h3>
                                             {item.details.map((detail, detailIndex) => (
-                                                <p key={detailIndex} className="text-sm leading-relaxed mb-1">
-                                                    <span dangerouslySetInnerHTML={{
-                                                        __html: translateDetail(detail)
-                                                            .replace(
+                                                <p key={detailIndex} className="text-sm sm:text-base leading-relaxed mb-1">
+                                                    <span
+                                                        dangerouslySetInnerHTML={{
+                                                            __html: translateDetail(detail).replace(
                                                                 /(MSc in Computer Science|BSc in Information Technology|15\+ years of experience|Former Vice Academic Director|Lecturer|Director of HLGera Training Center|Mentor|Speaker|计算机科学硕士|信息技术工程师|15年以上经验|前TEKY HOLDING学术副总监|讲师|HLGera培训中心主任|导师|演讲者)/g,
                                                                 '<strong>$1</strong>'
                                                             )
-                                                    }} />
+                                                        }}
+                                                    />
                                                 </p>
                                             ))}
                                         </div>

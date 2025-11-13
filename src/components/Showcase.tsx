@@ -223,7 +223,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ p, reverse }) => {
     const pills = getProjectPills(p.title, lang)
     return (
         <div className="flex flex-col  outline-none h-full mb-6 sm:mb-8 rounded-2xl bg-gray-50 sm:p-6" >
-            <div className={`grid md:grid-cols-2 gap-6 items-center p-8`}>
+            <div className={`grid md:grid-cols-2 gap-6 items-center p-6`}>
                 <div className={`shadow-3d-lg shadow-3d-hover relative rounded-2xl overflow-hidden bg-slate-100 ${reverse ? 'md:order-2' : 'md:order-1'}`}>
                     <div className="aspect-[16/9] w-full">
                         <img src={p.image} alt={tp.title} className="h-full w-full object-cover" />

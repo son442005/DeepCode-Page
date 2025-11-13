@@ -4,10 +4,12 @@ import { useLang } from '../lang'
 
 export const Header = () => {
     const [isOpen, setIsOpen] = useState(false)
-    const [isLangDropdownOpen, setIsLangDropdownOpen] = useState(false)
+    const [isDesktopLangDropdownOpen, setIsDesktopLangDropdownOpen] = useState(false)
+    const [isMobileLangDropdownOpen, setIsMobileLangDropdownOpen] = useState(false)
     const [isScrolled, setIsScrolled] = useState(false)
     const { lang, setLang } = useLang()
-    const langDropdownRef = useRef<HTMLDivElement | null>(null)
+    const desktopLangDropdownRef = useRef<HTMLDivElement | null>(null)
+    const mobileLangDropdownRef = useRef<HTMLDivElement | null>(null)
 
     useEffect(() => {
         const handleScroll = () => {
@@ -18,16 +20,28 @@ export const Header = () => {
     }, [])
 
     useEffect(() => {
-        const handleClickOutside = (e: MouseEvent) => {
-            if (!isLangDropdownOpen) return
-            const target = e.target as Node | null
-            if (langDropdownRef.current && target && !langDropdownRef.current.contains(target)) {
-                setIsLangDropdownOpen(false)
+        const handleClickOutside = (event: MouseEvent) => {
+            const target = event.target as Node | null
+            if (
+                isDesktopLangDropdownOpen &&
+                desktopLangDropdownRef.current &&
+                target &&
+                !desktopLangDropdownRef.current.contains(target)
+            ) {
+                setIsDesktopLangDropdownOpen(false)
+            }
+            if (
+                isMobileLangDropdownOpen &&
+                mobileLangDropdownRef.current &&
+                target &&
+                !mobileLangDropdownRef.current.contains(target)
+            ) {
+                setIsMobileLangDropdownOpen(false)
             }
         }
         document.addEventListener('click', handleClickOutside)
         return () => document.removeEventListener('click', handleClickOutside)
-    }, [isLangDropdownOpen])
+    }, [isDesktopLangDropdownOpen, isMobileLangDropdownOpen])
 
     // lang persistence handled by provider
     const handleToggle = () => setIsOpen((v) => !v)
@@ -46,8 +60,25 @@ export const Header = () => {
     ]
 
     const currentLang = languages.find(l => l.code === lang) || languages[0]
+
+    const handleDesktopLangToggle = () => {
+        setIsDesktopLangDropdownOpen((prev) => !prev)
+        setIsMobileLangDropdownOpen(false)
+    }
+
+    const handleMobileLangToggle = () => {
+        setIsMobileLangDropdownOpen((prev) => !prev)
+        setIsDesktopLangDropdownOpen(false)
+    }
+
+    const handleLangSelect = (code: typeof languages[number]['code']) => {
+        setLang(code)
+        setIsDesktopLangDropdownOpen(false)
+        setIsMobileLangDropdownOpen(false)
+    }
+
     return (
-        <header className={`shadow-3d fixed top-0 z-50 left-0 right-0 p-3  overflow-hidden ${isScrolled ? 'shadow-xl opacity-75' : ''}`}>
+        <header className={`shadow-3d fixed top-0 z-50 left-0 right-0 p-3 overflow-visible ${isScrolled ? 'shadow-xl opacity-75' : ''}`}>
         <div className="absolute inset-0 z-0">
             <div className="absolute inset-0 bg-white"></div>
             <div className="absolute inset-0 bg-orange-400" style={{ clipPath: 'polygon(0 0, 30% 0, 20% 100%, 0% 100%)' }}></div>
@@ -65,16 +96,16 @@ export const Header = () => {
                         <button onClick={() => handleNavClick('#contact')} className="text-base text-black hover:text-white hover:bg-primary transition-all duration-200 p-2 w-24 rounded-xl">{lang === 'en' ? 'Contact' : lang === 'vi' ? 'Liên hệ' : '联系'}</button>
 
                         {/* language dropdown */}
-                        <div ref={langDropdownRef} className="relative lang-dropdown">
+                        <div ref={desktopLangDropdownRef} className="relative lang-dropdown">
                             <button
-                                onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
+                                onClick={handleDesktopLangToggle}
                                 type="button"
                                 className="flex items-center gap-2 px-3 py-1.5 rounded-lg ring-1 ring-slate-300 bg-white hover:bg-slate-50 transition-colors text-sm font-medium text-slate-700"
                             >
                                 <span className="text-lg">{currentLang.flag}</span>
                                 <span>{currentLang.name}</span>
                                 <svg
-                                    className={`w-4 h-4 transition-transform ${isLangDropdownOpen ? 'rotate-180' : ''}`}
+                                    className={`w-4 h-4 transition-transform ${isDesktopLangDropdownOpen ? 'rotate-180' : ''}`}
                                     fill="none"
                                     stroke="currentColor"
                                     viewBox="0 0 24 24"
@@ -82,15 +113,12 @@ export const Header = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                                 </svg>
                             </button>
-                            {isLangDropdownOpen && (
-                                <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg ring-1 ring-slate-200 py-1 z-50">
+                            {isDesktopLangDropdownOpen && (
+                                <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg ring-1 ring-slate-200 py-1 z-[80]">
                                     {languages.map((l) => (
                                         <button
                                             key={l.code}
-                                            onClick={() => {
-                                                setLang(l.code)
-                                                setIsLangDropdownOpen(false)
-                                            }}
+                                            onClick={() => handleLangSelect(l.code)}
                                             className={`w-full flex items-center gap-3 px-4 py-2.5 text-left text-sm hover:bg-slate-50 transition-colors ${
                                                 lang === l.code ? 'bg-primary/10 text-blue-600 font-semibold' : 'text-slate-700'
                                             }`}
@@ -123,7 +151,7 @@ export const Header = () => {
                     </button>
                 </div>
                 {isOpen && (
-                    <div className="md:hidden absolute left-0 right-0 top-full bg-white border-t border-slate-200 shadow-lg z-[60]">
+                    <div className="md:hidden absolute left-0 right-0 top-full bg-white border-t border-slate-200 shadow-lg z-[60] overflow-visible">
                         <div className="flex flex-col gap-1 py-2">
                             <button
                                 onClick={() => handleNavClick('#about')}
@@ -147,9 +175,9 @@ export const Header = () => {
                                 {lang === 'en' ? 'Contact' : lang === 'vi' ? 'Liên hệ' : '联系'}
                             </button>
                             <div className="px-4 py-3">
-                                <div className="relative lang-dropdown">
+                                <div ref={mobileLangDropdownRef} className="relative lang-dropdown">
                                     <button
-                                        onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
+                                        onClick={handleMobileLangToggle}
                                         className="w-full flex items-center justify-between gap-2 px-3 py-2 rounded-lg ring-1 ring-slate-300 bg-white hover:bg-slate-50 transition-colors text-sm font-medium text-slate-700 touch-manipulation"
                                     >
                                         <div className="flex items-center gap-2">
@@ -157,7 +185,7 @@ export const Header = () => {
                                             <span>{currentLang.name}</span>
                                         </div>
                                         <svg
-                                            className={`w-4 h-4 transition-transform ${isLangDropdownOpen ? 'rotate-180' : ''}`}
+                                            className={`w-4 h-4 transition-transform ${isMobileLangDropdownOpen ? 'rotate-180' : ''}`}
                                             fill="none"
                                             stroke="currentColor"
                                             viewBox="0 0 24 24"
@@ -165,15 +193,12 @@ export const Header = () => {
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                                         </svg>
                                     </button>
-                                    {isLangDropdownOpen && (
-                                        <div className="absolute left-0 right-0 mt-2 bg-white rounded-lg shadow-lg ring-1 ring-slate-200 py-1 z-50">
+                                    {isMobileLangDropdownOpen && (
+                                        <div className="absolute left-0 right-0 mt-2 bg-white rounded-lg shadow-lg ring-1 ring-slate-200 py-1 z-[80]">
                                             {languages.map((l) => (
                                                 <button
                                                     key={l.code}
-                                                    onClick={() => {
-                                                        setLang(l.code)
-                                                        setIsLangDropdownOpen(false)
-                                                    }}
+                                                    onClick={() => handleLangSelect(l.code)}
                                                     type="button"
                                                     className={`w-full flex items-center gap-3 px-4 py-2.5 text-left text-sm hover:bg-slate-50 transition-colors touch-manipulation ${
                                                         lang === l.code ? 'bg-primary/10 text-blue-600 font-semibold' : 'text-slate-700'
