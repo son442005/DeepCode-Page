@@ -49,7 +49,7 @@ const ContactInfo: React.FC = () => {
   return (
     <section
       id="ContactInfo"
-      className="px-4 py-10 sm:px-8 sm:py-12 lg:px-20 lg:py-20 bg-gradient-to-br from-[#fc4a1a] to-[#007BFF]/10 rounded-3xl"
+      className="px-4 py-10 sm:px-8 sm:py-12 lg:px-20 lg:py-20  rounded-3xl"
     >
       <div className="max-w-6xl mx-auto space-y-10 sm:space-y-12 lg:space-y-16 bg-white/90 backdrop-blur-md px-4 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-16 rounded-2xl shadow-2xl">
         {/* Header */}

@@ -81,7 +81,7 @@ export const Header = () => {
         <header className={`shadow-3d fixed top-0 z-50 left-0 right-0 p-3 overflow-visible ${isScrolled ? 'shadow-xl opacity-75' : ''}`}>
         <div className="absolute inset-0 z-0">
             <div className="absolute inset-0 bg-white"></div>
-            <div className="absolute inset-0 bg-orange-400" style={{ clipPath: 'polygon(0 0, 30% 0, 20% 100%, 0% 100%)' }}></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-[#e6dfdd] to-[#d37227]"></div>
         </div>
             <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 ">
                 <div className="flex h-12 sm:h-14 items-center justify-between">
