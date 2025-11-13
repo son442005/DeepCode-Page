@@ -79,18 +79,19 @@ export const Header = () => {
 
     return (
         <header className={`shadow-3d fixed top-0 z-50 left-0 right-0 p-3 overflow-visible ${isScrolled ? 'shadow-xl opacity-75' : ''}`}>
-        <div className="absolute inset-0 z-0">
-            <div className="absolute inset-0 bg-white"></div>
-            <div className="absolute inset-0 bg-gradient-to-br from-[#e6dfdd] to-[#d37227]"></div>
-        </div>
+            <div className="absolute inset-0 z-0">
+                <div className="absolute inset-0 bg-white"></div>
+                <div className="absolute inset-0 bg-orange-400 hidden md:block" style={{ clipPath: 'polygon(0 0, 30% 0, 20% 100%, 0% 100%)' }}></div>
+                <div className="absolute inset-0 bg-orange-400 md:hidden" style={{ clipPath: 'polygon(0 0, 38% 0, 30% 100%, 0% 100%)' }}></div>
+            </div>
             <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 ">
                 <div className="flex h-12 sm:h-14 items-center justify-between">
                     <div className="flex items-center gap-2">
-                            <img src={`${import.meta.env.BASE_URL}HLG-logo.png`} alt={`${site.company} logo `} className="h-12 w-12 sm:h-14 sm:w-14" />
+                        <img src={`${import.meta.env.BASE_URL}HLG-logo.png`} alt={`${site.company} logo `} className="h-12 w-12 sm:h-14 sm:w-14" />
                         <span className="text-base sm:text-lg md:text-xl font-bold text-blue-700 tracking-tight">{site.company}</span>
                     </div>
                     <nav className="hidden md:flex items-center gap-2">
-                        {/* primary links */} 
+                        {/* primary links */}
                         <button onClick={() => handleNavClick('#about')} className="text-base text-black hover:text-white hover:bg-primary transition-all duration-200 p-2 w-24 rounded-xl">{lang === 'en' ? 'About' : lang === 'vi' ? 'Giới thiệu' : '关于'}</button>
                         <button onClick={() => handleNavClick('#features')} className="text-base text-black hover:text-white hover:bg-primary transition-all duration-200 p-2 w-24 rounded-xl">{lang === 'en' ? 'Services' : lang === 'vi' ? 'Dịch vụ' : '服务'}</button>
                         <button onClick={() => handleNavClick('#contact')} className="text-base text-black hover:text-white hover:bg-primary transition-all duration-200 p-2 w-24 rounded-xl">{lang === 'en' ? 'Contact' : lang === 'vi' ? 'Liên hệ' : '联系'}</button>
@@ -119,9 +120,8 @@ export const Header = () => {
                                         <button
                                             key={l.code}
                                             onClick={() => handleLangSelect(l.code)}
-                                            className={`w-full flex items-center gap-3 px-4 py-2.5 text-left text-sm hover:bg-slate-50 transition-colors ${
-                                                lang === l.code ? 'bg-primary/10 text-blue-600 font-semibold' : 'text-slate-700'
-                                            }`}
+                                            className={`w-full flex items-center gap-3 px-4 py-2.5 text-left text-sm hover:bg-slate-50 transition-colors ${lang === l.code ? 'bg-primary/10 text-blue-600 font-semibold' : 'text-slate-700'
+                                                }`}
                                         >
                                             <span className="text-lg">{l.flag}</span>
                                             <span>{l.name}</span>
@@ -200,9 +200,8 @@ export const Header = () => {
                                                     key={l.code}
                                                     onClick={() => handleLangSelect(l.code)}
                                                     type="button"
-                                                    className={`w-full flex items-center gap-3 px-4 py-2.5 text-left text-sm hover:bg-slate-50 transition-colors touch-manipulation ${
-                                                        lang === l.code ? 'bg-primary/10 text-blue-600 font-semibold' : 'text-slate-700'
-                                                    }`}
+                                                    className={`w-full flex items-center gap-3 px-4 py-2.5 text-left text-sm hover:bg-slate-50 transition-colors touch-manipulation ${lang === l.code ? 'bg-primary/10 text-blue-600 font-semibold' : 'text-slate-700'
+                                                        }`}
                                                 >
                                                     <span className="text-lg">{l.flag}</span>
                                                     <span>{l.name}</span>
