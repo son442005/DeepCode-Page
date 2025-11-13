@@ -1,99 +1,126 @@
-import { features } from '../constants'
-import { useLang } from '../lang'
-import { FadeUp, SlideIn } from './Anim'
+// src/components/Features.tsx
 
+// Import ICONS cùng với features từ constants
+import { features, ICONS } from '../constants';
+import { useLang } from '../lang';
+import { FadeUp, SlideIn } from './Anim';
+
+// Component để hiển thị biểu tượng
 const Icon = ({ name }: { name: string }) => {
-    if (name === 'ai') {
-        return (
-            <svg viewBox="0 0 24 24" className="h-6 w-6 text-slate-800" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="3" y="3" width="18" height="18" rx="4" />
-                <path d="M8 16V8h2.5a2.5 2.5 0 1 1 0 5H8" />
-                <path d="M14 16V8h2" />
-            </svg>
-        )
+    const icon = ICONS[name]; // Sử dụng ICONS đã import
+    if (!icon) {
+        // Trả về một placeholder và ghi log cảnh báo nếu biểu tượng không tìm thấy
+        console.warn(`Icon '${name}' not found in ICONS object. Check constants.ts and public folder.`);
+        return <div className="h-6 w-6 rounded bg-slate-700" />;
     }
-    if (name === 'web') {
-        return (
-            <svg viewBox="0 0 24 24" className="h-6 w-6 text-slate-800" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="9" />
-                <path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18" />
-            </svg>
-        )
-    }
-    if (name === 'mobile') {
-        return (
-            <svg viewBox="0 0 24 24" className="h-6 w-6 text-slate-800" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="7" y="2" width="10" height="20" rx="2" />
-                <path d="M11 18h2" />
-            </svg>
-        )
-    }
-    if (name === 'cloud') {
-        return (
-            <svg viewBox="0 0 24 24" className="h-6 w-6 text-slate-800" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M20 17.5A4.5 4.5 0 0 0 17 9a6 6 0 0 0-11 2.4A4 4 0 0 0 6 19h12" />
-            </svg>
-        )
-    }
-    if (name === 'blockchain') {
-        return (
-            <svg viewBox="0 0 24 24" className="h-6 w-6 text-slate-800" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="3" y="3" width="7" height="7" rx="1.5" />
-                <rect x="14" y="14" width="7" height="7" rx="1.5" />
-                <path d="M10 6.5h4M6.5 10v4M14 10v4M10 17.5h4" />
-            </svg>
-        )
-    }
-    return <div className="h-6 w-6 rounded bg-slate-700" />
-}
+    return <img src={icon.src} alt={icon.alt} className="h-36 w-36 object-contain" />;
+};
 
 export const Features = () => {
-    const { lang } = useLang()
-    return (
-        <section id="features" className="pt-8 sm:pt-10 pb-14 sm:pb-20 bg-gradient-to-br from-primary/5 to-secondary/10 ">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <FadeUp className="max-w-2xl text-white">
-                    <h2 className="text-2xl sm:text-4xl font-serif">{lang === 'en' ? 'Services' : lang === 'vi' ? 'Dịch vụ' : '服务'}</h2>
-                    <p className="mt-2 sm:mt-3 text-sm sm:text-base items-center border-b-2 border-secondary/50 pb-4">{lang === 'en' ? 'Comprehensive technology solutions for businesses.' : lang === 'vi' ? 'Giải pháp công nghệ toàn diện cho doanh nghiệp.' : '为企业提供全面的技术解决方案。'}</p>
-                </FadeUp>
-                <div className="mt-8 sm:mt-10 grid gap-4 sm:gap-6 sm:grid-cols-2">
-                    {features.map((f, index) => (
-                        <SlideIn key={f.title} direction={index % 2 === 0 ? 'left' : 'right'} className="feature-block rounded-2xl p-4 sm:p-6 shadow-lg ring-1 ring-slate-200/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1" style={{ backgroundColor: f.color }}>
-                            <div className="flex items-center gap-2 sm:gap-3">
-                                <div className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-lg bg-white/80 ring-1 ring-slate-200/50 shadow-sm">
-                                    <Icon name={f.icon} />
-                                </div>
-                                <h3 className="text-lg sm:text-xl font-semibold text-slate-900">{lang === 'en' ? (
-                                    f.icon === 'web' ? 'Website Development' :
-                                        f.icon === 'mobile' ? 'Mobile Apps' :
-                                            f.icon === 'ai' ? 'Artificial Intelligence (AI)' :
-                                                f.icon === 'blockchain' ? 'Blockchain' : f.title
-                                ) : lang === 'vi' ? f.title : (
-                                    f.icon === 'web' ? '网站开发' :
-                                        f.icon === 'mobile' ? '移动应用' :
-                                            f.icon === 'ai' ? '人工智能 (AI)' :
-                                                f.icon === 'blockchain' ? '区块链' : f.title
-                                )}</h3>
-                            </div>
-                            <p className="mt-2 sm:mt-3 text-slate-800 text-sm sm:text-base">{lang === 'en' ? (
-                                f.icon === 'web' ? 'Designing and building modern websites with optimized UX, SEO and performance.' :
-                                    f.icon === 'mobile' ? 'Developing cross-platform iOS/Android apps with intuitive UI/UX.' :
-                                        f.icon === 'ai' ? 'Consulting and implementing AI/ML, chatbots, OCR and data mining.' :
-                                            f.icon === 'blockchain' ? 'Building smart contracts, wallets, DApps and blockchain integrations.' : f.description
-                            ) : lang === 'vi' ? f.description : (
-                                f.icon === 'web' ? '设计和构建具有优化用户体验、SEO和性能的现代网站。' :
-                                    f.icon === 'mobile' ? '开发具有直观UI/UX的跨平台iOS/Android应用。' :
-                                        f.icon === 'ai' ? '咨询和实施AI/ML、聊天机器人、OCR和数据挖掘。' :
-                                            f.icon === 'blockchain' ? '构建智能合约、钱包、DApp和区块链集成。' : f.description
-                            )}</p>
-                        </SlideIn>
-                    ))}
+    const { lang } = useLang(); // Sử dụng hook ngôn ngữ
+
+    // Hàm để lấy tiêu đề dịch vụ dựa trên icon và ngôn ngữ
+    const getTitle = (icon: string, defaultTitle: string) => {
+        if (lang === 'en') {
+            switch (icon) {
+                case 'web': return 'Website Development';
+                case 'mobile': return 'Mobile Apps';
+                case 'ai': return 'Artificial Intelligence (AI)';
+                case 'blockchain': return 'Blockchain';
+                default: return defaultTitle;
+            }
+        } else if (lang === 'zh') {
+            switch (icon) {
+                case 'web': return '网站开发';
+                case 'mobile': return '移动应用';
+                case 'ai': return '人工智能 (AI)';
+                case 'blockchain': return '区块链';
+                default: return defaultTitle;
+            }
+        }
+        // Ngôn ngữ mặc định (ví dụ: tiếng Việt) hoặc nếu không có bản dịch cụ thể
+        switch (icon) {
+            case 'web': return 'Phát triển Website';
+            case 'mobile': return 'Ứng dụng Di động';
+            case 'ai': return 'Trí tuệ Nhân tạo (AI)';
+            case 'blockchain': return 'Blockchain';
+            default: return defaultTitle;
+        }
+    };
+
+    // Hàm để lấy mô tả dịch vụ dựa trên icon và ngôn ngữ
+    const getDescription = (icon: string, defaultDescription: string) => {
+        if (lang === 'en') {
+            switch (icon) {
+                case 'web': return 'Designing and building modern websites with optimized UX, SEO and performance.';
+                case 'mobile': return 'Developing cross-platform iOS/Android apps with intuitive UI/UX.';
+                case 'ai': return 'Consulting and implementing AI/ML, chatbots, OCR and data mining.';
+                case 'blockchain': return 'Building smart contracts, wallets, DApps and blockchain integrations.';
+                default: return defaultDescription;
+            }
+        } else if (lang === 'zh') {
+            switch (icon) {
+                case 'web': return '设计和构建具有优化用户体验、SEO和性能的现代网站。';
+                case 'mobile': return '开发具有直观UI/UX的跨平台iOS/Android应用。';
+                case 'ai': return '咨询和实施AI/ML、聊天机器人、OCR和数据挖掘。';
+                case 'blockchain': return '构建智能合约、钱包、DApp和区块链集成。';
+                default: return defaultDescription;
+            }
+        }
+        // Ngôn ngữ mặc định (ví dụ: tiếng Việt) hoặc nếu không có bản dịch cụ thể
+        switch (icon) {
+            case 'web': return 'Thiết kế và xây dựng các trang web hiện đại với UX, SEO và hiệu suất tối ưu.';
+            case 'mobile': return 'Phát triển ứng dụng iOS/Android đa nền tảng với UI/UX trực quan.';
+            case 'ai': return 'Tư vấn và triển khai AI/ML, chatbot, OCR và khai thác dữ liệu.';
+            case 'blockchain': return 'Xây dựng hợp đồng thông minh, ví, DApp và tích hợp blockchain.';
+            default: return defaultDescription;
+        }
+    };
+
+   return (
+    <section id="features" className="pt-8 sm:pt-10 pb-14 sm:pb-20 bg-gradient-to-br from-primary/5 to-secondary/10">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <FadeUp className="max-w-2xl text-white">
+          <h2 className="text-2xl sm:text-4xl font-serif">
+            {lang === 'en' ? 'Services' : lang === 'vi' ? 'Dịch vụ' : '服务'}
+          </h2>
+          <p className="mt-2 sm:mt-3 text-xm sm:text-base items-center border-b-2 border-secondary/50 pb-4">
+            {lang === 'en' 
+              ? 'Comprehensive technology solutions for businesses.' 
+              : lang === 'vi' 
+              ? 'Giải pháp công nghệ toàn diện cho doanh nghiệp.' 
+              : '为企业提供全面的技术解决方案。'}
+          </p>
+        </FadeUp>
+        <div className="mt-8 sm:mt-10 grid gap-4 sm:gap-6 sm:grid-cols-2">
+          {features.map((f, index) => (
+            <SlideIn 
+              key={f.title} 
+              direction={index % 2 === 0 ? 'left' : 'right'} 
+              className="feature-block rounded-2xl p-4 sm:p-6 shadow-lg ring-1 ring-slate-200/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1" 
+              style={{ background: f.color }}
+            >
+              <div className="flex items-center gap-2 sm:gap-3">
+                {/* Điều chỉnh kích thước của div bao quanh icon bằng các lớp Tailwind hợp lệ */}
+                <div className="flex 
+                  h-16 w-16   
+                  sm:h-20 sm:w-20
+                  lg:h-24 lg:w-24 
+                  items-center justify-center rounded-lg ring-1 ring-slate-200/50 shadow-sm"
+                >
+                  <Icon name={f.icon} />
                 </div>
-            </div>
-        </section>
-    )
-}
-
-
-
-
+                <h3 className="text-lg sm:text-xl font-semibold text-slate-900">
+                  {getTitle(f.icon, f.title)}
+                </h3>
+              </div>
+              <p className="mt-2 sm:mt-3 text-slate-800 text-xm sm:text-base">
+                {getDescription(f.icon, f.description)}
+              </p>
+            </SlideIn>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};

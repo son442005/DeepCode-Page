@@ -19,7 +19,7 @@ const App = () => {
         <div className="flex flex-col font-NotoSerif min-h-screen overflow-x-hidden w-full   ">
             <Header />
             <Hero />
-            <main className="flex flex-col w-ful gap-10 bg-gradient-to-br from-[#fc4a1a] via-sky-400 to-[#f7b733]">
+            <main className="flex flex-col w-ful gap-10 bg-white">
                 <About />
                 <Vision />
                 <Features />
