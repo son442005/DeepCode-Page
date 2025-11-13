@@ -37,7 +37,7 @@ export const FloatButton: React.FC = () => {
                 <button
                     onClick={handleWechat}
                     aria-label="Wechat"
-                    className="w-12 h-12 bg-[#FFFFFF] text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center outline-none focus:outline-none hover:scale-110"
+                    className="w-12 h-12 bg-[#FFFFFF] text-primary rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center outline-none focus:outline-none hover:scale-110"
                 >
                     <img
                         src={`${import.meta.env.BASE_URL}wechat-app-icon.png`}
@@ -50,11 +50,11 @@ export const FloatButton: React.FC = () => {
                 <button
                     onClick={handleTelegram}
                     aria-label="Telegram"
-                    className="w-12 h-12 bg-[#FFFFFF] text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center outline-none focus:outline-none hover:scale-110"
+                    className="w-12 h-12 bg-[#FFFFFF] text-primary rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center outline-none focus:outline-none hover:scale-110"
                 >
                     <svg
                         viewBox="0 0 24 24"
-                        fill="#0088cc"
+                        fill="currentColor"
                         className="w-7 h-7 drop-shadow-sm"
                     >
                         <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.193l-1.87 8.815c-.139.625-.518.775-1.048.481l-2.89-2.13-1.395 1.34c-.151.151-.282.282-.576.282l.206-2.92 5.342-4.826c.234-.207-.05-.323-.362-.116l-6.597 4.15-2.844-.894c-.618-.193-.635-.618.132-.928l11.132-4.287c.516-.193.966.119.797.904z" />
@@ -65,7 +65,7 @@ export const FloatButton: React.FC = () => {
                 <button
                     onClick={handleZalo}
                     aria-label="Zalo"
-                    className="w-12 h-12 bg-[#FFFFFF] text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center outline-none focus:outline-none hover:scale-110"
+                    className="w-12 h-12 bg-[#FFFFFF] text-secondary rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center outline-none focus:outline-none hover:scale-110"
                 >
                     <img
                         src={`${import.meta.env.BASE_URL}zalo-icon.svg`}
@@ -78,7 +78,7 @@ export const FloatButton: React.FC = () => {
                 <button
                     onClick={handleFacebook}
                     aria-label="Facebook"
-                    className="w-12 h-12 bg-[#FFFFFF] text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center outline-none focus:outline-none hover:scale-110"
+                    className="w-12 h-12 bg-[#FFFFFF] text-slate-900 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center outline-none focus:outline-none hover:scale-110"
                 >
                     <img
                         src={`${import.meta.env.BASE_URL}face-icon.png`}

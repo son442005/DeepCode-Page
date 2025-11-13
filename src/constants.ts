@@ -61,7 +61,7 @@ export const stats = [
 
 export const testimonials: Testimonial[] = [
     {
-        quote: 'Deepcode giúp chúng tôi tăng tốc ra mắt sản phẩm chỉ trong 8 tuần.',
+        quote: 'HLGera giúp chúng tôi tăng tốc ra mắt sản phẩm chỉ trong 8 tuần.',
         author: 'Nguyễn Văn A',
         role: 'CTO, Acme Corp',
     },
@@ -121,7 +121,7 @@ export const partnerLogos = [
 
 export const clientTestimonial = {
     quote:
-        "DeepCode đã giúp chúng tôi chuyển đổi toàn bộ vận hành lên nền tảng số, nâng cao hiệu suất, tiết kiệm chi phí và tạo lợi thế cạnh tranh vượt trội trong thị trường công nghệ.",
+        "HLGera đã giúp chúng tôi chuyển đổi toàn bộ vận hành lên nền tảng số, nâng cao hiệu suất, tiết kiệm chi phí và tạo lợi thế cạnh tranh vượt trội trong thị trường công nghệ.",
     author: "Ông Nguyễn Trương Giang",
     role: "Tổng Giám Đốc SkySoft",
 };
@@ -167,7 +167,7 @@ export const expertData = {
     items: [
         { id: 1, title: "Học Vấn", details: ["Thạc sĩ Khoa học Máy tính, Đại học Bách Khoa Hà Nội (2018)", "Kỹ sư Công nghệ Thông tin, ĐH Bách Khoa Hà Nội (2014)"] },
         { id: 2, title: "Kinh Nghiệm", details: ["15+ năm kinh nghiệm trong lĩnh vực phát triển phần mềm", "Nguyên Vice Academic Director tại TEKY HOLDING (2020-2022)", "Giảng viên Khoa CNTT, BTEC FPT Hà Nội (2022-2025)"] },
-        { id: 3, title: "Thành Tựu", details: ["Giám đốc trung tâm DeepCode, đào tạo về lập trình viên", "Mentor cho các cuộc thi khởi nghiệp, sáng tạo sinh viên", "Diễn giả tại nhiều hội thảo công nghệ quốc tế"] },
+        { id: 3, title: "Thành Tựu", details: ["Giám đốc trung tâm HLGera, đào tạo về lập trình viên", "Mentor cho các cuộc thi khởi nghiệp, sáng tạo sinh viên", "Diễn giả tại nhiều hội thảo công nghệ quốc tế"] },
     ],
 };
 

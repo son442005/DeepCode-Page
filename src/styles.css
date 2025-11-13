@@ -18,6 +18,15 @@
     color-scheme: dark;
 }
 
+@layer utilities {
+    .text-gradient-brand {
+        background-image: linear-gradient(90deg, theme('colors.primary') 0%, theme('colors.secondary') 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+}
+
 html,
 body,
 #root {

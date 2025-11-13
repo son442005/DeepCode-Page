@@ -15,10 +15,10 @@ export const CTA = () => {
     }
 
     return (
-        <section id="contact" className="bg-white rounded-none sm:-mx-4 sm:-mx-6 md:mx-0">
-            <div className="px-4 py-12 sm:px-6 sm:py-14 md:px-8 md:py-16 lg:px-10 lg:py-20">
-                <div className=" rounded-none sm:rounded-2xl bg-gradient-to-r from-[#FFFFFF] to-[#E9ECEF] p-6 sm:p-8 md:p-10 lg:p-12">
-                    <div className="grid gap-10 lg:grid-cols-2 items-start">
+        <section id="contact" className=" rounded-none sm:-mx-4  md:mx-0">
+            <div className="px-4 py-12 sm:px-6 sm:py-14 md:px-8 md:py-16 lg:px-20 lg:py-20">
+                <div className=" rounded-none sm:rounded-2xl bg-gradient-to-r from-[#FFFFFF] to-[#E9ECEF] p-6 sm:p-8 md:p-10 lg:p-20 opacity-85">
+                    <div className="grid gap-10 lg:grid-cols-2 items-start ">
                         <div className="max-w-2xl">
                             <h3 className="text-3xl sm:text-4xl font-extrabold text-slate-900">{lang === 'en' ? 'Ready to get started?' : lang === 'vi' ? 'Sẵn sàng bắt đầu?' : '准备开始了吗？'}</h3>
                             <p className="mt-4 text-slate-700 text-base sm:text-lg">{lang === 'en' ? 'Contact us to discuss the right software solution for your business.' : lang === 'vi' ? 'Liên hệ với chúng tôi để thảo luận giải pháp phần mềm phù hợp cho doanh nghiệp của bạn.' : '联系我们，讨论适合您业务的软件解决方案。'}</p>

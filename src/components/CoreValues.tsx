@@ -38,7 +38,7 @@ export const CoreValues = () => {
     return (
         <section id="values" className="">
             <div className="">
-                <div className="rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-50 to-blue-50 shadow-sm ">
+                <div className="rounded-3xl border border-slate-200 bg-gradient-to-br from-primary/5 to-secondary/10 shadow-sm ">
                     <h2 className="text-4xl font-bold text-slate-900 tracking-tight font-serif">{lang === 'en' ? 'Core Values' : lang === 'vi' ? 'Giá Trị Cốt Lõi' : '核心价值观'}</h2>
                     <div className="mt-10 grid lg:grid-cols-2 items-start">
                         {/* Left texts */}
@@ -68,7 +68,7 @@ export const CoreValues = () => {
                                 <div className="absolute left-[50%] top-[16%] h-28 w-28 rounded-full bg-accent flex items-center justify-center shadow-lg">
                                     <IconTarget />
                                 </div>
-                                <div className="absolute left-[32%] top-[48%] h-28 w-28 rounded-full bg-[#8B5CF6] flex items-center justify-center shadow-lg">
+                                <div className="absolute left-[32%] top-[48%] h-28 w-28 rounded-full bg-primary flex items-center justify-center shadow-lg">
                                     <IconHeart />
                                 </div>
                                 <div className="absolute left-[50%] top-[48%] h-28 w-28 rounded-full bg-secondary flex items-center justify-center shadow-lg">
@@ -76,7 +76,7 @@ export const CoreValues = () => {
                                 </div>
 
                                 {/* right circle overlapping center */}
-                                <div className="absolute left-[74%] top-1/2 h-28 w-28 -translate-y-1/2 rounded-full bg-[#EC4899] flex items-center justify-center shadow-lg">
+                                <div className="absolute left-[74%] top-1/2 h-28 w-28 -translate-y-1/2 rounded-full bg-secondary flex items-center justify-center shadow-lg">
                                     <IconShield />
                                 </div>
                             </div>

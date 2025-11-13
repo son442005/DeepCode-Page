@@ -3,6 +3,7 @@ import { staffStats } from "../constants";
 import { FadeUp } from './Anim'
 import { useLang } from '../lang'
 const StaffStats: React.FC = () => {
+
     const titleColor = 'text-slate-800';
     const { lang } = useLang()
 
@@ -42,14 +43,14 @@ const StaffStats: React.FC = () => {
     }
 
     return (
-        <section id="StaffStats" className={`p-6 sm:p-12 lg:p-20 bg-gradient-to-br from-slate-50 to-blue-50 text-slate-800  `}>
-            <div className="flex flex-col gap-8 sm:gap-12">
+        <section id="StaffStats" className={`p-6 sm:p-12 lg:p-20 bg-gradient-to-br from-primary/5 to-secondary/10 text-slate-800  `}>
+            <div className="flex flex-col gap-8 sm:gap-12 bg-gray-50 bg-opacity-50 p-8 rounded-xl">
                 <div className="">
-                    <h1 className={`text-3xl sm:text-4xl lg:text-5xl font-serif font-medium ${titleColor}`}>
+                    <h1 className={`text-3xl sm:text-4xl lg:text-5xl font-medium ${titleColor}`}>
                         {lang === 'en' ? 'Technical Team' : lang === 'vi' ? 'Nhân Sự Kỹ Thuật' : '技术团队'}
                     </h1>
                 </div>
-                <FadeUp className=" grid grid-cols-1 lg:grid-cols-4 ">
+                <FadeUp className=" grid grid-cols-1 lg:grid-cols-4  ">
 
                     {staffStats.map((stat, index) => (
                         <div key={index} className="flex flex-col border-b border-gray-300 pb-8 
@@ -70,7 +71,7 @@ const StaffStats: React.FC = () => {
                 </FadeUp>
                 <div className="mt-8 sm:mt-12 lg:mt-16 pt-6 sm:pt-8 border-t border-gray-300">
                     <p className="text-sm sm:text-base text-gray-600 max-w-4xl">
-                        {lang === 'en' ? 'DeepCode strongly invests in people development through internal training programs, opportunities to attend international courses, and a workplace that encourages creativity and innovation.' : lang === 'vi' ? 'DeepCode đầu tư mạnh mẽ vào việc phát triển nhân lực thông qua các chương trình đào tạo nội bộ, cơ hội tham gia các khóa học quốc tế và môi trường làm việc khuyến khích sáng tạo và đổi mới.' : 'DeepCode通过内部培训计划、参加国际课程的机会以及鼓励创造力和创新的工作场所，大力投资于人员发展。'}
+                        {lang === 'en' ? 'HLGera strongly invests in people development through internal training programs, opportunities to attend international courses, and a workplace that encourages creativity and innovation.' : lang === 'vi' ? 'HLG đầu tư mạnh mẽ vào việc phát triển nhân lực thông qua các chương trình đào tạo nội bộ, cơ hội tham gia các khóa học quốc tế và môi trường làm việc khuyến khích sáng tạo và đổi mới.' : 'HLG通过内部培训计划、参加国际课程的机会以及鼓励创造力和创新的工作场所，大力投资于人员发展。'}
                     </p>
                 </div>
             </div>

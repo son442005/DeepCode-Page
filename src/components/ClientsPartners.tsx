@@ -5,13 +5,13 @@ import { useLang } from '../lang'
 const ClientsPartners: React.FC = () => {
   const { lang } = useLang()
   return (
-    <section id="ClientsPartners" className="p-6 sm:p-12 lg:p-20 bg-[#000000] ">
-      <div className="flex flex-col gap-8 sm:gap-12 lg:gap-16">
-        <FadeUp className=" text-center">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-white">
+    <section id="ClientsPartners" className=" px-20 ">
+      <div className="flex flex-col gap-8 sm:gap-12 lg:gap-16 bg-white p-10 rounded-xl">
+        <FadeUp className=" text-center ">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-orange-500">
             {lang === 'en' ? 'Clients & Partners' : lang === 'vi' ? 'Khách Hàng & Đối Tác' : '客户与合作伙伴'}
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-white max-w-3xl mx-auto px-4">
+          <p className="mt-4 text-base sm:text-lg text-blue-400 max-w-3xl mx-auto px-4">
             {lang === 'en' ? 'We accompany pioneering businesses, working closely in every process to deliver strategic and effective digital solutions.' : lang === 'vi' ? 'Đồng hành cùng những doanh nghiệp tiên phong, sâu sát trong mọi quy trình để tạo ra giải pháp số mang tính chiến lược và hiệu quả.' : '我们陪伴先锋企业，在每个流程中密切合作，提供战略性和有效的数字解决方案。'}
           </p>
         </FadeUp>
@@ -30,7 +30,7 @@ const ClientsPartners: React.FC = () => {
           <span className="absolute -top-3 sm:-top-5 left-4 sm:left-8 text-4xl sm:text-5xl lg:text-6xl text-primary/30">"</span>
 
           <p className="text-lg sm:text-xl md:text-2xl text-gray-800 italic leading-relaxed">
-            {lang === 'en' ? 'DeepCode helped us digitize our operations end-to-end, improving efficiency, reducing costs, and gaining a strong competitive advantage.' : lang === 'vi' ? clientTestimonial.quote : 'DeepCode帮助我们端到端数字化运营，提高效率，降低成本，并获得了强大的竞争优势。'}
+            {lang === 'en' ? 'HLGera helped us digitize our operations end-to-end, improving efficiency, reducing costs, and gaining a strong competitive advantage.' : lang === 'vi' ? clientTestimonial.quote : 'HLGera帮助我们端到端数字化运营，提高效率，降低成本，并获得了强大的竞争优势。'}
           </p>
 
           <div className="mt-6 pt-4 border-t border-gray-200">

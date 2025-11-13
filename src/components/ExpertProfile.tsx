@@ -20,7 +20,7 @@ const ExpertProfileTailwind: React.FC<ExpertProfileTailwindProps> = () => {
                 .replace('15+ năm kinh nghiệm trong lĩnh vực phát triển phần mềm', '15+ years of experience in software development')
                 .replace('Nguyên Vice Academic Director tại TEKY HOLDING (2020-2022)', 'Former Vice Academic Director at TEKY HOLDING (2020-2022)')
                 .replace('Giảng viên Khoa CNTT, BTEC FPT Hà Nội (2022-2025)', 'Lecturer, IT Faculty, BTEC FPT Hanoi (2022-2025)')
-                .replace('Giám đốc trung tâm DeepCode, đào tạo về lập trình viên', 'Director of DeepCode Training Center for Software Engineering')
+                .replace('Giám đốc trung tâm HLGera, đào tạo về lập trình viên', 'Director of HLGera Training Center for Software Engineering')
                 .replace('Mentor cho các cuộc thi khởi nghiệp, sáng tạo sinh viên', 'Mentor for startup and student innovation competitions')
                 .replace('Diễn giả tại nhiều hội thảo công nghệ quốc tế', 'Speaker at various international tech conferences')
         }
@@ -31,7 +31,7 @@ const ExpertProfileTailwind: React.FC<ExpertProfileTailwindProps> = () => {
                 .replace('15+ năm kinh nghiệm trong lĩnh vực phát triển phần mềm', '在软件开发领域拥有15年以上经验')
                 .replace('Nguyên Vice Academic Director tại TEKY HOLDING (2020-2022)', '前TEKY HOLDING学术副总监（2020-2022年）')
                 .replace('Giảng viên Khoa CNTT, BTEC FPT Hà Nội (2022-2025)', 'BTEC FPT河内信息技术学院讲师（2022-2025年）')
-                .replace('Giám đốc trung tâm DeepCode, đào tạo về lập trình viên', 'DeepCode培训中心主任，软件工程培训')
+                .replace('Giám đốc trung tâm HLGera, đào tạo về lập trình viên', 'HLGera培训中心主任，软件工程培训')
                 .replace('Mentor cho các cuộc thi khởi nghiệp, sáng tạo sinh viên', '创业和大学生创新竞赛导师')
                 .replace('Diễn giả tại nhiều hội thảo công nghệ quốc tế', '多个国际技术会议演讲者')
         }
@@ -39,9 +39,9 @@ const ExpertProfileTailwind: React.FC<ExpertProfileTailwindProps> = () => {
     }
     return (
         <section id="ExpertProfile" aria-label="About Us">
-            <div className="p-16 font-sans bg-gradient-to-br from-slate-50 to-blue-50">
+            <div className="p-16 font-sans bg-gradient-to-br from-primary/5 to-secondary/10 ">
 
-                <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="w-full bg-white p-14  rounded-xl">
                     <header className="flex text-orange-500 items-center border-b-2 border-orange-300 pb-4">
                         <h1 className="text-4xl font-bold">{lang === 'en' ? 'Expert Team' : lang === 'vi' ? 'Đội Ngũ Chuyên Gia' : '专家团队'}</h1>
                     </header>
@@ -58,7 +58,7 @@ const ExpertProfileTailwind: React.FC<ExpertProfileTailwindProps> = () => {
 
                         <div className="lg:w-2/3 w-full pt-5 relative">
                             <h2 className="text-3xl font-bold text-orange-500 mt-0">{name}</h2>
-                            <p className="text-lg text-gray-600 mb-8">{role}</p>
+                            <p className="text-lg text-blue-600 mb-8">{role}</p>
 
                             <div className="flex flex-col gap-8 pl-10 relative">
 
@@ -78,7 +78,7 @@ const ExpertProfileTailwind: React.FC<ExpertProfileTailwindProps> = () => {
                                                     <span dangerouslySetInnerHTML={{
                                                         __html: translateDetail(detail)
                                                             .replace(
-                                                                /(MSc in Computer Science|BSc in Information Technology|15\+ years of experience|Former Vice Academic Director|Lecturer|Director of DeepCode Training Center|Mentor|Speaker|计算机科学硕士|信息技术工程师|15年以上经验|前TEKY HOLDING学术副总监|讲师|DeepCode培训中心主任|导师|演讲者)/g,
+                                                                /(MSc in Computer Science|BSc in Information Technology|15\+ years of experience|Former Vice Academic Director|Lecturer|Director of HLGera Training Center|Mentor|Speaker|计算机科学硕士|信息技术工程师|15年以上经验|前TEKY HOLDING学术副总监|讲师|HLGera培训中心主任|导师|演讲者)/g,
                                                                 '<strong>$1</strong>'
                                                             )
                                                     }} />

@@ -16,10 +16,10 @@ import ContactInfo from './components/ContactInfo'
 import { FloatButton } from './components/FloatButton'
 const App = () => {
     return (
-        <div className="flex flex-col font-NotoSerif min-h-screen text-slate-800 overflow-x-hidden w-full bg-white ">
+        <div className="flex flex-col font-NotoSerif min-h-screen overflow-x-hidden w-full   ">
             <Header />
             <Hero />
-            <main className="flex flex-col w-ful gap-10">
+            <main className="flex flex-col w-ful gap-10 bg-gradient-to-br from-[#fc4a1a] via-sky-400 to-[#f7b733]">
                 <About />
                 <Vision />
                 <Features />

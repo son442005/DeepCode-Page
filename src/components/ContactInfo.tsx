@@ -53,8 +53,8 @@ const ContactInfo: React.FC = () => {
     }
 
     return (
-        <section id="ContactInfo" className="p-6 sm:p-12 lg:p-20 bg-gradient-to-br from-slate-50 to-blue-50 ">
-            <div className="space-y-10 sm:space-y-12 lg:space-y-16">
+        <section id="ContactInfo" className="p-6 sm:p-12 lg:p-20  ">
+            <div className="space-y-10 sm:space-y-12 lg:space-y-16 bg-white p-20 rounded-xl">
                 {/* Header */}
                 <header className="">
                     <h1 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-medium text-slate-800 mb-3">
@@ -77,8 +77,8 @@ const ContactInfo: React.FC = () => {
                             <div className="relative shadow-3d-md hover:shadow-3d-lg transition-all duration-300 overflow-hidden rounded-2xl group">
                                 <img
                                     src={meetingImage}
-                                    alt={lang === 'en' ? 'DeepCode Meeting Room' : lang === 'vi' ? 'Phòng họp DeepCode' : 'DeepCode会议室'}
-                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                    alt={lang === 'en' ? 'HLGera Meeting Room' : lang === 'vi' ? 'Phòng họp HLGera' : 'HLGera会议室'}
+                                    className="w-full h-96 object-cover group-hover:scale-105 transition-transform duration-300"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
                             </div>

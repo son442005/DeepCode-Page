@@ -4,12 +4,12 @@ import { FadeUp } from './Anim'
 import { useLang } from '../lang'
 
 const QualityCommitment: React.FC = () => {
-    const bgColor = 'bg-orange-400 from-slate-50 to-blue-50';
+    const bgColor = 'bg-gradient-to-br from-[#fc4a1a] to-[#f7b733]';
     const titleColor = 'text-white';
 
     const { lang } = useLang()
     return (
-        <section id='Commit' className={`px-4 py-12 sm:px-6 sm:py-14 md:px-8 md:py-16 lg:p-20 overflow-x-hidden ${bgColor} `}>
+        <section id='Commit' className={`px-4 py-5 sm:px-6  md:px-8 md:py-16 lg:p-20 overflow-x-hidden`}>
             <div className="">
 
                 <header className="flex justify-between items-start mb-8 sm:mb-10 md:mb-12">
@@ -18,9 +18,9 @@ const QualityCommitment: React.FC = () => {
                     </h1>
                 </header>
 
-                <FadeUp className="flex flex-col lg:flex-row gap-12 lg:gap-20 ">
+                <FadeUp className="flex flex-col lg:flex-row gap-12 lg:gap-20 bg-white p-10 rounded-xl">
 
-                    <div className="lg:w-1/2 space-y-8 lg:border-r border-black g:pr-10  ">
+                    <div className="lg:w-1/2 space-y-8 lg:border-r border-white/30 g:pr-10  ">
                         {commitments.map((item, index) => (
                             <div key={index} className="flex items-start gap-4">
                                 <div className={`flex-shrink-0 w-8 h-8 rounded-full flex justify-center items-center text-white font-bold ${item.iconBg}`}>
@@ -41,7 +41,7 @@ const QualityCommitment: React.FC = () => {
                                                         item.title === 'Thời Gian Phản Hồi' ? '响应时间' : item.title
                                         )}
                                     </h2>
-                                    <p className="text-sm text-white break-words hyphens-auto">
+                                    <p className="text-sm text-black break-words hyphens-auto">
                                         {lang === 'en' ? (
                                             item.title === 'Bảo Mật Tuyệt Đối' ? 'Protecting customer data is our top priority with multi-layer security and rigorous controls.' :
                                                 item.title === 'Phát Triển Linh Hoạt' ? 'Agile methods ensure rapid adaptation to changes and customer needs.' :
@@ -60,11 +60,11 @@ const QualityCommitment: React.FC = () => {
                     </div>
 
                     <div className="lg:w-1/2 pt-4 lg:pt-0">
-                        <p className="text-base text-white mb-4 break-words hyphens-auto">
-                            {lang === 'en' ? 'DeepCode adopts international standards in software development:' : lang === 'vi' ? 'DeepCode áp dụng các tiêu chuẩn quốc tế trong quy trình phát triển phần mềm:' : 'DeepCode在软件开发中采用国际标准：'}
+                        <p className="text-base text-black mb-4 break-words hyphens-auto">
+                            {lang === 'en' ? 'HLGera adopts international standards in software development:' : lang === 'vi' ? 'HLGera áp dụng các tiêu chuẩn quốc tế trong quy trình phát triển phần mềm:' : 'HLGera在软件开发中采用国际标准：'}
                         </p>
 
-                        <ul className="list-disc pl-5 space-y-2 text-white break-words hyphens-auto">
+                        <ul className="list-disc pl-5 space-y-2 text-orange-400 break-words hyphens-auto">
                             {standards.map((standard, index) => (
                                 <li key={index} className="text-sm">
                                     {lang === 'en' && standard.startsWith('ISO 9001') && 'ISO 9001:2015 - Quality management system'}
