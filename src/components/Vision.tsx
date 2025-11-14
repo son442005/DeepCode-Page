@@ -4,7 +4,7 @@ import { useLang } from '../lang'
 const Vision = () => {
     const { lang } = useLang()
     return (
-        <section id="vision" className="w-[80%] mb-10 bg-white" aria-label="Our Vision">
+        <section id="vision" className="w-[80%] bg-white" aria-label="Our Vision">
             <div className="">
                 <FadeUp className="p-8 rounded-xl">
                     <h2 className="text-3xl sm:text-4xl font-bold text-black tracking-tight font-serif px-12">{lang === 'en' ? 'Vision' : lang === 'vi' ? 'Tầm Nhìn' : '愿景'}</h2>

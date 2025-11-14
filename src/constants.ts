@@ -68,7 +68,16 @@ export type Testimonial = {
     role: string
 }
 
+export type ProjectId =
+    | 'coursePlatform'
+    | 'rideHailing'
+    | 'elearningPlatform'
+    | 'enterpriseAiChatbot'
+    | 'smartMedicalRecords'
+    | 'binanceBot'
+
 export type Project = {
+    id: ProjectId
     title: string
     description: string
     image: string
@@ -139,33 +148,39 @@ export const nav = [
     { label: 'Khách hàng', href: '#ClientsPartners' },
 ]
 
-export const  projects: Project[] = [
+export const projects: Project[] = [
     {
+        id: 'coursePlatform',
         title: 'Nền tảng bán khoá học online',
         description: 'Cosale.vn kết nối chuyên gia, nhà sáng tạo nội dung giáo dục và cộng tác viên affiliate; hỗ trợ học viên trực tuyến. Công nghệ: Back‑end Laravel, Front‑end VueJS + Bootstrap, CSDL MySQL/Redis; cổng thanh toán VNPay, MoMo.',
         image: getAssetUrl('bakhoahoc.jpg'),
     },
     {
+        id: 'rideHailing',
         title: 'App gọi xe',
         description: 'Ứng dụng gọi xe đa nền tảng iOS/Android, điều phối thông minh kết nối tài xế với khách. Hỗ trợ nhiều phương thức thanh toán. Định hướng: Flutter front‑end, NodeJS back‑end, Google Maps API; xử lý >5.000 cuốc/ngày, phản hồi <2s.',
         image: getAssetUrl('Appdatxe.jpg'),
     },
     {
+        id: 'elearningPlatform',
         title: 'Nền tảng ELearning',
         description: 'Nền tảng học trực tuyến: Giáo viên tạo khóa học, tài liệu, bài học; giao bài và theo dõi tiến trình. Học sinh học bài, thảo luận, làm bài/kiểm tra và nhận phản hồi. Quản trị viên quản lý người dùng, phân quyền, theo dõi hoạt động và phân tích dữ liệu.',
         image: getAssetUrl('E.jpg'),
     },
     {
+        id: 'enterpriseAiChatbot',
         title: 'AI chatbot doanh nghiệp',
         description: 'Chatbot doanh nghiệp hỗ trợ 24/7; trả lời tự động theo tri thức chuyên ngành; học hỏi qua từng tương tác. Quy trình: thu thập dữ liệu, xây dựng kịch bản, huấn luyện chuyên sâu. Công nghệ: NLP Python, RASA; xử lý TV Việt; tích hợp Facebook Messenger, Zalo, Website; phân tích cảm xúc.',
         image: getAssetUrl('AIchart.jpg'),
     },
     {
+        id: 'smartMedicalRecords',
         title: 'Hồ sơ y tế thông minh',
         description: 'OCR MyHealth số hóa và quản lý hồ sơ y tế: đơn thuốc, kết quả xét nghiệm, bệnh án. AI + Computer Vision nhận dạng chữ bác sĩ với độ chính xác ~95%. Đã triển khai tại 15 bệnh viện và 50+ phòng khám. Công nghệ: TensorFlow, OpenCV, PyTorch.',
         image: getAssetUrl('hosoyte.jpg'),
     },
     {
+        id: 'binanceBot',
         title: 'BinanceBot Pro - Trading Bot AI',
         description: 'Tool trading tự động hàng đầu cho sàn Binance với AI trading bot tiên tiến. Tự động hóa giao dịch 24/7, quản lý rủi ro thông minh với stop-loss và take-profit tự động. Ứng dụng mobile iOS/Android để theo dõi portfolio và điều khiển bot mọi lúc mọi nơi. Hơn 100 chỉ báo kỹ thuật và pattern recognition tự động. Công nghệ: Node.js, React Native, Binance API, Machine Learning.',
         image: getAssetUrl('binance_trading_bot.png'),

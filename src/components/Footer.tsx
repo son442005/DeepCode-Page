@@ -28,17 +28,66 @@ export const Footer = () => {
                             {lang === 'en' ? 'Leading provider of custom software solutions and digital transformation for businesses.' : lang === 'vi' ? 'Nhà cung cấp hàng đầu các giải pháp phần mềm theo yêu cầu và chuyển đổi số cho doanh nghiệp.' : '为企业提供定制软件解决方案和数字化转型的领先供应商。'}
                         </p>
                         <div className="mt-6 flex items-center gap-3">
-                            <a href="#" aria-label="Facebook" className="h-9 w-9 rounded-md bg-white/10 hover:bg-white/20 transition flex items-center justify-center">
-                                <svg viewBox="0 0 24 24" className="h-5 w-5 fill-white/80"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.01 3.66 9.17 8.44 9.94v-7.03H7.9v-2.9h2.54V9.41c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.9h-2.34V22c4.78-.77 8.44-4.93 8.44-9.94Z" /></svg>
+                            {/* Wechat Button */}
+                            <a
+                                href="https://u.wechat.com/kEat7lQcv3GbnPcme-I_Zq8"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Wechat"
+                                className="w-12 h-12 bg-[#FFFFFF] text-primary rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center outline-none focus:outline-none hover:scale-110"
+                            >
+                                <img
+                                    src={`${import.meta.env.BASE_URL}wechat-app-icon.png`}
+                                    alt="Wechat"
+                                    className="w-8 h-8 object-contain drop-shadow-sm"
+                                />
                             </a>
-                            <a href="#" aria-label="Twitter" className="h-9 w-9 rounded-md bg-white/10 hover:bg-white/20 transition flex items-center justify-center">
-                                <svg viewBox="0 0 24 24" className="h-5 w-5 fill-white/80"><path d="M18.244 2H21.5l-7.4 8.46L23 22h-6.16l-4.81-6.27L6.5 22H3.243l7.92-9.05L1 2h6.34l4.38 5.74L18.243 2Zm-1.08 18.4h1.7L7.01 3.5H5.2l11.964 16.9Z" /></svg>
+
+                            {/* Telegram Button */}
+                            <a
+                                href="https://t.me/dingvandong1234"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Telegram"
+                                className="w-12 h-12 bg-[#FFFFFF] text-primary rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center outline-none focus:outline-none hover:scale-110"
+                            >
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                    className="w-7 h-7 drop-shadow-sm"
+                                >
+                                    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.193l-1.87 8.815c-.139.625-.518.775-1.048.481l-2.89-2.13-1.395 1.34c-.151.151-.282.282-.576.282l.206-2.92 5.342-4.826c.234-.207-.05-.323-.362-.116l-6.597 4.15-2.844-.894c-.618-.193-.635-.618.132-.928l11.132-4.287c.516-.193.966.119.797.904z" />
+                                </svg>
                             </a>
-                            <a href="#" aria-label="LinkedIn" className="h-9 w-9 rounded-md bg-white/10 hover:bg-white/20 transition flex items-center justify-center">
-                                <svg viewBox="0 0 24 24" className="h-5 w-5 fill-white/80"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v1.98h.06c.53-1 .18-2.18 2.72-2.18 2.9 0 3.42 1.9 3.42 4.36V23h-4v-7.2c0-1.72-.03-3.93-2.4-3.93-2.4 0-2.77 1.87-2.77 3.8V23h-4V8.5h3.17z" /></svg>
+
+                            {/* Zalo Button */}
+                            <a
+                                href="https://zalo.me/0353303605"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Zalo"
+                                className="w-12 h-12 bg-[#FFFFFF] text-secondary rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center outline-none focus:outline-none hover:scale-110"
+                            >
+                                <img
+                                    src={`${import.meta.env.BASE_URL}zalo-icon.svg`}
+                                    alt="Zalo"
+                                    className="w-8 h-8 object-contain drop-shadow-sm"
+                                />
                             </a>
-                            <a href="#" aria-label="Instagram" className="h-9 w-9 rounded-md bg-white/10 hover:bg-white/20 transition flex items-center justify-center">
-                                <svg viewBox="0 0 24 24" className="h-5 w-5 fill-white/80"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5A5.5 5.5 0 1 1 6.5 13 5.51 5.51 0 0 1 12 7.5Zm0 2A3.5 3.5 0 1 0 15.5 13 3.5 3.5 0 0 0 12 9.5Zm5.25-3.25a1.25 1.25 0 1 1-1.25 1.25 1.25 1.25 0 0 1 1.25-1.25Z" /></svg>
+
+                            {/* Facebook Button */}
+                            <a
+                                href="https://www.facebook.com/truongson.le.5473/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Facebook"
+                                className="w-12 h-12 bg-[#FFFFFF] text-slate-900 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center outline-none focus:outline-none hover:scale-110"
+                            >
+                                <img
+                                    src={`${import.meta.env.BASE_URL}face-icon.png`}
+                                    alt="Facebook"
+                                    className="w-8 h-8 object-contain drop-shadow-sm"
+                                />
                             </a>
                         </div>
                     </div>
