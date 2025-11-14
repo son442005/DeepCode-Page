@@ -139,31 +139,31 @@ export const nav = [
     { label: 'Khách hàng', href: '#ClientsPartners' },
 ]
 
-export const projects: Project[] = [
+export const  projects: Project[] = [
     {
         title: 'Nền tảng bán khoá học online',
         description: 'Cosale.vn kết nối chuyên gia, nhà sáng tạo nội dung giáo dục và cộng tác viên affiliate; hỗ trợ học viên trực tuyến. Công nghệ: Back‑end Laravel, Front‑end VueJS + Bootstrap, CSDL MySQL/Redis; cổng thanh toán VNPay, MoMo.',
-        image: getAssetUrl('course-selling.jpg'),
+        image: getAssetUrl('bakhoahoc.jpg'),
     },
     {
         title: 'App gọi xe',
         description: 'Ứng dụng gọi xe đa nền tảng iOS/Android, điều phối thông minh kết nối tài xế với khách. Hỗ trợ nhiều phương thức thanh toán. Định hướng: Flutter front‑end, NodeJS back‑end, Google Maps API; xử lý >5.000 cuốc/ngày, phản hồi <2s.',
-        image: getAssetUrl('ride-hailing.png'),
+        image: getAssetUrl('Appdatxe.jpg'),
     },
     {
         title: 'Nền tảng ELearning',
         description: 'Nền tảng học trực tuyến: Giáo viên tạo khóa học, tài liệu, bài học; giao bài và theo dõi tiến trình. Học sinh học bài, thảo luận, làm bài/kiểm tra và nhận phản hồi. Quản trị viên quản lý người dùng, phân quyền, theo dõi hoạt động và phân tích dữ liệu.',
-        image: getAssetUrl('e-learning_app.jpg'),
+        image: getAssetUrl('E.jpg'),
     },
     {
         title: 'AI chatbot doanh nghiệp',
         description: 'Chatbot doanh nghiệp hỗ trợ 24/7; trả lời tự động theo tri thức chuyên ngành; học hỏi qua từng tương tác. Quy trình: thu thập dữ liệu, xây dựng kịch bản, huấn luyện chuyên sâu. Công nghệ: NLP Python, RASA; xử lý TV Việt; tích hợp Facebook Messenger, Zalo, Website; phân tích cảm xúc.',
-        image: getAssetUrl('ai-chatbots.png'),
+        image: getAssetUrl('AIchart.jpg'),
     },
     {
         title: 'Hồ sơ y tế thông minh',
         description: 'OCR MyHealth số hóa và quản lý hồ sơ y tế: đơn thuốc, kết quả xét nghiệm, bệnh án. AI + Computer Vision nhận dạng chữ bác sĩ với độ chính xác ~95%. Đã triển khai tại 15 bệnh viện và 50+ phòng khám. Công nghệ: TensorFlow, OpenCV, PyTorch.',
-        image: getAssetUrl('all-health-records.webp'),
+        image: getAssetUrl('hosoyte.jpg'),
     },
     {
         title: 'BinanceBot Pro - Trading Bot AI',
@@ -300,232 +300,3 @@ export const contactItems: ContactItem[] = [
         icon: "🐦"
     },
 ]
-
-
-
-export const pdfProjects = [
-    {
-        category: "Web App & Ứng dụng doanh nghiệp",
-        projects: [
-            {
-                title: "Hệ thống Quản lý Khách hàng (CRM Platform)",
-                description: "Ứng dụng web quản lý khách hàng, hợp đồng, chăm sóc và lịch sử giao dịch.",
-                mainFeatures: "Tích hợp AI dự đoán hành vi khách hàng & chatbot chăm sóc tự động.",
-                highlights: "Tích hợp công cụ phân tích dữ liệu người dùng và gợi ý sản phẩm bằng AI. Real-time update & thông báo đẩy qua WebSocket.",
-                technologies: "ReactJS, Node.js, MongoDB, Express, Docker."
-            },
-            {
-                title: "Nền tảng Bán hàng & Thanh toán Online (Thương mại điện tử)",
-                description: "Website thương mại điện tử đa nhà cung cấp, hỗ trợ thanh toán điện tử, ví nội bộ.",
-                mainFeatures: "Tích hợp công cụ phân tích dữ liệu người dùng và gợi ý sản phẩm bằng AI.",
-                highlights: "Real-time update & thông báo đẩy qua WebSocket.",
-                technologies: "Next.js, NestJS, Stripe API, Redis cache."
-            },
-            {
-                title: "Ứng dụng Quản lý Dự án (Project Management WebApp)",
-                description: "Giúp doanh nghiệp quản lý công việc, tiến độ, nhân sự theo mô hình Kanban hoặc Agile.",
-                mainFeatures: "Tùy chỉnh dashboard theo vai trò người dùng.",
-                highlights: "Tùy chỉnh dashboard theo vai trò người dùng.",
-                technologies: "Vue.js, Firebase, TailwindCSS, GraphQL."
-            },
-            {
-                title: "Hệ thống Báo cáo dữ liệu động (Dynamic Dashboard System)",
-                description: "Nền tảng trực quan hóa dữ liệu doanh nghiệp theo thời gian thực.",
-                mainFeatures: "Tùy chỉnh dashboard theo vai trò người dùng.",
-                highlights: "Tùy chỉnh dashboard theo vai trò người dùng.",
-                technologies: "Python Flask, React, Chart.js, PostgreSQL."
-            },
-            {
-                title: "Hệ thống số hoá hồ sơ y tế OCR",
-                description: "N/A",
-                mainFeatures: "N/A",
-                highlights: "N/A",
-                technologies: "N/A"
-            }
-        ]
-    },
-    {
-        category: "Ứng dụng mobile",
-        projects: [
-            {
-                title: "Ứng dụng đặt vé xem phim (Movie Ticket Booking App)",
-                description: "Ứng dụng giúp người dùng tra cứu lịch chiếu, chọn rạp, đặt vé, và thanh toán trực tuyến.",
-                mainFeatures: "Giao diện module hóa: người dùng chọn tính năng mình quan tâm. Thanh toán nhiều dịch vụ trong 1 app. Tích hợp bản đồ (Google Maps API) hiển thị dịch vụ gần bạn. Hệ thống tích điểm, phần thưởng & khuyến mãi chéo. Quét mã QR online/offline.",
-                highlights: "N/A",
-                technologies: "N/A"
-            },
-            {
-                title: "Ứng dụng đặt vé show ca nhạc & sự kiện (Event & Concert Booking App)",
-                description: "Nền tảng đặt vé cho các buổi biểu diễn âm nhạc, hội nghị, hội chợ, lễ hội...",
-                mainFeatures: "Giao diện module hóa: người dùng chọn tính năng mình quan tâm. Thanh toán nhiều dịch vụ trong 1 app. Tích hợp bản đồ (Google Maps API) hiển thị dịch vụ gần bạn. Hệ thống tích điểm, phần thưởng & khuyến mãi chéo. Quét mã QR online/offline.",
-                highlights: "N/A",
-                technologies: "N/A"
-            },
-            {
-                title: "Ứng dụng tiện ích đô thị (SmartLife / City Service App)",
-                description: "Ứng dụng tổng hợp nhiều dịch vụ tiện ích: thanh toán hóa đơn, đặt taxi, gọi sửa chữa, mua vé xem phim, tra cứu lịch điện nước, v.v.",
-                mainFeatures: "Giao diện module hóa: người dùng chọn tính năng mình quan tâm. Thanh toán nhiều dịch vụ trong 1 app. Tích hợp bản đồ (Google Maps API) hiển thị dịch vụ gần bạn. Hệ thống tích điểm, phần thưởng & khuyến mãi chéo. Quét mã QR online/offline.",
-                highlights: "N/A",
-                technologies: "N/A"
-            },
-            {
-                title: "Ứng dụng quản lý vé & check-in QR (Ticket Management & QR Scanner)",
-                description: "Ứng dụng cho nhân viên sự kiện, dùng để quét và xác thực vé nhanh chóng.",
-                mainFeatures: "Phát hiện vé giả, vé đã sử dụng. Kết nối real-time với server. Dashboard cho ban tổ chức xem lượt check-in theo thời gian thực. Giao hàng nội khu (trong rạp hoặc khu sự kiện). Tích hợp thanh toán nhanh & theo dõi đơn hàng.",
-                highlights: "Token loyalty points để quy đổi ưu đãi, tạo nền tảng cho hệ sinh thái dịch vụ.",
-                technologies: "Kotlin / Flutter, Firebase Authentication, Blockchain Layer 2 (nếu muốn token hóa điểm thưởng)."
-            },
-            {
-                title: "Ứng dụng đặt đồ ăn, cà phê, dịch vụ tại sự kiện (Event Food & Service Ordering)",
-                description: "Cho phép người dùng tại rạp phim hoặc show âm nhạc đặt đồ ăn, đồ uống ngay trong app.",
-                mainFeatures: "Quản lý menu động cho từng sự kiện. Nạp tiền, rút tiền, lưu phương thức thanh toán. Lưu vé điện tử & giao dịch. Tích điểm, xếp hạng thành viên. Giao diện module plug-in (microservices). Tích hợp API từ các đối tác (Traveloka, CGV, TicketBox...).",
-                highlights: "Tự động gợi ý combo phù hợp theo sự kiện và lịch chiếu.",
-                technologies: "N/A"
-            },
-            {
-                title: "Ứng dụng ví điện tử mini (E-Wallet & Loyalty App)",
-                description: "Ứng dụng ví điện tử mini (E-Wallet & Loyalty App).",
-                mainFeatures: "Quản lý menu động cho từng sự kiện. Nạp tiền, rút tiền, lưu phương thức thanh toán. Lưu vé điện tử & giao dịch. Tích điểm, xếp hạng thành viên. Giao diện module plug-in (microservices). Tích hợp API từ các đối tác (Traveloka, CGV, TicketBox...).",
-                highlights: "N/A",
-                technologies: "N/A"
-            },
-            {
-                title: "Ứng dụng đặt vé toàn năng (All-in-One Booking App)",
-                description: "App tích hợp đặt vé phim, show, du lịch, taxi, khách sạn – mô hình 'Super App mini'.",
-                mainFeatures: "Chatbot hỗ trợ khách hàng 24/7.",
-                highlights: "N/A",
-                technologies: "N/A"
-            }
-        ]
-    },
-    {
-        category: "Blockchain & Web3",
-        projects: [
-            {
-                title: "Nền tảng NFT Marketplace",
-                description: "N/A",
-                mainFeatures: "N/A",
-                highlights: "N/A",
-                technologies: "N/A"
-            },
-            {
-                title: "Hệ thống Quản lý Chuỗi cung ứng (Supply Chain on Blockchain)",
-                description: "N/A",
-                mainFeatures: "N/A",
-                highlights: "N/A",
-                technologies: "N/A"
-            },
-            {
-                title: "Smart Contract Audit Tool",
-                description: "N/A",
-                mainFeatures: "N/A",
-                highlights: "N/A",
-                technologies: "N/A"
-            },
-            {
-                title: "Crypto Portfolio Tracker",
-                description: "N/A",
-                mainFeatures: "N/A",
-                highlights: "N/A",
-                technologies: "N/A"
-            },
-            {
-                title: "Hệ thống định giá BĐS sử dụng công nghệ AI",
-                description: "N/A",
-                mainFeatures: "N/A",
-                highlights: "N/A",
-                technologies: "N/A"
-            },
-            {
-                title: "Hệ thống sử dụng blockchain ghi nhận và thanh toán trên nền tảng cloud server.",
-                description: "N/A",
-                mainFeatures: "N/A",
-                highlights: "N/A",
-                technologies: "N/A"
-            },
-            {
-                title: "Cổng thanh toán USDT",
-                description: "N/A",
-                mainFeatures: "N/A",
-                highlights: "N/A",
-                technologies: "N/A"
-            }
-        ]
-    },
-    {
-        category: "Bảo mật & An ninh mạng",
-        projects: [
-            {
-                title: "Hệ thống phát hiện xâm nhập (AI Intrusion Detection System)",
-                description: "N/A",
-                mainFeatures: "N/A",
-                highlights: "N/A",
-                technologies: "N/A"
-            },
-            {
-                title: "Ứng dụng Kiểm thử xâm nhập tự động (Auto Pentest Platform)",
-                description: "N/A",
-                mainFeatures: "N/A",
-                highlights: "N/A",
-                technologies: "N/A"
-            },
-            {
-                title: "Passwordless Authentication System",
-                description: "N/A",
-                mainFeatures: "N/A",
-                highlights: "N/A",
-                technologies: "N/A"
-            }
-        ]
-    },
-    {
-        category: "Trí tuệ nhân tạo (AI & Machine Learning)",
-        projects: [
-            {
-                title: "Hệ thống định giá BĐS sử dụng công nghệ AI",
-                description: "Dự báo doanh số và phân loại khách hàng dựa trên lịch sử mua hàng.",
-                mainFeatures: "N/A",
-                highlights: "N/A",
-                technologies: "Scikit-learn, XGBoost, PowerBI."
-            },
-            {
-                title: "Hệ thóng nhận DeepFake thay đổi khuôn mặt",
-                description: "N/A",
-                mainFeatures: "N/A",
-                highlights: "N/A",
-                technologies: "N/A"
-            },
-            {
-                title: "Hệ thống chấm công tự động sử dụng xác thực khuôn mặt và định vị ngừoi dùng",
-                description: "N/A",
-                mainFeatures: "N/A",
-                highlights: "N/A",
-                technologies: "N/A"
-            },
-            {
-                title: "Chatbot hỗ trợ khách hàng AI (AI Customer Support Chatbot)",
-                description: "Chatbot tự động trả lời câu hỏi và xử lý yêu cầu khách hàng.",
-                mainFeatures: "N/A",
-                highlights: "N/A",
-                technologies: "Python, NLP (spaCy, Transformers), FastAPI."
-            },
-            {
-                title: "AI Dự báo doanh thu & hành vi khách hàng",
-                description: "Dự báo doanh số và phân loại khách hàng dựa trên lịch sử mua hàng.",
-                mainFeatures: "N/A",
-                highlights: "N/A",
-                technologies: "Scikit-learn, XGBoost, PowerBI."
-            },
-            {
-                title: "AI Nhận diện khuôn mặt & hành vi",
-                description: "Ứng dụng nhận diện nhân viên, khách hàng, hoặc phát hiện hành vi bất thường.",
-                mainFeatures: "N/A",
-                highlights: "N/A",
-                technologies: "OpenCV, TensorFlow, YOLOv8, Flask."
-            }
-        ]
-    }
-];
-
-
-
