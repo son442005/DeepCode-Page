@@ -1,272 +1,429 @@
 import React from 'react';
-import { projects } from '../constants';
-import { FadeUp } from './Anim'
-import { useLang } from '../lang'
+import { FadeUp } from './Anim'; // Assuming this is your animation component
+import { useLang } from '../lang'; // Assuming this is your language hook
 
-// Static list (no slider)
+// Replaced your 'projects' constant with the data extracted from the PDF
+// You might want to move this to a separate file like 'pdfProjectsData.js'
+export const pdfProjects = [
+    {
+        projects: [
+            {
+                title: "Hệ thống Quản lý Khách hàng (CRM Platform)",
+                description: "Ứng dụng web quản lý khách hàng, hợp đồng, chăm sóc và lịch sử giao dịch.",
+                mainFeatures: "Tích hợp AI dự đoán hành vi khách hàng & chatbot chăm sóc tự động.",
+                highlights: "Tích hợp công cụ phân tích dữ liệu người dùng và gợi ý sản phẩm bằng AI. Real-time update & thông báo đẩy qua WebSocket.",
+                technologies: "ReactJS, Node.js, MongoDB, Express, Docker.",
+                image: "https://via.placeholder.com/1200x675.png?text=CRM+Platform" // Placeholder image
+            },
+            {
+                title: "Nền tảng Bán hàng & Thanh toán Online (Thương mại điện tử)",
+                description: "Website thương mại điện tử đa nhà cung cấp, hỗ trợ thanh toán điện tử, ví nội bộ.",
+                mainFeatures: "Tích hợp công cụ phân tích dữ liệu người dùng và gợi ý sản phẩm bằng AI.",
+                highlights: "Real-time update & thông báo đẩy qua WebSocket.",
+                technologies: "Next.js, NestJS, Stripe API, Redis cache.",
+                image: "https://via.placeholder.com/1200x675.png?text=E-commerce+Platform" // Placeholder image
+            },
+            {
+                title: "Ứng dụng Quản lý Dự án (Project Management WebApp)",
+                description: "Giúp doanh nghiệp quản lý công việc, tiến độ, nhân sự theo mô hình Kanban hoặc Agile.",
+                mainFeatures: "Tùy chỉnh dashboard theo vai trò người dùng.",
+                highlights: "Tùy chỉnh dashboard theo vai trò người dùng.",
+                technologies: "Vue.js, Firebase, TailwindCSS, GraphQL.",
+                image: "https://via.placeholder.com/1200x675.png?text=Project+Management" // Placeholder image
+            },
+            {
+                title: "Hệ thống Báo cáo dữ liệu động (Dynamic Dashboard System)",
+                description: "Nền tảng trực quan hóa dữ liệu doanh nghiệp theo thời gian thực.",
+                mainFeatures: "Tùy chỉnh dashboard theo vai trò người dùng.",
+                highlights: "Tùy chỉnh dashboard theo vai trò người dùng.",
+                technologies: "Python Flask, React, Chart.js, PostgreSQL.",
+                image: "https://via.placeholder.com/1200x675.png?text=Dynamic+Dashboard" // Placeholder image
+            },
+            {
+                title: "Hệ thống số hoá hồ sơ y tế OCR",
+                description: "Số hóa hồ sơ y tế (chưa có mô tả chi tiết trong PDF)",
+                mainFeatures: "N/A",
+                highlights: "N/A",
+                technologies: "N/A",
+                image: "https://via.placeholder.com/1200x675.png?text=Medical+OCR" // Placeholder image
+            }
+        ]
+    },
+    {
+        category: "Ứng dụng mobile",
+        projects: [
+            {
+                title: "Ứng dụng đặt vé xem phim (Movie Ticket Booking App)",
+                description: "Ứng dụng giúp người dùng tra cứu lịch chiếu, chọn rạp, đặt vé, và thanh toán trực tuyến.",
+                mainFeatures: "Giao diện module hóa, thanh toán nhiều dịch vụ, tích hợp bản đồ, hệ thống tích điểm, quét mã QR.",
+                highlights: "N/A",
+                technologies: "N/A",
+                image: "https://via.placeholder.com/1200x675.png?text=Movie+Booking+App" // Placeholder image
+            },
+            {
+                title: "Ứng dụng đặt vé show ca nhạc & sự kiện (Event & Concert Booking App)",
+                description: "Nền tảng đặt vé cho các buổi biểu diễn âm nhạc, hội nghị, hội chợ, lễ hội...",
+                mainFeatures: "Giao diện module hóa, thanh toán nhiều dịch vụ, tích hợp bản đồ, hệ thống tích điểm, quét mã QR.",
+                highlights: "N/A",
+                technologies: "N/A",
+                image: "https://via.placeholder.com/1200x675.png?text=Event+Booking+App" // Placeholder image
+            },
+            {
+                title: "Ứng dụng tiện ích đô thị (SmartLife / City Service App)",
+                description: "Ứng dụng tổng hợp nhiều dịch vụ tiện ích: thanh toán hóa đơn, đặt taxi, gọi sửa chữa, mua vé xem phim, tra cứu lịch điện nước, v.v.",
+                mainFeatures: "Giao diện module hóa, thanh toán nhiều dịch vụ, tích hợp bản đồ, hệ thống tích điểm, quét mã QR.",
+                highlights: "N/A",
+                technologies: "N/A",
+                image: "https://via.placeholder.com/1200x675.png?text=City+Service+App" // Placeholder image
+            },
+            {
+                title: "Ứng dụng quản lý vé & check-in QR (Ticket Management & QR Scanner)",
+                description: "Ứng dụng cho nhân viên sự kiện, dùng để quét và xác thực vé nhanh chóng.",
+                mainFeatures: "Phát hiện vé giả, kết nối real-time, dashboard theo dõi check-in, giao hàng nội khu.",
+                highlights: "Token loyalty points để quy đổi ưu đãi, tạo nền tảng cho hệ sinh thái dịch vụ.",
+                technologies: "Kotlin / Flutter, Firebase Authentication, Blockchain Layer 2 (nếu muốn token hóa điểm thưởng).",
+                image: "https://via.placeholder.com/1200x675.png?text=Ticket+Scanner+App" // Placeholder image
+            },
+            {
+                title: "Ứng dụng đặt đồ ăn, cà phê, dịch vụ tại sự kiện (Event Food & Service Ordering)",
+                description: "Cho phép người dùng tại rạp phim hoặc show âm nhạc đặt đồ ăn, đồ uống ngay trong app.",
+                mainFeatures: "Quản lý menu động, nạp/rút tiền, lưu phương thức thanh toán, lưu vé điện tử & giao dịch, tích điểm, xếp hạng thành viên.",
+                highlights: "Tự động gợi ý combo phù hợp theo sự kiện và lịch chiếu.",
+                technologies: "N/A",
+                image: "https://via.placeholder.com/1200x675.png?text=Event+Food+Ordering" // Placeholder image
+            },
+            {
+                title: "Ứng dụng ví điện tử mini (E-Wallet & Loyalty App)",
+                description: "Ứng dụng ví điện tử mini (E-Wallet & Loyalty App).",
+                mainFeatures: "Quản lý menu động, nạp/rút tiền, lưu phương thức thanh toán, lưu vé điện tử & giao dịch, tích điểm, xếp hạng thành viên.",
+                highlights: "N/A",
+                technologies: "N/A",
+                image: "https://via.placeholder.com/1200x675.png?text=E-Wallet+App" // Placeholder image
+            },
+            {
+                title: "Ứng dụng đặt vé toàn năng (All-in-One Booking App)",
+                description: "App tích hợp đặt vé phim, show, du lịch, taxi, khách sạn – mô hình 'Super App mini'.",
+                mainFeatures: "Chatbot hỗ trợ khách hàng 24/7.",
+                highlights: "N/A",
+                technologies: "N/A",
+                image: "https://via.placeholder.com/1200x675.png?text=Super+App" // Placeholder image
+            }
+        ]
+    },
+    {
+        category: "Blockchain & Web3",
+        projects: [
+            {
+                title: "Nền tảng NFT Marketplace",
+                description: "N/A",
+                mainFeatures: "N/A",
+                highlights: "N/A",
+                technologies: "N/A",
+                image: "https://via.placeholder.com/1200x675.png?text=NFT+Marketplace" // Placeholder image
+            },
+            {
+                title: "Hệ thống Quản lý Chuỗi cung ứng (Supply Chain on Blockchain)",
+                description: "N/A",
+                mainFeatures: "N/A",
+                highlights: "N/A",
+                technologies: "N/A",
+                image: "https://via.placeholder.com/1200x675.png?text=Blockchain+Supply+Chain" // Placeholder image
+            },
+            {
+                title: "Smart Contract Audit Tool",
+                description: "N/A",
+                mainFeatures: "N/A",
+                highlights: "N/A",
+                technologies: "N/A",
+                image: "https://via.placeholder.com/1200x675.png?text=Smart+Contract+Audit" // Placeholder image
+            },
+            {
+                title: "Crypto Portfolio Tracker",
+                description: "N/A",
+                mainFeatures: "N/A",
+                highlights: "N/A",
+                technologies: "N/A",
+                image: "https://via.placeholder.com/1200x675.png?text=Crypto+Portfolio+Tracker" // Placeholder image
+            },
+            {
+                title: "Hệ thống định giá BĐS sử dụng công nghệ AI",
+                description: "N/A",
+                mainFeatures: "N/A",
+                highlights: "N/A",
+                technologies: "N/A",
+                image: "https://via.placeholder.com/1200x675.png?text=AI+Real+Estate+Valuation" // Placeholder image
+            },
+            {
+                title: "Hệ thống sử dụng blockchain ghi nhận và thanh toán trên nền tảng cloud server.",
+                description: "N/A",
+                mainFeatures: "N/A",
+                highlights: "N/A",
+                technologies: "N/A",
+                image: "https://via.placeholder.com/1200x675.png?text=Blockchain+Cloud+Payments" // Placeholder image
+            },
+            {
+                title: "Cổng thanh toán USDT",
+                description: "N/A",
+                mainFeatures: "N/A",
+                highlights: "N/A",
+                technologies: "N/A",
+                image: "https://via.placeholder.com/1200x675.png?text=USDT+Payment+Gateway" // Placeholder image
+            }
+        ]
+    },
+    {
+        category: "Bảo mật & An ninh mạng",
+        projects: [
+            {
+                title: "Hệ thống phát hiện xâm nhập (AI Intrusion Detection System)",
+                description: "N/A",
+                mainFeatures: "N/A",
+                highlights: "N/A",
+                technologies: "N/A",
+                image: "https://via.placeholder.com/1200x675.png?text=AI+Intrusion+Detection" // Placeholder image
+            },
+            {
+                title: "Ứng dụng Kiểm thử xâm nhập tự động (Auto Pentest Platform)",
+                description: "N/A",
+                mainFeatures: "N/A",
+                highlights: "N/A",
+                technologies: "N/A",
+                image: "https://via.placeholder.com/1200x675.png?text=Auto+Pentest+Platform" // Placeholder image
+            },
+            {
+                title: "Passwordless Authentication System",
+                description: "N/A",
+                mainFeatures: "N/A",
+                highlights: "N/A",
+                technologies: "N/A",
+                image: "https://via.placeholder.com/1200x675.png?text=Passwordless+Auth" // Placeholder image
+            }
+        ]
+    },
+    {
+        category: "Trí tuệ nhân tạo (AI & Machine Learning)",
+        projects: [
+            {
+                title: "Hệ thống định giá BĐS sử dụng công nghệ AI",
+                description: "Dự báo doanh số và phân loại khách hàng dựa trên lịch sử mua hàng.",
+                mainFeatures: "N/A",
+                highlights: "N/A",
+                technologies: "Scikit-learn, XGBoost, PowerBI.",
+                image: "https://via.placeholder.com/1200x675.png?text=AI+Real+Estate+Valuation" // Placeholder image
+            },
+            {
+                title: "Hệ thóng nhận DeepFake thay đổi khuôn mặt",
+                description: "N/A",
+                mainFeatures: "N/A",
+                highlights: "N/A",
+                technologies: "N/A",
+                image: "https://via.placeholder.com/1200x675.png?text=DeepFake+Detection" // Placeholder image
+            },
+            {
+                title: "Hệ thống chấm công tự động sử dụng xác thực khuôn mặt và định vị ngừoi dùng",
+                description: "N/A",
+                mainFeatures: "N/A",
+                highlights: "N/A",
+                technologies: "N/A",
+                image: "https://via.placeholder.com/1200x675.png?text=AI+Timekeeping" // Placeholder image
+            },
+            {
+                title: "Chatbot hỗ trợ khách hàng AI (AI Customer Support Chatbot)",
+                description: "Chatbot tự động trả lời câu hỏi và xử lý yêu cầu khách hàng.",
+                mainFeatures: "N/A",
+                highlights: "N/A",
+                technologies: "Python, NLP (spaCy, Transformers), FastAPI.",
+                image: "https://via.placeholder.com/1200x675.png?text=AI+Chatbot" // Placeholder image
+            },
+            {
+                title: "AI Dự báo doanh thu & hành vi khách hàng",
+                description: "Dự báo doanh số và phân loại khách hàng dựa trên lịch sử mua hàng.",
+                mainFeatures: "N/A",
+                highlights: "N/A",
+                technologies: "Scikit-learn, XGBoost, PowerBI.",
+                image: "https://via.placeholder.com/1200x675.png?text=AI+Sales+Forecasting" // Placeholder image
+            },
+            {
+                title: "AI Nhận diện khuôn mặt & hành vi",
+                description: "Ứng dụng nhận diện nhân viên, khách hàng, hoặc phát hiện hành vi bất thường.",
+                mainFeatures: "N/A",
+                highlights: "N/A",
+                technologies: "OpenCV, TensorFlow, YOLOv8, Flask.",
+                image: "https://via.placeholder.com/1200x675.png?text=AI+Face+Recognition" // Placeholder image
+            }
+        ]
+    }
+];
+
+
+// Interface for a single project from the PDF data
+interface PdfProject {
+    title: string;
+    description: string;
+    mainFeatures?: string;
+    highlights?: string;
+    technologies?: string;
+    image?: string; // Add image property
+}
+
+// Interface for a category of projects
+interface ProjectCategory {
+    category: string;
+    projects: PdfProject[];
+}
 
 interface ProjectCardProps {
-    p: { title: string, description: string, image: string };
+    p: PdfProject;
     reverse?: boolean;
 }
 
-const translateProject = (p: { title: string, description: string }, lang: 'vi' | 'en' | 'zh') => {
-    if (lang === 'vi') return p
-    if (lang === 'en') {
-        const map: Record<string, { t: string; d: string }> = {
-            'Nền tảng bán khoá học online': {
-                t: 'Online course sales platform',
-                d: 'Cosale.vn connects creators, experts and affiliate marketers; supports online learners. Stack: Laravel backend, VueJS + Bootstrap frontend, MySQL/Redis; payments via VNPay and MoMo.'
-            },
-            'App gọi xe': {
-                t: 'Ride‑hailing app',
-                d: 'Cross‑platform iOS/Android with intelligent dispatch connecting drivers and riders. Roadmap: Flutter frontend, NodeJS backend, Google Maps API; >5,000 rides/day, <2s response.'
-            },
-            'Nền tảng ELearning': {
-                t: 'E‑Learning platform',
-                d: 'Teachers create courses, materials and assignments; track learners. Students access lessons, discussions, quizzes and feedback. Admin manages users, roles, activity and analytics.'
-            },
-            'AI chatbot doanh nghiệp': {
-                t: 'Enterprise AI chatbot',
-                d: '24/7 support; domain‑knowledge answers and continuous learning. Pipeline: data collection, scenario design, deep training. Tech: NLP (Python, RASA), Vietnamese processing; integrates Messenger, Zalo, Website; sentiment analysis.'
-            },
-            'Hồ sơ ý tế thông minh': {
-                t: 'Smart medical record (OCR MyHealth)',
-                d: 'Digitizes medical records: prescriptions, lab results and charts. AI + Computer Vision reaches ~95% accuracy for handwriting. Deployed at 15 hospitals and 50+ clinics. Tech: TensorFlow, OpenCV, PyTorch.'
-            },
-            'BinanceBot Pro - Trading Bot AI': {
-                t: 'BinanceBot Pro - AI Trading Bot',
-                d: 'Leading automated trading tool for Binance exchange with advanced AI trading bot. Automates trading 24/7, smart risk management with automatic stop-loss and take-profit. Mobile app iOS/Android to track portfolio and control bot anytime, anywhere. Over 100 technical indicators and automatic pattern recognition. Tech: Node.js, React Native, Binance API, Machine Learning.'
-            },
-        }
-        if (map[p.title]) return { title: map[p.title].t, description: map[p.title].d }
-    }
-    if (lang === 'zh') {
-        const map: Record<string, { t: string; d: string }> = {
-            'Nền tảng bán khoá học online': {
-                t: '在线课程销售平台',
-                d: 'Cosale.vn 连接教育内容创作者、专家与联盟推广者，并支持在线学员。技术栈：后端 Laravel，前端 VueJS + Bootstrap，数据库 MySQL/Redis；支付集成 VNPay、MoMo。'
-            },
-            'App gọi xe': {
-                t: '叫车应用',
-                d: '跨平台 iOS/Android，智能调度连接司机与乘客。规划：前端 Flutter，后端 NodeJS，集成 Google Maps API；日均 5,000+ 单，响应 <2 秒。'
-            },
-            'Nền tảng ELearning': {
-                t: '电子学习平台',
-                d: '教师创建课程与资料，布置作业并跟踪进度；学生学习课程、参与讨论、测验并获得反馈；管理员管理用户与权限，监控活动并做学习数据分析。'
-            },
-            'AI chatbot doanh nghiệp': {
-                t: '企业 AI 聊天机器人',
-                d: '7×24 支持；基于行业知识自动答复并持续学习。流程：数据收集、话术场景构建、深度训练。技术：NLP（Python、RASA）、越南语处理；集成 Messenger、Zalo、网站；情感分析。'
-            },
-            'Hồ sơ ý tế thông minh': {
-                t: '智能医疗记录（OCR MyHealth）',
-                d: '数字化处方、检验结果与病历等医疗文档。AI + 计算机视觉对医生手写识别准确率约 95%。已在 15 家医院与 50+ 家诊所部署。技术：TensorFlow、OpenCV、PyTorch。'
-            },
-            'BinanceBot Pro - Trading Bot AI': {
-                t: 'BinanceBot Pro - AI 交易机器人',
-                d: '币安交易所领先的自动化交易工具，配备先进的 AI 交易机器人。7×24 自动交易，智能风险管理，自动止损和止盈。iOS/Android 移动应用，随时随地跟踪投资组合并控制机器人。超过 100 个技术指标和自动模式识别。技术：Node.js、React Native、Binance API、机器学习。'
-            },
-        }
-        if (map[p.title]) return { title: map[p.title].t, description: map[p.title].d }
-    }
-    return p
-}
+const translateProject = (p: PdfProject, lang: 'vi' | 'en' | 'zh') => {
+    // This function needs to be significantly expanded to translate all titles, descriptions, etc.
+    // For now, it will return the original Vietnamese text if no English/Chinese equivalent is explicitly defined.
+    // You'll need to manually add translations for each project field here.
 
-const getProjectBullets = (titleVi: string, lang: 'vi' | 'en' | 'zh') => {
-    // Build bullet points per project and language
-    const vi: Record<string, string[]> = {
-        'Nền tảng bán khoá học online': [
-            'Kết nối chuyên gia/creator với cộng tác viên affiliate',
-            'Hỗ trợ học viên học trực tuyến hiệu quả',
-            'Tích hợp thanh toán VNPay, MoMo'
-        ],
-        'App gọi xe': [
-            'Đa nền tảng iOS/Android, trải nghiệm mượt',
-            'Điều phối thông minh kết nối tài xế và khách',
-            'Hỗ trợ nhiều phương thức thanh toán, phản hồi < 2s'
-        ],
-        'Nền tảng ELearning': [
-            'Giáo viên tạo khóa, tài liệu, bài tập và theo dõi',
-            'Học sinh học bài, thảo luận, làm bài và nhận phản hồi',
-            'Quản trị viên quản lý người dùng, phân quyền, phân tích'
-        ],
-        'AI chatbot doanh nghiệp': [
-            'Hỗ trợ khách hàng 24/7, trả lời tự động theo ngành',
-            'Học liên tục từ dữ liệu doanh nghiệp và tương tác',
-            'Tích hợp Messenger, Zalo, Website; phân tích cảm xúc'
-        ],
-        'Hồ sơ ý tế thông minh': [
-            'Số hóa hồ sơ y tế: đơn thuốc, xét nghiệm, bệnh án',
-            'Nhận dạng chữ bác sĩ ~95% bằng AI & Computer Vision',
-            'Triển khai tại 15 bệnh viện và 50+ phòng khám'
-        ],
-        'BinanceBot Pro - Trading Bot AI': [
-            'AI trading bot tự động giao dịch 24/7 trên Binance',
-            'Quản lý rủi ro thông minh: stop-loss, take-profit tự động',
-            'Mobile app iOS/Android, 10K+ users, $50M+ volume, 99.9% uptime'
-        ],
-    }
-    const en: Record<string, string[]> = {
-        'Nền tảng bán khoá học online': [
-            'Connects experts/creators with affiliate marketers',
-            'Supports effective online learning for students',
-            'Integrated payments: VNPay, MoMo'
-        ],
-        'App gọi xe': [
-            'Cross‑platform iOS/Android with smooth UX',
-            'Intelligent dispatch linking drivers and riders',
-            'Multiple payments, < 2s response time'
-        ],
-        'Nền tảng ELearning': [
-            'Teachers create courses, materials, assignments, tracking',
-            'Students learn, discuss, take quizzes and get feedback',
-            'Admins manage users, roles and analytics'
-        ],
-        'AI chatbot doanh nghiệp': [
-            '24/7 support with domain‑aware auto responses',
-            'Continuous learning from enterprise data and interactions',
-            'Integrates Messenger, Zalo, Website; sentiment analysis'
-        ],
-        'Hồ sơ ý tế thông minh': [
-            'Digitizes medical records: prescriptions, labs, charts',
-            '~95% doctor handwriting recognition via AI & CV',
-            'Deployed in 15 hospitals and 50+ clinics'
-        ],
-        'BinanceBot Pro - Trading Bot AI': [
-            'AI trading bot automates trading 24/7 on Binance',
-            'Smart risk management: automatic stop-loss and take-profit',
-            'Mobile app iOS/Android, 10K+ users, $50M+ volume, 99.9% uptime'
-        ],
-    }
-    const zh: Record<string, string[]> = {
-        'Nền tảng bán khoá học online': [
-            '连接专家/创作者与联盟推广者',
-            '支持学员高效在线学习',
-            '集成支付：VNPay、MoMo'
-        ],
-        'App gọi xe': [
-            '跨平台 iOS/Android，体验流畅',
-            '智能调度连接司机与乘客',
-            '多种支付方式，响应 < 2 秒'
-        ],
-        'Nền tảng ELearning': [
-            '教师创建课程、资料与作业并跟踪进度',
-            '学生学习课程、讨论交流、测验与反馈',
-            '管理员管理用户、权限与数据分析'
-        ],
-        'AI chatbot doanh nghiệp': [
-            '7×24 行业知识自动答复',
-            '基于企业数据与互动持续学习',
-            '集成 Messenger、Zalo、网站；情感分析'
-        ],
-        'Hồ sơ ý tế thông minh': [
-            '医疗文档数字化：处方、检验、病历',
-            'AI+视觉 ~95% 医生手写识别',
-            '已在 15 家医院与 50+ 诊所部署'
-        ],
-        'BinanceBot Pro - Trading Bot AI': [
-            'AI 交易机器人 7×24 自动交易于币安',
-            '智能风险管理：自动止损与止盈',
-            'iOS/Android 移动应用，10K+ 用户，$50M+ 交易量，99.9% 正常运行时间'
-        ],
-    }
-    if (lang === 'vi' && vi[titleVi]) return vi[titleVi]
-    if (lang === 'en' && en[titleVi]) return en[titleVi]
-    if (lang === 'zh' && zh[titleVi]) return zh[titleVi]
-    // Fallback to generic
-    return lang === 'en'
-        ? ['Key features and solid architecture', 'Optimized for speed and reliability']
-        : lang === 'vi'
-            ? ['Tính năng nổi bật và kiến trúc vững chắc', 'Tối ưu tốc độ và độ tin cậy']
-            : ['关键功能与稳健架构', '针对速度与可靠性优化']
-}
+    const translations: Record<string, { en?: PdfProject; zh?: PdfProject }> = {
+        // Example for one project. You'd need to fill this out for all of them.
+        "Hệ thống Quản lý Khách hàng (CRM Platform)": {
+            en: {
+                title: "Customer Relationship Management (CRM Platform)",
+                description: "Web application for managing customers, contracts, customer care, and transaction history.",
+                mainFeatures: "AI-powered customer behavior prediction & automated chatbot support.",
+                highlights: "Integrates user data analysis tools and AI-driven product suggestions. Real-time updates & WebSocket push notifications.",
+                technologies: "ReactJS, Node.js, MongoDB, Express, Docker.",
+                image: "https://via.placeholder.com/1200x675.png?text=CRM+Platform"
+            },
+            zh: {
+                title: "客户关系管理（CRM）平台",
+                description: "用于管理客户、合同、客户服务和交易历史的Web应用程序。",
+                mainFeatures: "集成AI客户行为预测和自动聊天机器人支持。",
+                highlights: "集成用户数据分析工具和AI驱动的产品建议。实时更新和WebSocket推送通知。",
+                technologies: "ReactJS, Node.js, MongoDB, Express, Docker。",
+                image: "https://via.placeholder.com/1200x675.png?text=CRM+Platform"
+            }
+        },
+        // ... more translations for other projects
+    };
 
-const getProjectPills = (titleVi: string, lang: 'vi' | 'en' | 'zh') => {
-    const vi: Record<string, string[]> = {
-        'Nền tảng bán khoá học online': ['Affiliate', 'Laravel/Vue', 'Thanh toán'],
-        'App gọi xe': ['iOS/Android', 'Điều phối thông minh', '< 2s'],
-        'Nền tảng ELearning': ['Quản lý khóa học', 'Tương tác', 'Đánh giá'],
-        'AI chatbot doanh nghiệp': ['Hỗ trợ 24/7', 'RASA NLP', 'Tích hợp đa kênh'],
-        'Hồ sơ ý tế thông minh': ['OCR ~95%', '15 BV + 50+ PK', 'TensorFlow/OpenCV'],
-        'BinanceBot Pro - Trading Bot AI': ['AI Trading', '10K+ Users', 'Node.js/React Native'],
+    if (lang === 'en' && translations[p.title]?.en) {
+        return { ...p, ...translations[p.title].en };
     }
-    const en: Record<string, string[]> = {
-        'Nền tảng bán khoá học online': ['Affiliate', 'Laravel/Vue', 'Payments'],
-        'App gọi xe': ['iOS/Android', 'Smart dispatch', '< 2s'],
-        'Nền tảng ELearning': ['Course mgmt', 'Interaction', 'Assessment'],
-        'AI chatbot doanh nghiệp': ['24/7 support', 'RASA NLP', 'Omnichannel'],
-        'Hồ sơ ý tế thông minh': ['OCR ~95%', '15 hospitals+50 clinics', 'TensorFlow/OpenCV'],
-        'BinanceBot Pro - Trading Bot AI': ['AI Trading', '10K+ Users', 'Node.js/React Native'],
+    if (lang === 'zh' && translations[p.title]?.zh) {
+        return { ...p, ...translations[p.title].zh };
     }
-    const zh: Record<string, string[]> = {
-        'Nền tảng bán khoá học online': ['联盟推广', 'Laravel/Vue', '支付'],
-        'App gọi xe': ['iOS/Android', '智能调度', '< 2 秒'],
-        'Nền tảng ELearning': ['课程管理', '互动', '评测'],
-        'AI chatbot doanh nghiệp': ['7×24', 'RASA NLP', '全渠道'],
-        'Hồ sơ ý tế thông minh': ['OCR ~95%', '15 医院+50 诊所', 'TensorFlow/OpenCV'],
-        'BinanceBot Pro - Trading Bot AI': ['AI 交易', '10K+ 用户', 'Node.js/React Native'],
+    return p; // Return original if no translation found or lang is vi
+};
+
+
+const getProjectBullets = (project: PdfProject, lang: 'vi' | 'en' | 'zh') => {
+    const bullets: string[] = [];
+
+    // Prioritize mainFeatures, then highlights, then technologies
+    if (project.mainFeatures && project.mainFeatures !== 'N/A') {
+        bullets.push(project.mainFeatures);
     }
-    if (lang === 'vi' && vi[titleVi]) return vi[titleVi]
-    if (lang === 'en' && en[titleVi]) return en[titleVi]
-    if (lang === 'zh' && zh[titleVi]) return zh[titleVi]
-    return lang === 'en'
-        ? ['Seamless', 'Fast', 'Secure']
-        : lang === 'vi'
-            ? ['Mượt mà', 'Nhanh', 'Bảo mật']
-            : ['流畅', '快速', '安全']
-}
+    if (project.highlights && project.highlights !== 'N/A' && !bullets.includes(project.highlights)) {
+        bullets.push(project.highlights);
+    }
+    if (project.technologies && project.technologies !== 'N/A' && !bullets.includes(project.technologies)) {
+        bullets.push(project.technologies);
+    }
+
+    if (bullets.length === 0) {
+        // Fallback if no specific features/highlights are present
+        if (lang === 'en') return ['Key features and solid architecture', 'Optimized for speed and reliability'];
+        if (lang === 'vi') return ['Tính năng nổi bật và kiến trúc vững chắc', 'Tối ưu tốc độ và độ tin cậy'];
+        if (lang === 'zh') return ['关键功能与稳健架构', '针对速度与可靠性优化'];
+    }
+
+    return bullets;
+};
+
+const getProjectPills = (project: PdfProject, lang: 'vi' | 'en' | 'zh') => {
+    // This function will extract keywords from technologies or main features
+    const pills: string[] = [];
+
+    if (project.technologies && project.technologies !== 'N/A') {
+        project.technologies.split(',').forEach(tech => {
+            const trimmedTech = tech.trim();
+            if (trimmedTech) pills.push(trimmedTech);
+        });
+    }
+
+    // You might want to add more logic here to extract keywords from mainFeatures or highlights
+    // For simplicity, I'm just using technologies for now.
+
+    if (pills.length === 0) {
+        if (lang === 'en') return ['Seamless', 'Fast', 'Secure'];
+        if (lang === 'vi') return ['Mượt mà', 'Nhanh', 'Bảo mật'];
+        if (lang === 'zh') return ['流畅', '快速', '安全'];
+    }
+    return pills;
+};
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ p, reverse }) => {
-    const { lang } = useLang()
-    const tp = translateProject(p, lang)
-    const pills = getProjectPills(p.title, lang)
+    const { lang } = useLang();
+    const tp = translateProject(p, lang); // Use the translation function
+    const bullets = getProjectBullets(p, lang); // Get bullets based on PDF data
+    const pills = getProjectPills(p, lang); // Get pills based on PDF data
+
+    // Use a default image if none is provided
+    const imageUrl = tp.image || "https://via.placeholder.com/1200x675.png?text=Project+Image";
+
     return (
-        <div className="flex flex-col  outline-none h-full mb-6 sm:mb-8  bg-gray-50 sm:p-6" >
+        <div className="flex flex-col outline-none h-full mb-6 sm:mb-8 bg-gray-50 sm:p-6">
             <div className={`grid md:grid-cols-2 gap-6 items-center p-6`}>
                 <div className={`shadow-3d-lg shadow-3d relative overflow-hidden bg-slate-100 ${reverse ? 'md:order-2' : 'md:order-1'}`}>
                     <div className="aspect-[16/9] w-full">
-                        <img src={p.image} alt={tp.title} className="h-full w-full object-cover" />
+                        <img src={imageUrl} alt={tp.title} className="h-full w-full object-cover" />
                     </div>
                 </div>
                 <div className={`flex flex-col gap-3 sm:gap-4 ${reverse ? 'md:order-1' : 'md:order-2'}`}>
                     <h3 className="text-xl sm:text-2xl font-extrabold text-orange-500">{tp.title}</h3>
                     <p className="text-sm sm:text-base text-black leading-relaxed">{tp.description}</p>
                     <div className="mt-1 grid gap-2">
-                        {getProjectBullets(p.title, lang).map((item) => (
-                            <div key={item} className="flex items-start gap-2">
+                        {bullets.map((item, index) => (
+                            <div key={index} className="flex items-start gap-2">
                                 <svg className="h-5 w-5 flex-shrink-0 text-primary" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-7.07 7.07a1 1 0 01-1.415 0l-3.535-3.535a1 1 0 111.414-1.414l2.828 2.828 6.364-6.364a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
                                 <span className="text-sm sm:text-base text-blue-700 ">{item}</span>
                             </div>
                         ))}
                     </div>
                     <div className="mt-2 flex flex-wrap gap-2">
-                        {pills.map((x) => (
-                            <span key={x} className="px-3 py-1  text-xs sm:text-sm bg-primary/10 text-primary ring-1 ring-primary/20">{x}</span>
+                        {pills.map((x, index) => (
+                            <span key={index} className="px-3 py-1 text-xs sm:text-sm bg-primary/10 text-primary ring-1 ring-primary/20">{x}</span>
                         ))}
                     </div>
                 </div>
             </div>
         </div>
-    )
+    );
 };
 
 export const Showcase: React.FC = () => {
-    const { lang } = useLang()
+    const { lang } = useLang();
 
     return (
-        <section id="showcase" className=" w-[80%] bg-white py-7"   >
+        <section id="showcase" className="w-[80%] bg-white py-7">
             <div className="flex flex-col gap-6 sm:gap-8 w-full ">
                 <FadeUp className="">
-                    <h2 className="text-4xl font-bold text-blue-800 text-center border-b-2 pb-2">{lang === 'en' ? 'Projects' : lang === 'vi' ? 'Dự án tiêu biểu ' : '代表性项目'} </h2>
+                    <h2 className="text-4xl font-bold text-blue-800 text-center border-b-2 pb-2">
+                        {lang === 'en' ? 'Projects' : lang === 'vi' ? 'Dự án tiêu biểu ' : '代表性项目'}
+                    </h2>
                 </FadeUp>
 
                 <FadeUp className="flex flex-col gap-10 relative w-full max-w-7xl mx-auto px-2 pb-4 sm:pb-6 lg:pb-8">
-                    <>
-                        {projects.map((p, i) => (
-                            <ProjectCard key={p.title} p={p} reverse={i % 2 === 1} />
-                        ))}
-                    </>
+                    {/* Iterate through categories and then projects within each category */}
+                    {pdfProjects.map((categoryData, categoryIndex) => (
+                        <div key={categoryIndex} className="mb-8">
+                            <h3 className="text-3xl font-bold text-blue-700 mb-6 text-center">
+                                {categoryData.category} {/* Display category title */}
+                            </h3>
+                            {categoryData.projects.map((project, projectIndex) => (
+                                <ProjectCard key={project.title} p={project} reverse={(categoryIndex * 100 + projectIndex) % 2 === 1} />
+                            ))}
+                        </div>
+                    ))}
                 </FadeUp>
             </div>
         </section>
