@@ -62,7 +62,7 @@ export const Footer = () => {
 
                             {/* Zalo Button */}
                             <a
-                                href="https://zalo.me/0353303605"
+                                href="https://zalo.me/0929009999"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Zalo"
@@ -77,7 +77,7 @@ export const Footer = () => {
 
                             {/* Facebook Button */}
                             <a
-                                href="https://www.facebook.com/truongson.le.5473/"
+                                href="https://www.facebook.com/tu.tuan.7921"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 aria-label="Facebook"

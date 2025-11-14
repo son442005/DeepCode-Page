@@ -228,8 +228,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ p, reverse }) => {
         <div className="flex flex-col  outline-none h-full bg-gray-50 " >
             <div className={`grid md:grid-cols-2 gap-6 items-center p-6`}>
                 <div className={` relative overflow-hidden bg-slate-100 ${reverse ? 'md:order-2' : 'md:order-1'}`}>
-                    <div className="aspect-[16/9] w-full">
-                        <img src={p.image} alt={tp.title} className="h-full w-full object-cover " />
+                    <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                        <img 
+                            src={p.image} 
+                            alt={tp.title} 
+                            className="absolute inset-0 w-full h-full object-cover" 
+                            loading="lazy"
+                        />
                     </div>
                 </div>
                 <div className={`flex flex-col gap-3 sm:gap-4 ${reverse ? 'md:order-1' : 'md:order-2'}`}>

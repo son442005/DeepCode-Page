@@ -13,6 +13,7 @@ import StaffStats from './components/StaffStats'
 import Commit from './components/Commit'
 import ClientsPartners from './components/ClientsPartners'
 import ContactInfo from './components/ContactInfo'
+import FounderProfile from './components/FounderProfile'
 import { FloatButton } from './components/FloatButton'
 const App = () => {
     return (
@@ -25,6 +26,7 @@ const App = () => {
                 <Features />
                 <Stats />
                 <Showcase />
+                <FounderProfile />
                 <ExpertProfile />
                 {/* <Testimonials /> */}
                 <StaffStats />

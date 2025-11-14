@@ -20,12 +20,12 @@ export const FloatButton: React.FC = () => {
     };
 
     const handleZalo = () => {
-        window.open('https://zalo.me/0353303605', '_blank');
+        window.open('https://zalo.me/0929009999', '_blank');
         setIsOpen(false);
     };
 
     const handleFacebook = () => {
-        window.open('https://www.facebook.com/truongson.le.5473/', '_blank');
+        window.open('https://www.facebook.com/tu.tuan.7921', '_blank');
         setIsOpen(false);
     };
 
