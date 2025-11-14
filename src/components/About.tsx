@@ -5,7 +5,7 @@ import { FadeUp } from './Anim'
 export const About = () => {
     const { lang } = useLang()
     return (
-        <section id="about" className="w-[80%]" aria-label="About Us ">
+        <section id="about" className="w-full md:w-[80%]" aria-label="About Us ">
             <div className="p-10 bg-white">
                 <FadeUp className="grid lg:grid-cols-2 items-center bg-white p-3 rounded-xl px-10 border-2 border-indigo-600">
                     <div>

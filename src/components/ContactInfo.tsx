@@ -47,10 +47,11 @@ const ContactInfo: React.FC = () => {
     };
 
     return (
-        <section
-            id="ContactInfo"
-            className=" overflow-x-hidden px-4 sm:px-8 bg-white w-[80%]">
-            <div className="max-w-6xl mx-auto space-y-10 sm:space-y-12 lg:space-y-16  px-4 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-16 ">
+        <div className="w-full flex justify-center">
+            <section
+                id="ContactInfo"
+                className="overflow-x-hidden px-4 sm:px-8 bg-white w-full md:w-[80%] pb-0">
+                <div className="max-w-6xl mx-auto space-y-10 sm:space-y-12 lg:space-y-16  px-4 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-16 ">
                 {/* Header */}
                 <header className="text-center sm:text-left">
                     <h1 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-semibold text-slate-800 mb-3">
@@ -167,6 +168,7 @@ const ContactInfo: React.FC = () => {
                 </div>
             </div>
         </section>
+        </div>
     );
 };
 

@@ -263,7 +263,7 @@ export const Showcase: React.FC = () => {
     const { lang } = useLang()
 
     return (
-        <section id="showcase" className=" w-[80%] bg-white py-7"   >
+        <section id="showcase" className=" w-full md:w-[80%] bg-white py-7"   >
             <div className="flex flex-col gap-6 sm:gap-8 w-full ">
                 <FadeUp className="">
                     <h2 className="text-4xl font-bold text-blue-800 text-center border-b-2 pb-2">{lang === 'en' ? 'Projects' : lang === 'vi' ? 'Dự án tiêu biểu ' : '代表性项目'} </h2>

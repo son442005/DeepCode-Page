@@ -80,7 +80,7 @@ const FounderProfile: React.FC = () => {
             : '创始人';
 
     return (
-        <section id="founderProfile" aria-label="Founder Profile" className="w-[80%] lg:w-[80%] mx-auto flex flex-col bg-white p-4">
+        <section id="founderProfile" aria-label="Founder Profile" className="w-full md:w-[80%] mx-auto flex flex-col bg-white p-4">
             <div className="">
                 <div className="py-8 sm:py-12 lg:p-14 rounded-xl">
                     <header className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-orange-500 border-b-2 border-orange-300 pb-4">

@@ -78,7 +78,7 @@ export const Features = () => {
   };
 
   return (
-    <section id="features" className="w-[80%] bg-white mt-0">
+    <section id="features" className="w-full md:w-[80%] bg-white mt-0">
       <div className="mx-auto max-w-7xl p-9 sm:px-6 lg:px-8 ">
         <FadeUp className="max-w-2xl text-black">
           <h2 className="text-2xl sm:text-4xl font-serif font-bold">

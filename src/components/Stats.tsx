@@ -6,7 +6,7 @@ export const Stats = () => {
     const { lang } = useLang()
     return (
         <div className="w-full flex justify-center">
-            <section id="stats" className="w-[80%] bg-white py-10">
+            <section id="stats" className="w-full md:w-[80%] bg-white py-10">
                 <div className="w-full px-4 sm:px-6 lg:px-8">
                     <FadeUp className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                         {stats.map((s) => (

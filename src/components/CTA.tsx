@@ -15,7 +15,7 @@ export const CTA = () => {
     }
 
     return (
-        <section id="contact" className="w-[80%] sm:w-[90%] md:w-[80%] mx-auto bg-white ">
+        <section id="contact" className="w-full md:w-[80%] mx-auto bg-white ">
             <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-10 sm:py-14 lg:py-20">
                 <div className="bg from-white to-[#E9ECEF] p-6 sm:p-8 md:p-12 lg:p-16 rounded-xl shadow-sm">
 
