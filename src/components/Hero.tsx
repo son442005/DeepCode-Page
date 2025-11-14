@@ -1,8 +1,52 @@
 import { site } from '../constants'
 import { useLang } from '../lang'
 import { useInView } from '../hooks/useInView'
+import { useState, useEffect } from 'react'
 
 export const Hero = () => {
+    const [currentSlide, setCurrentSlide] = useState(0)
+    const [isTransitioning, setIsTransitioning] = useState(true)
+    const baseSlides = [
+        `${import.meta.env.BASE_URL}Slideshow-1.jpg`,
+        `${import.meta.env.BASE_URL}Slideshow-2.jpg`,
+        `${import.meta.env.BASE_URL}Slideshow-3.jpg`
+    ]
+    // Duplicate first slide at the end for seamless loop
+    const slides = [...baseSlides, baseSlides[0]]
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentSlide((prev) => {
+                const next = prev + 1
+                if (next > baseSlides.length) {
+                    // After showing duplicate slide, reset to 0
+                    return 0
+                }
+                return next
+            })
+        }, 3000) // Change slide every 3 seconds
+
+        return () => clearInterval(interval)
+    }, [baseSlides.length])
+
+    // Handle seamless loop: when showing duplicate slide, reset to 0 without transition
+    useEffect(() => {
+        if (currentSlide === baseSlides.length) {
+            // Reset to 0 right after transition completes (1500ms)
+            const timer = setTimeout(() => {
+                setIsTransitioning(false)
+                setCurrentSlide(0)
+                // Use requestAnimationFrame for smoother reset
+                requestAnimationFrame(() => {
+                    setTimeout(() => {
+                        setIsTransitioning(true)
+                    }, 16) // Next frame
+                })
+            }, 1500) // Wait for transition to complete
+            return () => clearTimeout(timer)
+        }
+    }, [currentSlide, baseSlides.length])
+
     const handlePrimaryClick = () => {
         const el = document.querySelector('#contact')
         if (!el) return
@@ -18,10 +62,31 @@ export const Hero = () => {
     const { lang } = useLang()
     return (
         <section className="relative pt-20 h-screen overflow-x-hidden w-full" aria-label="Hero">
-            <div
-                className="absolute top-0 left-0 right-0 z-0 h-full w-full bg-cover bg-center"
-                style={{ backgroundImage: `url(${import.meta.env.BASE_URL}hero-background.png)`, minWidth: '100vw' }}
-            />
+            {/* Slideshow Background */}
+            <div className="absolute top-0 left-0 right-0 z-0 h-full w-full overflow-hidden" style={{ minWidth: '100vw' }}>
+                <div 
+                    className={`h-full ${isTransitioning ? 'transition-transform duration-[1500ms] ease' : ''}`}
+                    style={{
+                        width: `${slides.length * 100}vw`,
+                        transform: `translateX(-${currentSlide * 100}vw)`,
+                        display: 'flex',
+                        willChange: 'transform'
+                    }}
+                >
+                    {slides.map((slide, index) => (
+                        <div
+                            key={index}
+                            className="flex-shrink-0 h-full"
+                            style={{
+                                backgroundImage: `url(${slide})`,
+                                backgroundSize: 'cover',
+                                backgroundPosition: 'center',
+                                width: '100vw'
+                            }}
+                        />
+                    ))}
+                </div>
+            </div>
             {/* Left dark overlay to highlight text */}
             <div className="pointer-events-none absolute top-0 left-0 right-0 z-0 h-full w-full bg-[linear-gradient(to_right,rgba(0,0,0,0.8)_0%,rgba(0,0,0,0.6)_35%,rgba(0,0,0,0.3)_55%,rgba(0,0,0,0)_72%)]" style={{ minWidth: '100vw' }} />
             {/* Right soft light overlay */}
