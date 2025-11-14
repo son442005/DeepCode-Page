@@ -49,8 +49,8 @@ const ContactInfo: React.FC = () => {
     return (
         <section
             id="ContactInfo"
-            className="w-full overflow-x-hidden px-4 py-10 sm:px-8 sm:py-12 lg:px-16 lg:py-20 rounded-3xl">
-            <div className="max-w-6xl mx-auto space-y-10 sm:space-y-12 lg:space-y-16 bg-white/90 backdrop-blur-md px-4 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-16 rounded-2xl shadow-2xl">
+            className=" overflow-x-hidden px-4 sm:px-8 bg-white w-[80%]">
+            <div className="max-w-6xl mx-auto space-y-10 sm:space-y-12 lg:space-y-16  px-4 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-16 ">
                 {/* Header */}
                 <header className="text-center sm:text-left">
                     <h1 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-semibold text-slate-800 mb-3">
@@ -73,7 +73,7 @@ const ContactInfo: React.FC = () => {
                 <div className="grid gap-8 sm:gap-10 lg:grid-cols-2">
                     {/* Left Column */}
                     <FadeUp className="order-2 lg:order-1">
-                        <div className="relative shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden rounded-2xl group aspect-[16/9] sm:aspect-[4/3]">
+                        <div className="relative shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group aspect-[16/9] sm:aspect-[4/3]">
                             <img
                                 src={meetingImage}
                                 alt={lang === 'en' ? 'HLGera Meeting Room' : lang === 'vi' ? 'Phòng họp HLGera' : 'HLGera会议室'}
@@ -87,10 +87,10 @@ const ContactInfo: React.FC = () => {
                     <div className="space-y-6 order-1 lg:order-2">
                         {contactItems.map((item, index) => (
                             <FadeUp key={index}>
-                                <div className="bg-white rounded-2xl p-5 sm:p-7 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-100">
+                                <div className="bg-white  p-5 sm:p-7 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-100">
                                     <div className="flex items-start gap-3 sm:gap-4">
                                         {/* Icon */}
-                                        <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-blue-100 flex items-center justify-center text-xl sm:text-2xl text-blue-600 shadow-inner">
+                                        <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12  bg-blue-100 flex items-center justify-center text-xl sm:text-2xl text-blue-600 shadow-inner">
                                             {item.icon}
                                         </div>
 

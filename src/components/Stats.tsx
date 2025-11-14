@@ -6,12 +6,12 @@ export const Stats = () => {
     const { lang } = useLang()
     return (
         <section className="">
-            <div className="px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl">
+            <div className="px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl ww-[80%]">
                 <FadeUp className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mx-7xl m-auto">
                     {stats.map((s) => (
-                        <div key={s.label} className="shadow-3d shadow-3d-hover rounded-xl bg-white px-6 py-6 sm:px-10 sm:py-8 text-center text-primary">
-                            <div className="font-bold text-3xl sm:text-4xl">{s.value}</div>
-                            <div className="mt-2 text-base sm:text-lg">{lang === 'en' ? (
+                        <div key={s.label} className="shadow-3d shadow-3d-hover rounded-xl bg-blue-500 px-6 py-6 sm:px-10 sm:py-8 text-center text-white transition-shadow">
+                            <div className="font-bold text-3xl sm:text-4xl ">{s.value}</div>
+                            <div className="mt-2 text-base sm:text-lg  ">{lang === 'en' ? (
                                 s.label === 'Dự án hoàn thành' ? 'Completed projects' :
                                     s.label === 'Khách hàng doanh nghiệp' ? 'Business clients' :
                                         s.label === 'Tỉ lệ hài lòng' ? 'Satisfaction rate' : s.label

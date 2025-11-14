@@ -5,8 +5,8 @@ import { useLang } from '../lang'
 const ClientsPartners: React.FC = () => {
   const { lang } = useLang()
   return (
-    <section id="ClientsPartners" className="px-3 sm:px-12 lg:px-16 ">
-      <div className="flex flex-col gap-8 sm:gap-12 lg:gap-16 bg-white p-10 rounded-xl">
+    <section id="ClientsPartners" className="px-3 w-[80%] bg-white ">
+      <div className="flex flex-col gap-8 sm:gap-12 lg:gap-16 p-4 rounded-xl">
         <FadeUp className=" text-center ">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-orange-500">
             {lang === 'en' ? 'Clients & Partners' : lang === 'vi' ? 'Khách Hàng & Đối Tác' : '客户与合作伙伴'}

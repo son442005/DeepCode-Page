@@ -38,9 +38,9 @@ const ExpertProfileTailwind: React.FC<ExpertProfileTailwindProps> = () => {
         return d
     }
     return (
-        <section id="ExpertProfile" aria-label="About Us">
-            <div className="px-4 py-10 sm:px-8 md:px-12 lg:px-16 font-sans bg-gradient-to-br from-primary/5 to-secondary/10">
-                <div className="w-full bg-white px-6 py-8 sm:px-10 sm:py-12 lg:p-14 rounded-xl">
+        <section id="ExpertProfile" aria-label="About Us" className='w-[80%] sm:w-[85%] lg:w-[80%] mx-auto flex flex-col bg-white p-4'>
+           <div className="">
+                <div className=" py-8 sm:py-12 lg:p-14 rounded-xl ">
                     <header className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-orange-500 border-b-2 border-orange-300 pb-4">
                         <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold">
                             {lang === 'en' ? 'Expert Team' : lang === 'vi' ? 'Đội Ngũ Chuyên Gia' : '专家团队'}
@@ -52,7 +52,7 @@ const ExpertProfileTailwind: React.FC<ExpertProfileTailwindProps> = () => {
                             <img
                                 src={expertData.profileImage}
                                 alt={name}
-                                className="shadow-3d-lg shadow-3d-hover mt-6 sm:mt-8 lg:mt-10 w-full max-w-xs sm:max-w-sm lg:max-w-full h-auto object-cover rounded-2xl border border-gray-200"
+                                className=" mt-6 sm:mt-8 lg:mt-10 w-full max-w-xs sm:max-w-sm lg:max-w-full h-auto object-cover rounded-xl border border-gray-200"
                             />
                         </div>
 

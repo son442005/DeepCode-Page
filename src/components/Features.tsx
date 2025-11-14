@@ -11,7 +11,7 @@ const Icon = ({ name }: { name: string }) => {
     if (!icon) {
         // Trả về một placeholder và ghi log cảnh báo nếu biểu tượng không tìm thấy
         console.warn(`Icon '${name}' not found in ICONS object. Check constants.ts and public folder.`);
-        return <div className="h-6 w-6 rounded bg-slate-700" />;
+        return <div className="h-6 w-6 bg-slate-700" />;
     }
     return <img src={icon.src} alt={icon.alt} className="h-36 w-36 object-contain" />;
 };
@@ -78,9 +78,9 @@ export const Features = () => {
     };
 
    return (
-    <section id="features" className="pt-8 sm:pt-10 pb-14 sm:pb-20 bg-gradient-to-br from-primary/5 to-secondary/10">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <FadeUp className="max-w-2xl text-white">
+    <section id="features" className="w-[80%] bg-white">
+      <div className="mx-auto max-w-7xl p-9 sm:px-6 lg:px-8 ">
+        <FadeUp className="max-w-2xl text-black">
           <h2 className="text-2xl sm:text-4xl font-serif">
             {lang === 'en' ? 'Services' : lang === 'vi' ? 'Dịch vụ' : '服务'}
           </h2>
@@ -97,7 +97,7 @@ export const Features = () => {
             <SlideIn 
               key={f.title} 
               direction={index % 2 === 0 ? 'left' : 'right'} 
-              className="feature-block rounded-2xl p-4 sm:p-6 shadow-lg ring-1 ring-slate-200/50 hover:shadow-xl transition-all duration-300 hover:-translate-y-1" 
+              className="feature-block  p-4 sm:p-6  ring-1 ring-slate-200/50" 
               style={{ background: f.color }}
             >
               <div className="flex items-center gap-2 sm:gap-3">
@@ -106,7 +106,7 @@ export const Features = () => {
                   h-16 w-16   
                   sm:h-20 sm:w-20
                   lg:h-24 lg:w-24 
-                  items-center justify-center rounded-lg ring-1 ring-slate-200/50 shadow-sm"
+                  items-center justify-centerring-1 ring-slate-200/50 "
                 >
                   <Icon name={f.icon} />
                 </div>

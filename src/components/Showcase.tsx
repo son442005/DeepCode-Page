@@ -222,9 +222,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ p, reverse }) => {
     const tp = translateProject(p, lang)
     const pills = getProjectPills(p.title, lang)
     return (
-        <div className="flex flex-col  outline-none h-full mb-6 sm:mb-8 rounded-2xl bg-gray-50 sm:p-6" >
+        <div className="flex flex-col  outline-none h-full mb-6 sm:mb-8  bg-gray-50 sm:p-6" >
             <div className={`grid md:grid-cols-2 gap-6 items-center p-6`}>
-                <div className={`shadow-3d-lg shadow-3d-hover relative rounded-2xl overflow-hidden bg-slate-100 ${reverse ? 'md:order-2' : 'md:order-1'}`}>
+                <div className={`shadow-3d-lg shadow-3d relative overflow-hidden bg-slate-100 ${reverse ? 'md:order-2' : 'md:order-1'}`}>
                     <div className="aspect-[16/9] w-full">
                         <img src={p.image} alt={tp.title} className="h-full w-full object-cover" />
                     </div>
@@ -242,7 +242,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ p, reverse }) => {
                     </div>
                     <div className="mt-2 flex flex-wrap gap-2">
                         {pills.map((x) => (
-                            <span key={x} className="px-3 py-1 rounded-full text-xs sm:text-sm bg-primary/10 text-primary ring-1 ring-primary/20">{x}</span>
+                            <span key={x} className="px-3 py-1  text-xs sm:text-sm bg-primary/10 text-primary ring-1 ring-primary/20">{x}</span>
                         ))}
                     </div>
                 </div>
@@ -255,10 +255,10 @@ export const Showcase: React.FC = () => {
     const { lang } = useLang()
 
     return (
-        <section id="showcase" className=" py-8  sm:py-10  ">
-            <div className="flex flex-col gap-6 sm:gap-8 w-full">
-                <FadeUp className=" ">
-                    <h2 className="text-2xl sm:text-3xl font-bold text-blue-800 text-center">{lang === 'en' ? 'Projects' : lang === 'vi' ? 'Dự án tiêu biểu ' : '代表性项目'} </h2>
+        <section id="showcase" className=" w-[80%] bg-white py-7"   >
+            <div className="flex flex-col gap-6 sm:gap-8 w-full ">
+                <FadeUp className="">
+                    <h2 className="text-4xl font-bold text-blue-800 text-center border-b-2 pb-2">{lang === 'en' ? 'Projects' : lang === 'vi' ? 'Dự án tiêu biểu ' : '代表性项目'} </h2>
                 </FadeUp>
 
                 <FadeUp className="flex flex-col gap-10 relative w-full max-w-7xl mx-auto px-2 pb-4 sm:pb-6 lg:pb-8">

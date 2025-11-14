@@ -12,8 +12,9 @@ export default {
                     secondary: '#F59E0B', // Warm amber - for accents
                     accent: '#10B981', // Emerald green - for success/positive elements
                     dark: '#1E293B', // Soft navy - easier on eyes than pure black
-                    background: '#FEF9F3', // Warm cream - soft and inviting
-                    rbg: '#94A3B8', // Updated gray
+                    background: '#FF9900', // Warm cream - soft and inviting
+                    
+
                 },
                 fontFamily: {
                     sans: [

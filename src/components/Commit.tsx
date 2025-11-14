@@ -5,11 +5,11 @@ import { useLang } from '../lang'
 
 const QualityCommitment: React.FC = () => {
     const bgColor = 'bg-gradient-to-br from-[#fc4a1a] to-[#f7b733]';
-    const titleColor = 'text-white';
+    const titleColor = 'text-black';
 
     const { lang } = useLang()
     return (
-        <section id='Commit' className={`px-4 py-5 sm:px-6  md:px-8 md:py-16 lg:p-20 overflow-x-hidden`}>
+        <section id='Commit' className={`px-4 py-5 sm:px-6  md:px-8 md:py-16 lg:p-20 overflow-x-hidden w-[80%] bg-white`}>
             <div className="">
 
                 <header className="flex justify-between items-start mb-8 sm:mb-10 md:mb-12">
@@ -64,7 +64,7 @@ const QualityCommitment: React.FC = () => {
                             {lang === 'en' ? 'HLGera adopts international standards in software development:' : lang === 'vi' ? 'HLGera áp dụng các tiêu chuẩn quốc tế trong quy trình phát triển phần mềm:' : 'HLGera在软件开发中采用国际标准：'}
                         </p>
 
-                        <ul className="list-disc pl-5 space-y-2 text-orange-400 break-words hyphens-auto">
+                        <ul className="list-disc pl-5 space-y-2 text-black break-words hyphens-auto">
                             {standards.map((standard, index) => (
                                 <li key={index} className="text-sm">
                                     {lang === 'en' && standard.startsWith('ISO 9001') && 'ISO 9001:2015 - Quality management system'}

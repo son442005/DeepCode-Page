@@ -43,8 +43,8 @@ const StaffStats: React.FC = () => {
     }
 
     return (
-        <section id="StaffStats" className={`p-6 sm:p-12 lg:p-20 bg-gradient-to-br from-primary/5 to-secondary/10 text-slate-800  `}>
-            <div className="flex flex-col gap-8 sm:gap-12 bg-gray-50 bg-opacity-50 p-8 rounded-xl">
+        <section id="StaffStats" className={`p-6 lg:p-10 w-[80%]  bg-white`} aria-label="Staff Statistics">
+            <div className="flex flex-col gap-8 sm:gap-12">
                 <div className="">
                     <h1 className={`text-3xl sm:text-4xl lg:text-5xl font-medium ${titleColor}`}>
                         {lang === 'en' ? 'Technical Team' : lang === 'vi' ? 'Nhân Sự Kỹ Thuật' : '技术团队'}
