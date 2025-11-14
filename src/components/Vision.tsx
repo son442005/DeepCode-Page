@@ -6,7 +6,7 @@ const Vision = () => {
     return (
         <section id="vision" className="w-[80%] mb-10 bg-white" aria-label="Our Vision">
             <div className="">
-                <FadeUp className=" 0 p-8 rounded-xl">
+                <FadeUp className="p-8 rounded-xl">
                     <h2 className="text-3xl sm:text-4xl font-bold text-black tracking-tight font-serif px-12">{lang === 'en' ? 'Vision' : lang === 'vi' ? 'Tầm Nhìn' : '愿景'}</h2>
                     <div className="mt-6 text-center">
                         <p className="mx-auto max-w-5xl text-base sm:text-base leading-relaxed font-serif text-black">
