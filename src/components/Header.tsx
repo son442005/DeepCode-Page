@@ -87,7 +87,7 @@ export const Header = () => {
             <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 ">
                 <div className="flex h-12 sm:h-14 items-center justify-between">
                     <div className="flex items-center gap-2">
-                        <img src={`${import.meta.env.BASE_URL}HLG-logo.png`} alt={`${site.company} logo `} className="h-12 w-12 sm:h-14 sm:w-14" />
+                        <img src={`${import.meta.env.BASE_URL}HLG-logo.ico`} alt={`${site.company} logo `} className="h-12 w-12 sm:h-14 sm:w-14" />
                         <span className="text-base sm:text-lg md:text-xl font-bold text-blue-700 tracking-tight">{site.company}</span>
                     </div>
                     <nav className="hidden md:flex items-center gap-2">

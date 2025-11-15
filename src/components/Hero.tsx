@@ -9,7 +9,9 @@ export const Hero = () => {
     const baseSlides = [
         `${import.meta.env.BASE_URL}Slideshow-1.jpg`,
         `${import.meta.env.BASE_URL}Slideshow-2.jpg`,
-        `${import.meta.env.BASE_URL}Slideshow-3.jpg`
+        `${import.meta.env.BASE_URL}Slideshow-3.jpg`,
+        `${import.meta.env.BASE_URL}slide-4.jpg`
+
     ]
     // Duplicate first slide at the end for seamless loop
     const slides = [...baseSlides, baseSlides[0]]
